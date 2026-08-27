@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Journey — Nur Indah Chasanah</title>
+<meta name="description" content="Work experience, education, and organizational journey of Nur Indah Chasanah — UI/UX designer and front-end developer.">
+
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    cream: "#FFFFFF",
+                    paper: "#F0F5EA",
+                    "paper-deep": "#E2ECD4",
+                    ink: "#1E2A1A",
+                    "ink-soft": "#4A5A40",
+                    matcha: "#7FB069",
+                    "matcha-deep": "#4E7A3A",
+                    "matcha-bright": "#8FC97A",
+                    "matcha-mist": "#D4E8C0",
+                    latte: "#C28A5A",
+                    "latte-deep": "#A06A3E",
+                    "latte-bright": "#DBA87A",
+                    gold: "#D4A84A",
+                    "gold-deep": "#B8862E",
+                    "gold-bright": "#E8C86A",
+                    line: "#DDE6D0"
+                },
+                fontFamily: {
+                    display: ["Fredoka", "sans-serif"],
+                    body: ["Plus Jakarta Sans", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    * { -webkit-tap-highlight-color: transparent; }
+    html { scroll-padding-top: 110px; }
+
+    body {
+        background-color: #FFFFFF;
+        color: #1E2A1A;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
+
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+    }
+
+    ::selection { background: #D4A84A; color: #FFFFFF; }
+
+    .container-px { padding-left: clamp(20px, 6vw, 160px); padding-right: clamp(20px, 6vw, 160px); }
+    .container-wrap { max-width: 1680px; margin-left: auto; margin-right: auto; }
+
+    .eyebrow {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .blob-shape {
+        border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%;
+        animation: morph 12s ease-in-out infinite;
+    }
+    @keyframes morph {
+        0%, 100% { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
+        50% { border-radius: 42% 58% 55% 45% / 55% 40% 60% 45%; }
+    }
+
+    .ambient-shadow-sm { box-shadow: 0 10px 26px -14px rgba(78, 122, 58, 0.18); }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal-delay-1.is-visible { transition-delay: .06s; }
+    .reveal-delay-2.is-visible { transition-delay: .12s; }
+    .reveal-delay-3.is-visible { transition-delay: .18s; }
+
+    .nav-link { position: relative; }
+    .nav-link.active { color: #4E7A3A; }
+    .nav-link.active::after {
+        content: ""; position: absolute; left: 50%; bottom: -6px;
+        width: 4px; height: 4px; border-radius: 50%; background: #C28A5A; transform: translateX(-50%);
+    }
+
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(.16,1,.3,1); }
+    #mobile-menu.open { max-height: 480px; }
+
+    .btn-primary { transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, background-color 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(78, 122, 58, 0.40); }
+    .btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
+    .btn-ghost { transition: transform 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease; }
+    .btn-ghost:hover { transform: translateY(-3px); }
+    .btn-ghost:active { transform: translateY(-1px) scale(0.98); }
+
+    .grain {
+        position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 1; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .float-slow { animation: floaty 7s ease-in-out infinite; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(3deg); } }
+
+    .cert-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease, background-color 0.3s ease; }
+    .cert-chip:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -12px rgba(78, 122, 58, 0.28); background-color: #F0F5EA; }
+
+    /* ===== Compass / journey signature ===== */
+    .compass-ring {
+        position: absolute; border-radius: 50%; border: 2px dashed rgba(78,122,58,0.35);
+        animation: spin 34s linear infinite;
+    }
+    .compass-ring.inner { border-color: rgba(194,138,90,0.4); animation-duration: 22s; animation-direction: reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== Tabs ===== */
+    .tab-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 20px; border-radius: 9999px;
+        font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13.5px;
+        color: #4A5A40; background: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow .3s ease;
+    }
+    .tab-btn:hover { background: #F0F5EA; }
+    .tab-btn.is-active { color: #FFFFFF; background-color: #4E7A3A; transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(30,42,26,0.35); }
+    .tab-panel { display: none; }
+    .tab-panel.is-active { display: block; }
+
+    /* ===== Journey card ===== */
+    .info-card {
+        position: relative;
+        background: #FFFFFF;
+        border: 1px solid #DDE6D0;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 26px -14px rgba(78,122,58,0.18);
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    }
+    .info-card:hover { transform: translateY(-5px); box-shadow: 0 24px 46px -18px rgba(78,122,58,0.28); }
+
+    .card-head {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        padding: 16px 20px; border-bottom: 1.5px dashed #C9D8B7; background: #FAFCF7;
+    }
+    .card-head-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+
+    .logo-badge-sm {
+        width: 38px; height: 38px; border-radius: 50%; background: #FFFFFF; border: 1px solid #DDE6D0;
+        display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; padding: 6px;
+    }
+    .logo-badge-sm img { width: 100%; height: 100%; object-fit: contain; }
+
+    .stamp-date {
+        display: inline-block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 12.5px;
+        line-height: 1.3; white-space: nowrap;
+    }
+
+    .tag-badge {
+        display: inline-flex; align-items: center; flex-shrink: 0;
+        font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+        color: #FFFFFF; padding: 5px 12px; border-radius: 9999px;
+    }
+
+    .accent-work { color: #4E7A3A; }
+    .accent-edu { color: #A06A3E; }
+    .accent-org { color: #B8862E; }
+    .bg-accent-work { background: #4E7A3A; }
+    .bg-accent-edu { background: #A06A3E; }
+    .bg-accent-org { background: #B8862E; }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+        }
+        .reveal { opacity: 1; transform: none; }
+    }
+
+    :focus-visible { outline: 2px solid #C28A5A; outline-offset: 3px; border-radius: 6px; }
+
+    .bg-warm-glow { background: radial-gradient(ellipse at 30% 40%, rgba(127,176,105,0.08), transparent 70%); }
+</style>
+</head>
+<body class="antialiased min-h-screen selection:bg-gold selection:text-cream">
+
+<div class="grain"></div>
+
+<!-- Floating Navigation -->
+<nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
+    <div class="flex items-center justify-between gap-4 sm:gap-8 bg-cream/88 backdrop-blur-xl border border-line shadow-[0_8px_30px_-12px_rgba(78,122,58,0.18)] rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
+        <a class="flex items-center gap-2 shrink-0 pl-1" href="index.html">
+            <span class="w-8 h-8 rounded-full bg-matcha-deep flex items-center justify-center" aria-hidden="true">
+                <span class="material-symbols-outlined text-cream text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
+            </span>
+            <span class="font-display text-[17px] font-semibold text-matcha-deep tracking-tight">Indah</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium text-ink-soft">
+            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="index.html#home">Home</a>
+            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="project.html">Project</a>
+            <a class="nav-link active hover:text-matcha-deep transition-colors" data-nav href="journey.html">Journey</a>
+        </div>
+
+        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold btn-primary" href="index.html#contact">
+            Say Hello
+            <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+        </a>
+
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-matcha-deep p-2 rounded-full hover:bg-paper" id="menu-btn">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+    </div>
+
+    <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
+        <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="index.html">Home</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="project.html">Project</a>
+            <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="journey.html">Journey</a>
+            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="index.html#contact">Say Hello</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="relative container-wrap container-px pt-[148px] sm:pt-[166px] pb-10 sm:pb-12 overflow-hidden" id="top">
+        <div class="absolute inset-0 bg-warm-glow pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+            <div class="reveal is-visible relative z-10">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper border border-line text-ink-soft eyebrow mb-6">
+                    <span class="material-symbols-outlined text-[14px] text-matcha-deep">flight_takeoff</span>
+                    My Journey
+                </span>
+                <h1 class="font-display text-[38px] sm:text-[48px] leading-[1.08] tracking-[-0.01em] text-ink font-semibold">
+                    Every stop, <span class="text-matcha-deep">stamped</span> with purpose.
+                </h1>
+                <p class="font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed mt-5 max-w-lg">
+                    A quick look at the work, education, and experiences that have shaped the way I design and build. Explore them below.
+                </p>
+            </div>
+
+            <div class="reveal reveal-delay-1 is-visible relative hidden sm:flex justify-center items-center h-[240px]">
+                <div class="compass-ring w-[220px] h-[220px]"></div>
+                <div class="compass-ring inner w-[160px] h-[160px]"></div>
+                <div class="relative w-20 h-20 rounded-full bg-matcha-deep flex items-center justify-center ambient-shadow-sm float-slow">
+                    <span class="material-symbols-outlined text-cream text-[34px]">explore</span>
+                </div>
+                <span class="absolute top-2 right-6 eyebrow text-latte-deep bg-cream px-3 py-1 rounded-full border border-line rotate-3">est. 2022</span>
+                <span class="absolute bottom-4 left-2 eyebrow text-matcha-deep bg-cream px-3 py-1 rounded-full border border-line -rotate-3">Jakarta, ID</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOGGLE JOURNEY ============ -->
+    <section class="container-wrap container-px pb-20 sm:pb-28" id="journey-toggle">
+        <div class="reveal bg-paper/60 border border-line rounded-[2rem] sm:rounded-[2.5rem] p-4 sm:p-9">
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-10" role="tablist">
+                <button class="tab-btn is-active" data-tab="work" role="tab" aria-selected="true">
+                    <span class="material-symbols-outlined text-[18px]">work_history</span>
+                    Work
+                </button>
+                <button class="tab-btn" data-tab="education" role="tab" aria-selected="false">
+                    <span class="material-symbols-outlined text-[18px]">school</span>
+                    Education
+                </button>
+                <button class="tab-btn" data-tab="organizations" role="tab" aria-selected="false">
+                    <span class="material-symbols-outlined text-[18px]">groups</span>
+                    Organizations
+                </button>
+            </div>
+
+            <!-- WORK PANEL -->
+            <div class="tab-panel is-active" id="panel-work" role="tabpanel">
+                <div class="flex flex-col gap-5 sm:gap-6 max-w-3xl mx-auto">
+
+                    <article class="info-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="logo-badge-sm">
+                                    <img src="https://www.disnakerja.com/wp-content/uploads/2022/08/PLN-Icon-Plus.jpg" alt="PLN Icon Plus logo">
+                                </div>
+                                <span class="stamp-date accent-work">Jul 2025 — Dec 2025</span>
+                            </div>
+                            <span class="tag-badge bg-accent-work">Internship</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="font-display text-[19px] text-ink font-semibold leading-tight">UI/UX &amp; Front-End Intern</h3>
+                            <p class="font-body text-[13.5px] text-ink-soft mt-1">PT PLN Indonesia Comnets Plus</p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-4">
+                                Designed 30+ web and mobile screens in Figma, applying typography, color theory, and design-system principles later adopted by the front-end team — carrying concepts from low- to high-fidelity through 3–4 rounds of stakeholder revisions, pairing with developers each sprint, and implementing interfaces directly in Vue.js (Vue 2 &amp; 3).
+                            </p>
+                            <a class="cert-chip inline-flex items-center gap-2 mt-5 pl-2 pr-4 py-2 rounded-full border border-line bg-cream" href="#">
+                                <span class="w-6 h-6 rounded-full bg-matcha/15 accent-work flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">verified</span>
+                                </span>
+                                <span class="font-body text-[12.5px] font-semibold text-ink">View certificate</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="logo-badge-sm">
+                                    <img src="https://dslc.law/assets/images/DSLC%20Website_Logo_FooterAsset%201.png" alt="DSLC logo">
+                                </div>
+                                <span class="stamp-date accent-edu">Mar 2026 — May 2026</span>
+                            </div>
+                            <span class="tag-badge bg-accent-edu">Internship</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="font-display text-[19px] text-ink font-semibold leading-tight">Graphic Design Intern</h3>
+                            <p class="font-body text-[13.5px] text-ink-soft mt-1">Dwinanto Strategic Legal Consultant</p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-4">
+                                Produced 40+ visual assets — social media graphics, website articles, and marketing materials — using Illustrator and Canva to strengthen the firm's digital presence, publishing Instagram and LinkedIn content at a steady 3 posts a week alongside the marketing team.
+                            </p>
+                            <a class="cert-chip inline-flex items-center gap-2 mt-5 pl-2 pr-4 py-2 rounded-full border border-line bg-cream" href="#">
+                                <span class="w-6 h-6 rounded-full bg-latte/15 accent-edu flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">verified</span>
+                                </span>
+                                <span class="font-body text-[12.5px] font-semibold text-ink">View certificate</span>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- EDUCATION PANEL -->
+            <div class="tab-panel" id="panel-education" role="tabpanel">
+                <article class="info-card max-w-3xl mx-auto">
+                    <div class="card-head">
+                        <div class="card-head-left">
+                            <div class="logo-badge-sm">
+                                <img src="https://idschool.net/wp-content/uploads/2017/10/IPB-1024x1024.png" alt="IPB University logo">
+                            </div>
+                            <span class="stamp-date accent-edu">2022 — 2026</span>
+                        </div>
+                        <span class="tag-badge bg-accent-edu">Bachelor's</span>
+                    </div>
+                    <div class="p-6 sm:p-7">
+                        <h3 class="font-display text-[19px] text-ink font-semibold leading-tight">D4 Software Engineering</h3>
+                        <p class="font-body text-[13.5px] text-ink-soft mt-1">IPB University — Bogor, Indonesia</p>
+
+                        <div class="mt-5 pt-4 border-t border-dashed border-line">
+                            <span class="eyebrow text-ink-soft/60">Final Project</span>
+                            <p class="font-display text-[15.5px] text-ink font-medium leading-snug mt-2">
+                                "Implementation of a Vue.js-Based Front-End Module for an Internal Communication Portal Using Single-Page Application Architecture"
+                            </p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-3">
+                                Built the Application, Gallery, and IT Helpdesk modules with a Vue.js SPA architecture, connected the front-end to REST APIs via Vue Router and Axios, developed across 4 sprints using Agile Scrum, and validated functionality through black-box testing and UAT.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ORGANIZATIONS PANEL -->
+            <div class="tab-panel" id="panel-organizations" role="tabpanel">
+                <div class="flex flex-col gap-5 sm:gap-6 max-w-3xl mx-auto">
+
+                    <article class="info-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="logo-badge-sm">
+                                    <img src="https://idschool.net/wp-content/uploads/2017/10/IPB-1024x1024.png" alt="IPB University logo">
+                                </div>
+                                <span class="stamp-date accent-org">Aug 2024 — Oct 2024</span>
+                            </div>
+                            <span class="tag-badge bg-accent-org">Volunteer</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="font-display text-[18px] text-ink font-semibold leading-tight">Poster Competition Mentor</h3>
+                            <p class="font-body text-[13.5px] text-ink-soft mt-1">IPB University</p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-4">
+                                Mentored 20+ student teams in graphic design principles — 5 advanced to the semifinals — reviewing posters and coaching on visual communication, layout, and typography throughout the competition.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="logo-badge-sm">
+                                    <img src="https://idschool.net/wp-content/uploads/2017/10/IPB-1024x1024.png" alt="IPB University logo">
+                                </div>
+                                <span class="stamp-date accent-org">Dec 2023 — Feb 2024</span>
+                            </div>
+                            <span class="tag-badge bg-accent-org">Committee</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="font-display text-[18px] text-ink font-semibold leading-tight">Design, Decoration &amp; Branding Staff — SIKRAB TPL 60</h3>
+                            <p class="font-body text-[13.5px] text-ink-soft mt-1">IPB University</p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-4">
+                                Designed the logo, guidebook, posters, and promotional materials used across the event for 120+ students, revising closely with the committee lead to keep visuals consistent and on schedule.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-head">
+                            <div class="card-head-left">
+                                <div class="logo-badge-sm">
+                                    <img src="https://idschool.net/wp-content/uploads/2017/10/IPB-1024x1024.png" alt="IPB University logo">
+                                </div>
+                                <span class="stamp-date accent-org">Jun 2023 — Jan 2024</span>
+                            </div>
+                            <span class="tag-badge bg-accent-org">Committee</span>
+                        </div>
+                        <div class="p-6 sm:p-7">
+                            <h3 class="font-display text-[18px] text-ink font-semibold leading-tight">Design, Decoration &amp; Branding Staff — MPKMB SV 60</h3>
+                            <p class="font-body text-[13.5px] text-ink-soft mt-1">IPB University</p>
+                            <p class="font-body text-[14.5px] text-ink-soft leading-relaxed mt-4">
+                                Designed 6 event logos, 3 guidebooks, and 20+ Instagram posts for an orientation welcoming 2,000+ new students, managing the process from concept to final production with the committee to hit every deadline.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ CONTACT CTA ============ -->
+    <section class="container-wrap container-px pb-16 sm:pb-24">
+        <div class="reveal relative bg-matcha-deep rounded-[2.25rem] sm:rounded-[3rem] px-6 sm:px-16 py-14 sm:py-20 overflow-hidden text-center">
+            <span aria-hidden="true" class="absolute -top-10 -left-10 w-40 h-40 bg-latte/30 blob-shape blur-2xl"></span>
+            <span aria-hidden="true" class="absolute -bottom-14 -right-14 w-56 h-56 bg-matcha-bright/25 blob-shape blur-2xl"></span>
+
+            <h2 class="font-display text-[28px] sm:text-[38px] leading-[1.15] text-cream font-semibold max-w-2xl mx-auto">
+                Curious about the work behind the journey?
+            </h2>
+            <p class="font-body text-[15px] text-cream/80 max-w-md mx-auto mt-4">
+                See how these experiences turned into shipped screens and projects.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                <a class="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-cream text-matcha-deep font-body text-[14px] font-semibold" href="project.html">
+                    View my work
+                    <span class="material-symbols-outlined text-[18px]">north_east</span>
+                </a>
+                <a class="btn-ghost inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-cream/40 text-cream font-body text-[14px] font-semibold hover:bg-cream/10" href="index.html#contact">
+                    Say hello
+                    <span class="material-symbols-outlined text-[18px]">mail</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line">
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">© 2026 Nur Indah Chasanah</p>
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">Crafted with intention &amp; a bit of green tea</p>
+</footer>
+
+<script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        menuIcon.textContent = isOpen ? 'close' : 'menu';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Tab toggle
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+
+            tabButtons.forEach(b => {
+                b.classList.remove('is-active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-selected', 'true');
+
+            tabPanels.forEach(p => p.classList.toggle('is-active', p.id === 'panel-' + target));
+        });
+    });
+</script>
+
+</body>
+</html>

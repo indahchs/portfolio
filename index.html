@@ -3,500 +3,770 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Portfolio - Nur Indah Chasanah</title>
-<!-- Material Symbols Outlined -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<!-- Google Fonts -->
+<title>Nur Indah Chasanah — UI/UX &amp; Front-End Developer</title>
+<meta name="description" content="Portfolio of Nur Indah Chasanah — UI/UX designer and front-end developer crafting calm, considered digital experiences.">
+
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+</script>
 <script id="tailwind-config">
     tailwind.config = {
         darkMode: "class",
         theme: {
             extend: {
                 colors: {
-                    "primary": "#4A6549",
-                    "on-primary": "#ffffff",
-                    "primary-container": "#8BA888",
-                    "on-primary-container": "#243d24",
-                    "secondary": "#765846",
-                    "on-secondary": "#ffffff",
-                    "secondary-container": "#FDD5BE",
-                    "on-secondary-container": "#795A49",
-                    "tertiary": "#735858",
-                    "on-tertiary": "#ffffff",
-                    "tertiary-container": "#FDD5BE",
-                    "on-tertiary-container": "#493132",
-                    "background": "#ffffff",
-                    "on-background": "#1C1C17",
-                    "surface": "#FDF9F1",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container-low": "#F7F3EB",
-                    "surface-container": "#F1EDE6",
-                    "surface-container-high": "#ECE8E0",
-                    "surface-container-highest": "#E6E2DA",
-                    "surface-variant": "#E6E2DA",
-                    "on-surface": "#1C1C17",
-                    "on-surface-variant": "#434841",
-                    "outline": "#737970",
-                    "outline-variant": "#C3C8BF",
-                    "fun-fact-a": "#FDD5BE",
-                    "fun-fact-b": "#B99999"
-                },
-                borderRadius: {
-                    DEFAULT: "1rem",
-                    lg: "2rem",
-                    xl: "3rem",
-                    full: "9999px"
-                },
-                spacing: {
-                    xs: "4px",
-                    sm: "12px",
-                    base: "8px",
-                    md: "24px",
-                    lg: "48px",
-                    xl: "80px",
-                    gutter: "24px",
-                    "container-max": "1120px"
+                    cream: "#FFFFFF",
+                    paper: "#F0F5EA",
+                    "paper-deep": "#E2ECD4",
+                    ink: "#1E2A1A",
+                    "ink-soft": "#4A5A40",
+                    matcha: "#7FB069",
+                    "matcha-deep": "#4E7A3A",
+                    "matcha-bright": "#8FC97A",
+                    "matcha-mist": "#D4E8C0",
+                    latte: "#C28A5A",
+                    "latte-deep": "#A06A3E",
+                    "latte-bright": "#DBA87A",
+                    gold: "#D4A84A",
+                    "gold-bright": "#E8C86A",
+                    line: "#DDE6D0"
                 },
                 fontFamily: {
-                    "caption": ["Plus Jakarta Sans"],
-                    "label-md": ["Plus Jakarta Sans"],
-                    "body-md": ["Plus Jakarta Sans"],
-                    "body-lg": ["Plus Jakarta Sans"],
-                    "headline-md": ["Quicksand"],
-                    "headline-lg": ["Quicksand"],
-                    "headline-xl": ["Quicksand"]
-                },
-                fontSize: {
-                    "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
-                    "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
-                    "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-                    "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-                    "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
-                    "headline-lg": ["clamp(28px, 5vw, 40px)", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
-                    "headline-xl": ["clamp(36px, 6vw, 56px)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    display: ["Fredoka", "sans-serif"],
+                    body: ["Plus Jakarta Sans", "sans-serif"]
                 }
             }
         }
     }
 </script>
+
 <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    html { scroll-padding-top: 110px; }
+
     body {
-        background-color: #ffff;
-        color: #1C1C17;
+        background-color: #FFFFFF;
+        color: #1E2A1A;
         font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
     }
 
-    h1, h2, h3, .font-display {
-        font-family: 'Quicksand', sans-serif;
-    }
+    h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
 
     .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+        font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
     }
+
+    ::selection { background: #D4A84A; color: #FFFFFF; }
+
+    .container-px {
+        padding-left: clamp(20px, 6vw, 160px);
+        padding-right: clamp(20px, 6vw, 160px);
+    }
+    .container-wrap { max-width: 1680px; margin-left: auto; margin-right: auto; }
+
+    .eyebrow {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .clay-radius { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
+    .clay-radius-alt { border-radius: 38% 62% 61% 39% / 55% 45% 55% 45%; }
+    .clay-radius-sm { border-radius: 26px 54px 26px 54px; }
 
     .blob-shape {
-        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        animation: morph 8s ease-in-out infinite;
+        border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%;
+        animation: morph 12s ease-in-out infinite;
     }
-
     @keyframes morph {
-        0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-        34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
-        67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+        0%, 100% { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
+        50% { border-radius: 42% 58% 55% 45% / 55% 40% 60% 45%; }
     }
 
-    .ambient-shadow {
-        box-shadow: 0 8px 24px rgba(107, 78, 61, 0.08);
-    }
+    .ambient-shadow { box-shadow: 0 20px 50px -20px rgba(78, 122, 58, 0.20); }
+    .ambient-shadow-sm { box-shadow: 0 10px 26px -14px rgba(78, 122, 58, 0.18); }
 
-    .fade-in-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-in-section.is-visible {
-        opacity: 1;
-        transform: none;
-    }
-
-    .doodle {
+    .cursor-glow {
         position: absolute;
-        z-index: 10;
+        inset: 0;
         pointer-events: none;
+        background: radial-gradient(500px circle at var(--cursor-x, 50%) var(--cursor-y, 30%), rgba(127, 176, 105, 0.15), transparent 60%);
+        transition: background 0.15s ease-out;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal-delay-1.is-visible { transition-delay: .08s; }
+    .reveal-delay-2.is-visible { transition-delay: .16s; }
+    .reveal-delay-3.is-visible { transition-delay: .24s; }
+    .reveal-delay-4.is-visible { transition-delay: .32s; }
+
+    .word-reveal span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(0.4em) rotate(1.5deg);
+        animation: wordIn 0.85s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes wordIn { to { opacity: 1; transform: translateY(0) rotate(0); } }
+
+    .underline-hover {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    .underline-hover:hover { background-size: 100% 2px; }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 32s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    .marquee-mask {
+        -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    }
+
+    .img-reveal { clip-path: inset(0 0 0 0); }
+    .img-reveal img { transition: transform 0.9s cubic-bezier(.16,1,.3,1); }
+    .img-reveal:hover img { transform: scale(1.045); }
+
+    .timeline-line {
+        background: repeating-linear-gradient(to bottom, #C28A5A 0, #C28A5A 6px, transparent 6px, transparent 14px);
+        width: 2px;
+    }
+
+    .nav-link { position: relative; }
+    .nav-link.active { color: #4E7A3A; }
+    .nav-link.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #C28A5A;
+        transform: translateX(-50%);
     }
 
     #mobile-menu {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s ease;
+        transition: max-height 0.4s cubic-bezier(.16,1,.3,1);
     }
-    #mobile-menu.open {
-        max-height: 400px;
+    #mobile-menu.open { max-height: 480px; }
+
+    .btn-primary { transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, background-color 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(78, 122, 58, 0.40); }
+    .btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
+    .btn-ghost { transition: transform 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease; }
+    .btn-ghost:hover { transform: translateY(-3px); }
+    .btn-ghost:active { transform: translateY(-1px) scale(0.98); }
+
+    .grain {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.025;
+        z-index: 1;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
+
+    .float-slow { animation: floaty 7s ease-in-out infinite; }
+    .float-slow-rev { animation: floaty 8s ease-in-out infinite reverse; }
+    @keyframes floaty {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    .skill-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease; }
+    .skill-chip:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 10px 22px -10px rgba(78, 122, 58, 0.25); }
+
+    .cert-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease, background-color 0.3s ease; }
+    .cert-chip:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -12px rgba(78, 122, 58, 0.28); background-color: #F0F5EA; }
+
+    .project-card {
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px -16px rgba(78, 122, 58, 0.25);
+    }
+
+    .tool-logo {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    .tool-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+            scroll-behavior: auto !important;
+        }
+        .reveal { opacity: 1; transform: none; }
+        .word-reveal span { opacity: 1; transform: none; }
+    }
+
+    :focus-visible { outline: 2px solid #C28A5A; outline-offset: 3px; border-radius: 6px; }
+
+    .bg-warm-glow { background: radial-gradient(ellipse at 30% 40%, rgba(127,176,105,0.08), transparent 70%); }
+    .bg-warm-glow-2 { background: radial-gradient(ellipse at 70% 60%, rgba(194,138,90,0.06), transparent 60%); }
 </style>
 </head>
-<body class="antialiased min-h-screen text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<body class="antialiased min-h-screen selection:bg-gold selection:text-cream">
 
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
-    <div class="max-w-container-max mx-auto px-gutter h-[76px] flex items-center justify-between">
-        <a class="font-display text-xl sm:text-2xl font-bold text-primary tracking-tight flex items-center gap-2" href="#home">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
-            Portfolio
+<div class="grain"></div>
+
+<!-- Floating Navigation -->
+<nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
+    <div class="flex items-center justify-between gap-4 sm:gap-8 bg-cream/88 backdrop-blur-xl border border-line shadow-[0_8px_30px_-12px_rgba(78,122,58,0.18)] rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
+        <a class="flex items-center gap-2 shrink-0 pl-1" href="#home">
+            <span class="w-8 h-8 rounded-full bg-matcha-deep flex items-center justify-center" aria-hidden="true">
+                <span class="material-symbols-outlined text-cream text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
+            </span>
+            <span class="font-display text-[17px] font-semibold text-matcha-deep tracking-tight">Indah</span>
         </a>
 
-        <!-- Desktop nav -->
-        <div class="hidden md:flex items-center gap-md">
-            <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#home">Home</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#about">About</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#skills">Skills</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#project">Project</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#contact">Contact</a>
+        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium text-ink-soft">
+            <a class="nav-link active hover:text-matcha-deep transition-colors" data-nav href="#home">Home</a>
+            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="project.html">Project</a>
+            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="journey.html">Journey</a>
         </div>
 
-        <a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(74,101,73,0.2)] active:scale-95 transition-all duration-300" href="#contact">
+        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold btn-primary" href="#contact">
             Say Hello
+            <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
         </a>
 
-        <!-- Mobile toggle -->
-        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-primary p-2 rounded-full hover:bg-primary-container/10" id="menu-btn">
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-matcha-deep p-2 rounded-full hover:bg-paper" id="menu-btn">
             <span class="material-symbols-outlined" id="menu-icon">menu</span>
         </button>
     </div>
 
-    <!-- Mobile nav panel -->
-    <div class="md:hidden border-t border-outline-variant/30 bg-surface" id="mobile-menu">
-        <div class="flex flex-col px-gutter py-md gap-1">
-            <a class="text-primary font-bold font-label-md text-label-md px-3 py-2.5 rounded-xl bg-primary-container/10" href="#home">Home</a>
-            <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="#about">About</a>
-            <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="#skills">Skills</a>
-            <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="#project">Project</a>
-            <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="#contact">Contact</a>
-            <a class="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md" href="#contact">Say Hello</a>
+    <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
+        <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
+            <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="#home">Home</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#about">About</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#skills">Skills</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#work">Work</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#journey">Journey</a>
+            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="#contact">Say Hello</a>
         </div>
     </div>
 </nav>
 
-<main class="pt-[76px] pb-xl">
+<main>
 
-    <!-- Hero Section -->
-    <section class="max-w-container-max mx-auto px-gutter min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-lg relative py-lg md:py-0 mb-xl fade-in-section is-visible" id="home">
-        <div class="flex-1 flex flex-col items-start space-y-md z-10 text-center md:text-left w-full">
-            <div class="inline-flex mx-auto md:mx-0 items-center gap-2 px-4 py-2 rounded-full bg-primary-container/20 text-primary font-label-md text-label-md">
-                <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
-                Hello, I'm
-            </div>
-            <h1 class="font-display text-headline-lg text-on-background w-full">
-                Nur Indah Chasanah
-            </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
-                Software Engineering Student | Front-End Developer crafting cozy, intuitive, and accessible digital experiences.
-            </p>
-            <div class="flex flex-wrap justify-center md:justify-start gap-sm pt-sm w-full">
-                <a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(74,101,73,0.2)] active:scale-95 transition-all duration-300" href="#project">
-                    View Projects
-                </a>
-                <a class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary-container/10 active:scale-95 transition-all duration-300" href="#">
-                    Download CV
-                    <span class="material-symbols-outlined text-[18px]">download</span>
-                </a>
-            </div>
-        </div>
-        <div class="flex-1 relative flex justify-center items-center w-full mt-lg md:mt-0">
-            <div class="absolute inset-0 bg-primary-container/20 blob-shape -z-10 w-full h-full max-w-[320px] sm:max-w-[400px] max-h-[320px] sm:max-h-[400px] m-auto blur-3xl opacity-60"></div>
-            <img alt="Illustration of Nur Indah at her desk" class="w-full max-w-[280px] sm:max-w-[400px] h-auto object-cover blob-shape bg-surface-container-low ambient-shadow p-2 border-4 border-surface" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
-            <!-- Doodles -->
-            <span class="material-symbols-outlined doodle text-secondary/40 text-[36px] sm:text-[44px] -top-2 right-2 sm:-right-2 rotate-12" style="font-variation-settings: 'FILL' 1;">local_florist</span>
-            <div class="doodle -bottom-3 left-2 sm:left-8 flex items-center gap-2 bg-surface px-4 py-2.5 rounded-full ambient-shadow border border-surface-container-high">
-                <span class="material-symbols-outlined text-tertiary text-[22px]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
-            </div>
-        </div>
-    </section>
+    <!-- ============ HERO ============ -->
+    <section class="relative container-wrap container-px pt-[148px] sm:pt-[166px] pb-16 sm:pb-24 overflow-hidden" id="home">
+        <div class="absolute inset-0 bg-warm-glow pointer-events-none"></div>
+        <div class="absolute inset-0 bg-warm-glow-2 pointer-events-none"></div>
+        <div class="cursor-glow hidden md:block" id="cursorGlow"></div>
 
-    <!-- About Section -->
-    <section class="max-w-container-max mx-auto px-gutter py-xl fade-in-section is-visible" id="about">
-        <h2 class="font-display text-headline-lg text-center mb-xl text-on-background relative inline-block left-1/2 -translate-x-1/2">
-            About Me
-            <span class="absolute -bottom-3 left-0 w-full h-2 bg-secondary-container/50 rounded-full -z-10"></span>
-        </h2>
-        <div class="bg-surface-container-lowest rounded-xl p-md sm:p-lg ambient-shadow border border-surface-container-low flex flex-col md:flex-row items-center gap-lg relative">
-            <span class="material-symbols-outlined doodle text-primary/30 text-[40px] sm:text-[48px] -top-5 -left-5 rotate-[-15deg]">psychiatry</span>
-            <div class="w-full md:w-1/3 flex justify-center">
-                <img alt="Nur Indah Chasanah portrait" class="w-48 h-48 sm:w-64 sm:h-64 object-cover blob-shape ambient-shadow border-4 border-surface" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/bd44a4bb-94d3-46fc-9581-03fcc2a16595">
-            </div>
-            <div class="w-full md:w-2/3 space-y-md">
-                <p class="font-body-lg text-body-lg text-on-surface-variant">
-                    Hi! I'm Indah, a fresh graduate in Software Engineering who believes that good design is a lot like whisking the perfect bowl of matcha, it takes patience, attention to detail, & a bit of care to get that smooth, balanced result. I specialize in user-centered UI/UX design and front-end development, turning research and wireframes into interfaces that feel calm, clean, and easy to use.
+        <span aria-hidden="true" class="hidden lg:block absolute top-[170px] left-[2%] w-2.5 h-2.5 rounded-full bg-latte/50 float-slow"></span>
+        <span aria-hidden="true" class="hidden lg:block absolute top-[380px] left-[0%] w-1.5 h-1.5 rounded-full bg-matcha/50 float-slow-rev"></span>
+        <span aria-hidden="true" class="hidden lg:block absolute top-[110px] right-[4%] w-1.5 h-1.5 rounded-full bg-gold/60 float-slow"></span>
+
+        <div class="reveal is-visible flex flex-wrap items-center gap-3 mb-7">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper border border-line text-ink-soft eyebrow">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-matcha opacity-60"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-matcha"></span>
+                </span>
+                Open to front-end &amp; UI/UX roles
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-8 items-center relative">
+            <div class="relative z-10">
+                <h1 class="word-reveal font-display text-[42px] sm:text-[48px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-ink font-semibold">
+                    <span style="animation-delay:.05s">Interfaces</span> <span style="animation-delay:.15s">that</span><br>
+                    <span class="text-matcha-deep" style="animation-delay:.25s">feel</span> <span class="relative inline-block text-latte" style="animation-delay:.35s">warm<svg aria-hidden="true" class="absolute -bottom-1.5 left-0 w-full" height="8" viewBox="0 0 200 10" xmlns="http://www.w3.org/2000/svg"><path d="M2 7 Q 50 -2 100 6 T 198 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"/></svg></span><span style="animation-delay:.4s">,</span><br>
+                    <span style="animation-delay:.5s">built</span> <span style="animation-delay:.6s">with</span> <span style="animation-delay:.7s">care.</span>
+                </h1>
+
+                <p class="reveal reveal-delay-2 is-visible font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed max-w-md mt-6">
+                    I'm <span class="text-ink font-semibold">Nur Indah Chasanah</span> — a UI/UX designer and front-end developer who treats every interface like a small ritual: considered, unhurried, and a little bit delightful.
                 </p>
-                <div>
-                    <h3 class="font-label-md text-label-md text-on-surface mb-sm">Fun Facts</h3>
-                    <div class="flex flex-wrap gap-xs">
-                        <span class="px-3 py-1 rounded-full bg-fun-fact-a/30 text-on-tertiary-container font-caption text-caption">🏆 3x UI/UX Competition Winner</span>
-                        <span class="px-3 py-1 rounded-full bg-fun-fact-b/30 text-on-secondary-container font-caption text-caption">💻 UI/UX Designer & Front-End</span>
-                        <span class="px-3 py-1 rounded-full bg-fun-fact-a/30 text-on-tertiary-container font-caption text-caption">🍵 Matcha Enthusiast</span>
+
+                <div class="reveal reveal-delay-3 is-visible flex flex-wrap items-center gap-4 mt-8">
+                    <a class="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="#work">
+                        View my work
+                        <span class="material-symbols-outlined text-[18px]">north_east</span>
+                    </a>
+                    <a
+                    href="https://drive.google.com/uc?export=download&id=1jWkBkgSmwXccAKtioLIiNjfMEx5Inyt_"
+                    target="_blank"
+                    class="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink/15 text-ink font-body text-[14px] font-semibold hover:bg-paper"
+                    >
+                        Download CV
+                        <span class="material-symbols-outlined text-[18px]">download</span>
+                    </a>
+                </div>
+
+                <div class="reveal reveal-delay-4 is-visible flex flex-wrap items-center gap-x-6 gap-y-2 mt-11 eyebrow text-ink-soft/75">
+                    <span>Creative</span>
+                    <span class="w-1 h-1 rounded-full bg-ink-soft/40"></span>
+                    <span>Curious</span>
+                    <span class="w-1 h-1 rounded-full bg-ink-soft/40"></span>
+                    <span>Responsible</span>
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-2 is-visible relative flex justify-center items-center">
+                <div class="absolute w-[105%] h-[105%] bg-matcha-mist/40 blob-shape blur-3xl -z-10"></div>
+                <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[220px] h-[280px] sm:w-[280px] sm:h-[360px]">
+                    <img alt="Illustration of Nur Indah at her desk" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
+                </div>
+                <div class="absolute -top-3 -right-1 sm:right-2 float-slow bg-cream px-4 py-2.5 rounded-full ambient-shadow-sm border border-line flex items-center gap-2">
+                    <span class="material-symbols-outlined text-latte text-[20px]" style="font-variation-settings:'FILL' 1;">local_cafe</span>
+                    <span class="eyebrow text-ink-soft">matcha &amp; code</span>
+                </div>
+                <div class="absolute -bottom-4 -left-3 sm:left-2 float-slow-rev bg-matcha-deep text-cream px-4 py-2.5 rounded-full ambient-shadow-sm flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">palette</span>
+                    <span class="eyebrow">Figma → code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="container-wrap container-px py-14 sm:py-20" id="about">
+        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
+            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
+                A bit <span class="text-matcha-deep">about</span> me
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-6 lg:gap-8 items-start">
+            <div class="reveal reveal-delay-1 relative bg-paper rounded-[2.25rem] p-7 sm:p-9 border border-line">
+                <span aria-hidden="true" class="material-symbols-outlined absolute -top-5 -left-4 text-latte/30 text-[46px] rotate-[-12deg]" style="font-variation-settings:'FILL' 1;">format_quote</span>
+                <p class="font-display text-[20px] sm:text-[24px] leading-[1.4] text-ink font-medium">
+                    Good design is a lot like whisking the perfect bowl of matcha,
+                    <span class="text-matcha-deep"> it takes patience, attention, and a bit of care</span> to get that smooth, balanced result.
+                </p>
+                <p class="font-body text-[15px] text-ink-soft leading-relaxed mt-6">
+                    I'm a fresh graduate in Software Engineering who specializes in user-centered UI/UX design and front-end development, turning research and wireframes into interfaces that feel calm, clean, and easy to use. Currently writing my thesis on the front-end of COMPORGAS, an internal portal built for a national energy company.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-7">
+                    <span class="px-3.5 py-1.5 rounded-full bg-cream border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🍵 certified matcha enthusiast</span>
+                    <span class="px-3.5 py-1.5 rounded-full bg-cream border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🎶 Powered by Music</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 sm:gap-5">
+                <div class="reveal reveal-delay-2 clay-radius-sm bg-matcha-deep text-cream p-6 flex flex-col justify-between min-h-[140px] ambient-shadow-sm">
+                    <span class="material-symbols-outlined text-[24px]">design_services</span>
+                    <div>
+                        <p class="font-display text-[28px] leading-none font-semibold">01</p>
+                        <p class="font-body text-[12.5px] mt-1 opacity-90">UI/UX Design — research to prototype</p>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-3 clay-radius-sm bg-latte text-cream p-6 flex flex-col justify-between min-h-[140px] ambient-shadow-sm">
+                    <span class="material-symbols-outlined text-[24px]">code_blocks</span>
+                    <div>
+                        <p class="font-display text-[28px] leading-none font-semibold">02</p>
+                        <p class="font-body text-[12.5px] mt-1 opacity-90">Front-End Dev — Vue, Laravel, Next.js</p>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2 col-span-2 bg-paper border border-line rounded-[1.75rem] p-6 flex items-center justify-between gap-3">
+                    <div>
+                        <p class="font-display text-[24px] text-ink leading-none">10+</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">UI/UX projects designed</p>
+                    </div>
+                    <div class="w-px h-9 bg-line shrink-0"></div>
+                    <div>
+                        <p class="font-display text-[24px] text-ink leading-none">60+</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">web & mobile screens designed</p>
+                    </div>
+                    <div class="w-px h-9 bg-line shrink-0"></div>
+                    <div>
+                        <p class="font-display text-[24px] text-ink leading-none">2</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">internship experiences.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="max-w-container-max mx-auto px-gutter py-xl fade-in-section is-visible" id="skills">
-        <h2 class="font-display text-headline-lg text-center mb-xl text-on-background relative inline-block left-1/2 -translate-x-1/2">
-            My Toolkit
-            <span class="absolute -bottom-3 left-0 w-full h-2 bg-primary-container/40 rounded-full -z-10"></span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
-            <!-- Languages -->
-            <div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center">
-                <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
-                    <span class="material-symbols-outlined text-[32px]">code</span>
+    <!-- ============ SKILLS ============ -->
+    <section class="py-14 sm:py-20 bg-paper/70 border-y border-line" id="skills">
+        <div class="container-wrap container-px">
+            <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
+                <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
+                    My <span class="text-latte">toolkit</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="marquee-mask mb-10 sm:mb-14">
+            <div class="marquee-track" id="marqueeTrack"></div>
+        </div>
+
+        <div class="container-wrap container-px grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="reveal reveal-delay-1 bg-cream rounded-[1.75rem] border border-line p-7 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-11 h-11 rounded-full bg-matcha/15 text-matcha-deep flex items-center justify-center"><span class="material-symbols-outlined">terminal</span></span>
+                    <h3 class="font-display text-[18px] text-ink font-medium">Languages</h3>
                 </div>
-                <h3 class="font-display text-headline-md text-on-surface mb-md">Languages</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">JavaScript</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">TypeScript</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">HTML/CSS</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Python</span>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">JavaScript</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">TypeScript</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">HTML / CSS</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">Python</span>
                 </div>
             </div>
-            <!-- Tools -->
-            <div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center relative md:-translate-y-4">
-                <span class="material-symbols-outlined doodle text-secondary/30 text-[32px] -top-4 right-1 rotate-12">local_florist</span>
-                <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
-                    <span class="material-symbols-outlined text-[32px]">handyman</span>
+            <div class="reveal reveal-delay-2 bg-cream rounded-[1.75rem] border border-line p-7 md:-translate-y-4 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center"><span class="material-symbols-outlined">handyman</span></span>
+                    <h3 class="font-display text-[18px] text-ink font-medium">Tools</h3>
                 </div>
-                <h3 class="font-display text-headline-md text-on-surface mb-md">Tools</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Github</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Figma</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Adobe XD</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Canva</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Maze</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">VS Code</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Jira</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Adobe Illustrator</span>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Figma</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Adobe XD</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Illustrator</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Canva</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Maze</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">GitHub</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Jira</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">VS Code</span>
                 </div>
             </div>
-            <!-- Frameworks -->
-            <div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center">
-                <div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
-                    <span class="material-symbols-outlined text-[32px]">widgets</span>
+            <div class="reveal reveal-delay-3 bg-cream rounded-[1.75rem] border border-line p-7 shadow-sm">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-11 h-11 rounded-full bg-gold/20 text-latte-deep flex items-center justify-center"><span class="material-symbols-outlined">widgets</span></span>
+                    <h3 class="font-display text-[18px] text-ink font-medium">Frameworks</h3>
                 </div>
-                <h3 class="font-display text-headline-md text-on-surface mb-md">Frameworks</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Laravel</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Vue.js</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Next.js</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Vuetify</span>
-                    <span class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Bootstrap</span>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Laravel</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Vue.js</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Next.js</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Vuetify</span>
+                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Bootstrap</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="max-w-container-max mx-auto px-gutter py-xl bg-surface-container-low/50 rounded-3xl mt-xl mb-xl fade-in-section is-visible" id="project">
-        <h2 class="font-display text-headline-lg text-center mb-xl text-on-background relative inline-block left-1/2 -translate-x-1/2">
-            Featured Projects
-            <span class="absolute -bottom-3 left-0 w-full h-2 bg-secondary-container/50 rounded-full -z-10"></span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mb-lg">
+    <!-- ============ PROJECTS - 3 in a row ============ -->
+    <section class="container-wrap container-px py-16 sm:py-24" id="work">
+        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-14 sm:mb-20">
+            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
+                Project <span class="text-matcha-deep">design</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
             <!-- Project 1 -->
-            <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow border border-surface-container flex flex-col group hover:-translate-y-2 transition-transform duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img alt="Web IoT Pig Tracking dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b">
+            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
+                <div class="img-reveal aspect-[4/3] overflow-hidden">
+                    <img alt="Web IoT Pig Tracking dashboard" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b">
                 </div>
-                <div class="p-md flex flex-col flex-1">
-                    <h3 class="font-display text-headline-md text-on-surface mb-xs">Web IoT Pig Tracking</h3>
-                    <div class="flex flex-wrap gap-2 mb-sm">
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Vue.js</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Vuetify</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Figma</span>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="eyebrow text-latte-deep">Product Design · Web Platform</span>
+                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">Web IoT Pig Tracking</h3>
+                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
+                        Real-time operational dashboard that tracks livestock data through IoT sensors.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Vue.js</span>
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Vuetify</span>
                     </div>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-1">Track, visualize, and monitor every operation in real-time through a powerful web-based dashboard for smarter operational insights.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300 flex-1" href="#">
+                    <div class="flex flex-wrap gap-3 mt-5">
+                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70">
                             Prototype
+                            <span class="material-symbols-outlined text-[16px]">north_east</span>
                         </a>
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex-1" href="#">
+                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="#">
                             Behance
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
+
             <!-- Project 2 -->
-            <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow border border-surface-container flex flex-col group hover:-translate-y-2 transition-transform duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img alt="App Seraya interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53">
+            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
+                <div class="img-reveal aspect-[4/3] overflow-hidden">
+                    <img alt="App Seraya interface" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53">
                 </div>
-                <div class="p-md flex flex-col flex-1">
-                    <h3 class="font-display text-headline-md text-on-surface mb-xs">App Seraya</h3>
-                    <div class="flex flex-wrap gap-2 mb-sm">
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Figma</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Spring Boot</span>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="eyebrow text-matcha-deep">UI/UX Design · Mobile App</span>
+                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">App Seraya</h3>
+                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
+                        AI-powered companion for emotional self-care and daily mindfulness.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Figma</span>
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Spring Boot</span>
                     </div>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-1">AI-Powered App for Emotional Self-Care, Personal Growth, Mindfulness, and Daily Reflection for a Healthier and Happier Mind.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300 flex-1" href="#">
+                    <div class="flex flex-wrap gap-3 mt-5">
+                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485">
                             Prototype
+                            <span class="material-symbols-outlined text-[16px]">north_east</span>
                         </a>
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex-1" href="#">
+                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="#">
                             Behance
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
+
             <!-- Project 3 -->
-            <div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow border border-surface-container flex flex-col group hover:-translate-y-2 transition-transform duration-300">
-                <div class="h-48 overflow-hidden">
-                    <img alt="Web Foody interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a">
+            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
+                <div class="img-reveal aspect-[4/3] overflow-hidden">
+                    <img alt="Web Foody interface" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a">
                 </div>
-                <div class="p-md flex flex-col flex-1">
-                    <h3 class="font-display text-headline-md text-on-surface mb-xs">Web Foody</h3>
-                    <div class="flex flex-wrap gap-2 mb-sm">
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Figma</span>
-                        <span class="px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant font-caption text-xs">Laravel</span>
+                <div class="p-6 flex flex-col flex-1">
+                    <span class="eyebrow text-latte-deep">Product Design · Web App</span>
+                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">Web Foody</h3>
+                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
+                        BMI tracking, food logs, and AI-driven health recommendations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Figma</span>
+                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Laravel</span>
                     </div>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-md flex-1">Empowering living with BMI tracking, logs, and AI-driven food recommendations for healthier daily habits and better choices.</p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 transition-all duration-300 flex-1" href="#">
+                    <div class="flex flex-wrap gap-3 mt-5">
+                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION---FOODY--Copy-?node-id=0-1&p=f&t=LenPCVfLsvRdwmjz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1098%3A9296&show-proto-sidebar=1">
                             Prototype
+                            <span class="material-symbols-outlined text-[16px]">north_east</span>
                         </a>
-                        <a class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors flex-1" href="#">
+                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="#">
                             Behance
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
+
         </div>
-        <div class="text-center">
-            <a class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary text-primary bg-transparent font-label-md text-label-md hover:-translate-y-0.5 hover:shadow-lg active:scale-95 transition-all duration-300" href="#">
-                View All Project
+
+        <div class="reveal text-center mt-16 sm:mt-20">
+            <a class="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink/15 text-ink font-body text-[14px] font-semibold hover:bg-paper" href="project.html">
+                View all projects
                 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
             </a>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="max-w-container-max mx-auto px-gutter py-xl fade-in-section is-visible" id="experience">
-        <h2 class="font-display text-headline-lg text-center mb-xl text-on-background relative inline-block left-1/2 -translate-x-1/2">
-            Experience
-            <span class="absolute -bottom-3 left-0 w-full h-2 bg-primary-container/40 rounded-full -z-10"></span>
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-            <!-- Experience 1 -->
-            <div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low flex flex-col items-start">
-                <div class="flex items-center gap-sm mb-sm w-full">
-                    <div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary shrink-0">
-                        <span class="material-symbols-outlined">design_services</span>
-                    </div>
-                    <div>
-                        <h3 class="font-display text-headline-md text-on-surface">PT PLN Indonesia Comnets Plus</h3>
-                        <p class="font-caption text-caption text-on-surface-variant">UI/UX Engineer Intern | Jul 2025 - Dec 2025</p>
+  <!-- ============ RECOGNITION / ACHIEVEMENTS ============ -->
+    <section class="container-wrap container-px py-14 sm:py-20 bg-paper/40" id="achievements">
+        <div class="reveal">
+            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold mb-3">
+                Awards &amp; <span class="text-matcha-deep">Recognition</span>
+            </h2>
+            <p class="font-body text-[15px] text-ink-soft max-w-2xl mb-10">
+                A few highlights from my journey in UI/UX and software development competitions.
+            </p>
+        </div>
+
+        <div class="flex flex-col gap-4 max-w-3xl mx-auto">
+            <!-- Achievement 1 - 3rd Place Android -->
+            <div class="reveal reveal-delay-1 group">
+                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-5">
+                        <!-- Peringkat & Icon -->
+                        <div class="flex items-center gap-4 shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
+                                <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-px h-12 bg-line shrink-0"></div>
+
+                        <!-- Info Kompetisi -->
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-display text-base font-semibold text-ink">Android Programming Competition</h3>
+                            <p class="font-body text-sm text-ink-soft/70">at the I/O Festival 2025</p>
+                        </div>
+
+                        <!-- Tahun & Button -->
+                        <div class="flex items-center gap-3 shrink-0">
+                            <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2025</span>
+                            <a target="_blank" href="https://drive.google.com/file/d/1EoVYDTy3e4tXZgEj0LvKvxsWNGcpPS0u/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
+                                <span class="material-symbols-outlined text-[16px]">verified</span>
+                                Certificate
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-sm">
-                    Designed 30+ responsive web and mobile screens in Figma, developed wireframes and prototypes, collaborated with developers using HTML/CSS, JavaScript, and Vue.js for handoff, and identified 4 usability issues through UAT.
-                </p>
-                <a class="mt-md inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary-container/10 active:scale-95 transition-all duration-300" href="#">
-                    Certificate
-                    <span class="material-symbols-outlined text-[18px]">verified</span>
-                </a>
             </div>
-            <!-- Experience 2 -->
-            <div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low flex flex-col items-start">
-                <div class="flex items-center gap-sm mb-sm w-full">
-                    <div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary shrink-0">
-                        <span class="material-symbols-outlined">work</span>
-                    </div>
-                    <div>
-                        <h1 class="font-display text-headline-md text-on-surface">DSLC Law</h1>
-                        <p class="font-caption text-caption text-on-surface-variant">Graphic Design Internship | Mar 2026 - May 2026</p>
+
+            <!-- Achievement 2 - 1st Place SWITCHFEST -->
+            <div class="reveal reveal-delay-1 group">
+                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-5">
+                        <!-- Peringkat & Icon -->
+                        <div class="flex items-center gap-4 shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="font-display text-xl font-semibold text-matcha-deep">1st</span>
+                                <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-px h-12 bg-line shrink-0"></div>
+
+                        <!-- Info Kompetisi -->
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-display text-base font-semibold text-ink">UI/UX Competition</h3>
+                            <p class="font-body text-sm text-ink-soft/70">at SWITCHFEST</p>
+                        </div>
+
+                        <!-- Tahun & Button -->
+                        <div class="flex items-center gap-3 shrink-0">
+                            <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
+                            <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
+                                <span class="material-symbols-outlined text-[16px]">verified</span>
+                                Certificate
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-sm">
-                    Produced 40+ visual assets for website articles and social media, publishing 3 posts weekly while collaborating with the marketing team to maintain consistent corporate branding and communication.
-                </p>
-                <a class="mt-md inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary text-primary font-label-md text-label-md hover:bg-primary-container/10 active:scale-95 transition-all duration-300" href="#">
-                    Certificate
-                    <span class="material-symbols-outlined text-[18px]">verified</span>
-                </a>
+            </div>
+
+            <!-- Achievement 3 - 3rd Place NIFC -->
+            <div class="reveal reveal-delay-3 group">
+                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-5">
+                        <!-- Peringkat & Icon -->
+                        <div class="flex items-center gap-4 shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
+                                <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="w-px h-12 bg-line shrink-0"></div>
+
+                        <!-- Info Kompetisi -->
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-display text-base font-semibold text-ink">UI/UX Competition</h3>
+                            <p class="font-body text-sm text-ink-soft/70">at the NATIONAL INFORMATIC FUN COMPETITION 3.0</p>
+                        </div>
+
+                        <!-- Tahun & Button -->
+                        <div class="flex items-center gap-3 shrink-0">
+                            <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
+                            <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
+                                <span class="material-symbols-outlined text-[16px]">verified</span>
+                                Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section class="max-w-container-max mx-auto px-gutter py-xl fade-in-section is-visible" id="achievements">
-        <h2 class="font-display text-headline-lg text-center mb-xl text-on-background relative inline-block left-1/2 -translate-x-1/2">
-            Achievements
-            <span class="absolute -bottom-3 left-0 w-full h-2 bg-tertiary-container/50 rounded-full -z-10"></span>
-        </h2>
-        <div class="flex flex-col gap-sm">
-            <div class="bg-surface-container-lowest rounded-xl p-4 ambient-shadow border border-surface-container-low flex items-center gap-md hover:bg-primary-container/5 transition-colors">
-                <div class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary shrink-0">
-                    <span class="material-symbols-outlined">military_tech</span>
-                </div>
+    <!-- ============ CONTACT ============ -->
+    <section class="container-wrap container-px py-16 sm:py-24" id="contact">
+        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
+            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
+                Let's build something <span class="text-matcha-deep">meaningful</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 items-stretch">
+
+            <!-- left: message -->
+            <div class="reveal reveal-delay-1 relative bg-paper rounded-[2.25rem] p-7 sm:p-9 border border-line flex flex-col justify-between">
                 <div>
-                    <h4 class="font-display text-base font-bold text-on-surface">3rd Place - Android Programming Competition at the I/O Festival</h4>
-                    <p class="font-body-md text-sm text-on-surface-variant">Led end-to-end UX design for an iOS mental health app, from user research and journey mapping to high-fidelity prototyping.</p>
+                    <span aria-hidden="true" class="material-symbols-outlined text-latte/30 text-[48px] rotate-[-5deg] block mb-4" style="font-variation-settings:'FILL' 1;">mail</span>
+                    <p class="font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed max-w-md">
+                        Whether it's a product to design, an interface to build my inbox is open.
+                    </p>
                 </div>
+                <a class="btn-primary inline-flex items-center gap-2 w-fit mt-8 px-7 py-3.5 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="mailto:hello@nurindah.dev">
+                    Say hello
+                    <span class="material-symbols-outlined text-[18px]">north_east</span>
+                </a>
             </div>
-            <div class="bg-surface-container-lowest rounded-xl p-4 ambient-shadow border border-surface-container-low flex items-center gap-md hover:bg-primary-container/5 transition-colors">
-                <div class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary shrink-0">
-                    <span class="material-symbols-outlined">emoji_events</span>
-                </div>
-                <div>
-                    <h4 class="font-display text-base font-bold text-on-surface">1st Place - SWITCHFEST UI/UX Competition</h4>
-                    <p class="font-body-md text-sm text-on-surface-variant">Designed an Android hypertension management app, translating user flows into high-fidelity prototypes.</p>
-                </div>
+
+            <!-- right: channels -->
+            <div class="grid grid-cols-2 gap-4 sm:gap-5">
+                <a class="skill-chip reveal reveal-delay-1 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="mailto:hello@nurindah.dev">
+                    <span class="w-11 h-11 rounded-full bg-matcha/15 text-matcha-deep flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                    </span>
+                    <span class="font-body text-[13px] font-medium text-ink">Email</span>
+                </a>
+                <a class="skill-chip reveal reveal-delay-2 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="https://www.linkedin.com/in/indahchs/" target="_blank">
+                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">work</span>
+                    </span>
+                    <span class="font-body text-[13px] font-medium text-ink">LinkedIn</span>
+                </a>
+                <a class="skill-chip reveal reveal-delay-2 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="https://github.com/indahchs" target="_blank">
+                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">code</span>
+                    </span>
+                    <span class="font-body text-[13px] font-medium text-ink">GitHub</span>
+                </a>
+                <a class="skill-chip reveal reveal-delay-3 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="https://www.behance.net/indahchs" target="_blank">
+                    <span class="w-11 h-11 rounded-full bg-matcha/15 text-matcha-deep flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">palette</span>
+                    </span>
+                    <span class="font-body text-[13px] font-medium text-ink">Behance</span>
+                </a>
             </div>
-            <div class="bg-surface-container-lowest rounded-xl p-4 ambient-shadow border border-surface-container-low flex items-center gap-md hover:bg-primary-container/5 transition-colors">
-                <div class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary shrink-0">
-                    <span class="material-symbols-outlined">workspace_premium</span>
-                </div>
-                <div>
-                    <h4 class="font-display text-base font-bold text-on-surface">3rd Place - UI/UX Competition at the NATIONAL INFORMATIC FUN COMPETITION 3.0</h4>
-                    <p class="font-body-md text-sm text-on-surface-variant">Developed a skincare mobile app concept, applying user research and wireframing to deliver a validated prototype.</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="w-full py-md bg-surface-container border-t border-surface-container-low mt-xl" id="contact">
-    <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md text-center md:text-left">
-        <div class="font-display text-headline-md text-primary flex items-center gap-2">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
-            Portfolio
-        </div>
-        <div class="font-caption text-caption text-on-surface-variant text-center">
-            © 2026 Nur Indah Chasanah — Crafted with intention and green tea.
-        </div>
-        <div class="flex gap-4">
-            <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
-                <span class="font-label-md text-label-md">GitHub</span>
-            </a>
-            <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
-                <span class="font-label-md text-label-md">LinkedIn</span>
-            </a>
-            <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
-                <span class="font-label-md text-label-md">Behance</span>
-            </a>
-        </div>
-    </div>
+<footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line">
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">© 2026 Nur Indah Chasanah</p>
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">Crafted with intention &amp; a bit of green tea</p>
 </footer>
 
-<!-- Mobile menu toggle + Intersection Observer for fade-ins -->
 <script>
     // Mobile menu
     const menuBtn = document.getElementById('menu-btn');
@@ -517,23 +787,77 @@
         });
     });
 
-    // Fade-in on scroll
-    document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
         });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
 
-        document.querySelectorAll('.fade-in-section').forEach(section => {
-            observer.observe(section);
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Active nav link on scroll
+    const navLinks = document.querySelectorAll('[data-nav]');
+    const sections = ['home', 'about', 'skills', 'work', 'journey'].map(id => document.getElementById(id)).filter(Boolean);
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                });
+            }
         });
-    });
+    }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
+
+    sections.forEach(sec => navObserver.observe(sec));
+
+    // Cursor glow (desktop only, respects reduced motion)
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const glow = document.getElementById('cursorGlow');
+    if (glow && !prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+        const hero = document.getElementById('home');
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            hero.style.setProperty('--cursor-x', x + '%');
+            hero.style.setProperty('--cursor-y', y + '%');
+        });
+    }
+
+    // Skills marquee with real tool logos from CDN/online sources
+    const marqueeItems = [
+        { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+        { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+        { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
+        { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+        { name: 'Laravel', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+        { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+        { name: 'Adobe XD', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-original.svg' },
+        { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+        { name: 'Vuetify', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuetify/vuetify-original.svg' },
+        { name: 'Bootstrap', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+        { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+        { name: 'Jira', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg' }
+    ];
+
+    const track = document.getElementById('marqueeTrack');
+    if (track) {
+        const buildSet = () => marqueeItems.map(item => `
+            <span class="flex items-center gap-3 shrink-0 px-7">
+                <span class="w-9 h-9 rounded-full bg-paper border border-line flex items-center justify-center overflow-hidden flex-shrink-0 p-1.5">
+                    <img src="${item.logo}" alt="${item.name}" class="w-full h-full object-contain" loading="lazy" />
+                </span>
+                <span class="font-display text-[20px] sm:text-[24px] text-ink/70 font-medium">${item.name}</span>
+            </span>
+        `).join('');
+        track.innerHTML = buildSet() + buildSet();
+    }
 </script>
 
 </body>

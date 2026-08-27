@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Projects — Nur Indah Chasanah</title>
+<meta name="description" content="Web development and mobile app projects by Nur Indah Chasanah — UI/UX designer and front-end developer.">
+
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    cream: "#FFFFFF",
+                    paper: "#F0F5EA",
+                    "paper-deep": "#E2ECD4",
+                    ink: "#1E2A1A",
+                    "ink-soft": "#4A5A40",
+                    matcha: "#7FB069",
+                    "matcha-deep": "#4E7A3A",
+                    "matcha-bright": "#8FC97A",
+                    "matcha-mist": "#D4E8C0",
+                    latte: "#C28A5A",
+                    "latte-deep": "#A06A3E",
+                    "latte-bright": "#DBA87A",
+                    gold: "#D4A84A",
+                    "gold-deep": "#B8862E",
+                    "gold-bright": "#E8C86A",
+                    line: "#DDE6D0"
+                },
+                fontFamily: {
+                    display: ["Fredoka", "sans-serif"],
+                    body: ["Plus Jakarta Sans", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    * { -webkit-tap-highlight-color: transparent; }
+    html { scroll-padding-top: 110px; }
+
+    body {
+        background-color: #FFFFFF;
+        color: #1E2A1A;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
+
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+    }
+
+    ::selection { background: #D4A84A; color: #FFFFFF; }
+
+    .container-px { padding-left: clamp(20px, 6vw, 160px); padding-right: clamp(20px, 6vw, 160px); }
+    .container-wrap { max-width: 1680px; margin-left: auto; margin-right: auto; }
+
+    .eyebrow {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .blob-shape {
+        border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%;
+        animation: morph 12s ease-in-out infinite;
+    }
+    @keyframes morph {
+        0%, 100% { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
+        50% { border-radius: 42% 58% 55% 45% / 55% 40% 60% 45%; }
+    }
+
+    .ambient-shadow-sm { box-shadow: 0 10px 26px -14px rgba(78, 122, 58, 0.18); }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal-delay-1.is-visible { transition-delay: .06s; }
+    .reveal-delay-2.is-visible { transition-delay: .12s; }
+    .reveal-delay-3.is-visible { transition-delay: .18s; }
+
+    .nav-link { position: relative; }
+    .nav-link.active { color: #4E7A3A; }
+    .nav-link.active::after {
+        content: ""; position: absolute; left: 50%; bottom: -6px;
+        width: 4px; height: 4px; border-radius: 50%; background: #C28A5A; transform: translateX(-50%);
+    }
+
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(.16,1,.3,1); }
+    #mobile-menu.open { max-height: 480px; }
+
+    .btn-primary { transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, background-color 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(78, 122, 58, 0.40); }
+    .btn-primary:active { transform: translateY(-1px) scale(0.98); }
+
+    .btn-ghost { transition: transform 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease; }
+    .btn-ghost:hover { transform: translateY(-3px); }
+    .btn-ghost:active { transform: translateY(-1px) scale(0.98); }
+
+    .grain {
+        position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 1; mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .float-slow { animation: floaty 7s ease-in-out infinite; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(3deg); } }
+
+    .img-reveal { clip-path: inset(0 0 0 0); }
+    .img-reveal img { transition: transform 0.9s cubic-bezier(.16,1,.3,1); }
+    .img-reveal:hover img { transform: scale(1.045); }
+
+    .project-card {
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px -16px rgba(78, 122, 58, 0.25);
+    }
+
+    .accent-web { color: #4E7A3A; }
+    .accent-mobile { color: #A06A3E; }
+
+    /* ===== Filter pills ===== */
+    .filter-pill {
+        transition: all 0.3s cubic-bezier(.16,1,.3,1);
+        cursor: pointer;
+    }
+    .filter-pill.active {
+        background-color: #4E7A3A;
+        color: #FFFFFF;
+        border-color: #4E7A3A;
+        box-shadow: 0 10px 22px -10px rgba(78, 122, 58, 0.45);
+    }
+    .filter-pill:not(.active):hover {
+        transform: translateY(-2px);
+        background-color: #F0F5EA;
+    }
+
+    /* ===== Pagination ===== */
+    .page-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 40px; height: 40px; padding: 0 6px;
+        border-radius: 9999px; border: 1px solid #DDE6D0; background: #FFFFFF;
+        font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px; color: #4A5A40;
+        transition: all 0.25s cubic-bezier(.16,1,.3,1);
+    }
+    .page-btn:hover:not(:disabled) { background: #F0F5EA; transform: translateY(-2px); }
+    .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .page-btn.is-active { color: #FFFFFF; border-color: transparent; background-color: #4E7A3A; }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+        }
+        .reveal { opacity: 1; transform: none; }
+    }
+
+    :focus-visible { outline: 2px solid #C28A5A; outline-offset: 3px; border-radius: 6px; }
+
+    .bg-warm-glow { background: radial-gradient(ellipse at 30% 40%, rgba(127,176,105,0.08), transparent 70%); }
+</style>
+</head>
+<body class="antialiased min-h-screen selection:bg-gold selection:text-cream">
+
+<div class="grain"></div>
+
+<!-- Floating Navigation -->
+<nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
+    <div class="flex items-center justify-between gap-4 sm:gap-8 bg-cream/88 backdrop-blur-xl border border-line shadow-[0_8px_30px_-12px_rgba(78,122,58,0.18)] rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
+        <a class="flex items-center gap-2 shrink-0 pl-1" href="index.html">
+            <span class="w-8 h-8 rounded-full bg-matcha-deep flex items-center justify-center" aria-hidden="true">
+                <span class="material-symbols-outlined text-cream text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
+            </span>
+            <span class="font-display text-[17px] font-semibold text-matcha-deep tracking-tight">Indah</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium text-ink-soft">
+            <a class="nav-link hover:text-matcha-deep transition-colors" href="index.html#home">Home</a>
+            <a class="nav-link active hover:text-matcha-deep transition-colors" href="project.html">Project</a>
+            <a class="nav-link hover:text-matcha-deep transition-colors" href="journey.html">Journey</a>
+        </div>
+
+        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold btn-primary" href="index.html#contact">
+            Say Hello
+            <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+        </a>
+
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-matcha-deep p-2 rounded-full hover:bg-paper" id="menu-btn">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+    </div>
+
+    <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
+        <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="index.html">Home</a>
+            <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="project.html">Project</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="journey.html">Journey</a>
+            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="index.html#contact">Say Hello</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+    <!-- ============ PAGE HERO ============ -->
+    <section class="relative container-wrap container-px pt-[148px] sm:pt-[166px] pb-10 sm:pb-12 overflow-hidden">
+        <div class="absolute inset-0 bg-warm-glow pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+            <div class="reveal is-visible relative z-10">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper border border-line text-ink-soft eyebrow mb-6">
+                    <span class="material-symbols-outlined text-[14px] text-matcha-deep">folder_open</span>
+                    Selected Work
+                </span>
+                <h1 class="font-display text-[38px] sm:text-[48px] leading-[1.08] tracking-[-0.01em] text-ink font-semibold">
+                    My <span class="text-matcha-deep">Projects</span>
+                </h1>
+                <p class="font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed mt-5 max-w-lg">
+                    17 projects across web development and mobile app design — from early research to shipped screens.
+                </p>
+            </div>
+
+            <div class="reveal reveal-delay-1 is-visible bg-paper border border-line rounded-[2rem] p-7 flex items-center gap-6 justify-self-start lg:justify-self-end w-full lg:w-auto">
+                <span class="font-display text-[56px] leading-none text-matcha-deep font-semibold">17</span>
+                <div class="w-px h-12 bg-line shrink-0"></div>
+                <div>
+                    <p class="font-body text-[13px] text-ink-soft leading-snug">Projects across</p>
+                    <p class="font-display text-[16px] text-ink font-medium">Web · Mobile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FILTERS ============ -->
+    <section class="container-wrap container-px pb-8 sm:pb-10">
+        <div class="reveal is-visible flex flex-wrap gap-2.5" id="filterBar">
+            <button class="filter-pill active px-5 py-2.5 rounded-full border border-line bg-cream font-body text-[13px] font-semibold text-ink-soft" data-filter="all">
+                All <span class="opacity-60">(17)</span>
+            </button>
+            <button class="filter-pill px-5 py-2.5 rounded-full border border-line bg-cream font-body text-[13px] font-semibold text-ink-soft" data-filter="web">
+                Web Development <span class="opacity-60">(9)</span>
+            </button>
+            <button class="filter-pill px-5 py-2.5 rounded-full border border-line bg-cream font-body text-[13px] font-semibold text-ink-soft" data-filter="mobile">
+                Mobile App <span class="opacity-60">(8)</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============ PROJECT GRID ============ -->
+    <section class="container-wrap container-px pb-20 sm:pb-28">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7" id="projectGrid"></div>
+
+        <div class="flex items-center justify-center gap-2 mt-10" id="pagination"></div>
+
+        <div class="reveal text-center mt-14 sm:mt-16" id="emptyState" style="display:none;">
+            <p class="font-body text-ink-soft">No projects in this category yet.</p>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT CTA ============ -->
+    <section class="container-wrap container-px pb-16 sm:pb-24">
+        <div class="reveal relative bg-matcha-deep rounded-[2.25rem] sm:rounded-[3rem] px-6 sm:px-16 py-14 sm:py-20 overflow-hidden text-center">
+            <span aria-hidden="true" class="absolute -top-10 -left-10 w-40 h-40 bg-latte/30 blob-shape blur-2xl"></span>
+            <span aria-hidden="true" class="absolute -bottom-14 -right-14 w-56 h-56 bg-matcha-bright/25 blob-shape blur-2xl"></span>
+
+            <h2 class="font-display text-[28px] sm:text-[38px] leading-[1.15] text-cream font-semibold max-w-2xl mx-auto">
+                Interested in working together?
+            </h2>
+            <p class="font-body text-[15px] text-cream/80 max-w-md mx-auto mt-4">
+                I'm open to front-end and UI/UX opportunities — let's talk about what you're building.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+                <a class="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-cream text-matcha-deep font-body text-[14px] font-semibold" href="journey.html">
+                    View my journey
+                    <span class="material-symbols-outlined text-[18px]">north_east</span>
+                </a>
+                <a class="btn-ghost inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-cream/40 text-cream font-body text-[14px] font-semibold hover:bg-cream/10" href="index.html#contact">
+                    Say hello
+                    <span class="material-symbols-outlined text-[18px]">mail</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line">
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">© 2026 Nur Indah Chasanah</p>
+    <p class="eyebrow text-ink-soft/60 normal-case font-semibold">Crafted with intention &amp; a bit of green tea</p>
+</footer>
+
+<script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        menuIcon.textContent = isOpen ? 'close' : 'menu';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuIcon.textContent = 'menu';
+        });
+    });
+
+    // ---- Dummy project data (17 items) — replace with real project info ----
+    const categoryMeta = {
+        web:    { label: 'Web Development', accentClass: 'accent-web' },
+        mobile: { label: 'Mobile App',       accentClass: 'accent-mobile' }
+    };
+
+    // prototypeUrl / behanceUrl are per-project — replace each "#" with the real link.
+    // Use `image` for a direct image URL (e.g. your own uploaded image / Figma export).
+    // If `image` is left out, the card falls back to a placeholder built from `seed`.
+    const projects = [
+        { title: 'Web IoT Pig Tracking',     cat: 'web',    type: 'Web Platform',    desc: 'Real-time operational dashboard that tracks livestock data through IoT sensors.', tags: ['Vue.js', 'Vuetify'], image:'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b', prototypeUrl: 'https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70', behanceUrl: 'https://www.behance.net/gallery/241725399/IoT-Pigging-Monitoring' },
+        { title: 'App Seraya',              cat: 'mobile', type: 'Mobile App',      desc: 'AI-powered companion for emotional self-care and daily mindfulness.', tags: ['Figma', 'Spring Boot'], image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53', prototypeUrl: 'https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/229427779/AI-Powered-App-for-Emotional-Self-Care-and-Reflection' },
+        { title: 'Web Foody',                cat: 'web',    type: 'Web App',         desc: 'BMI tracking, food logs, and AI-driven health recommendations.', tags: ['Figma', 'Laravel'], image:'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a', prototypeUrl: 'https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION---FOODY--Copy-?node-id=0-1&p=f&t=LenPCVfLsvRdwmjz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1098%3A9296&show-proto-sidebar=1', behanceUrl: 'https://www.behance.net/gallery/205265235/Foody' },
+        { title: 'Web Serasana',         cat: 'web',    type: 'Web App', desc: 'Serasana is a company portal for exploring company information and booking rooms', tags: ['Figma', 'FigJam'], image: 'img/serasana web.png', prototypeUrl: 'https://www.figma.com/proto/NDBxMwohXrffl1uZnO3j4H/serasana?node-id=1-128&p=f&t=5J5Mv8byl8MWrDwF-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1', behanceUrl: 'https://www.behance.net/gallery/245051355/Landing-Page-Website-Serasana' },
+        { title: 'App Hyperaid',           cat: 'mobile', type: 'Mobile App',      desc: 'Empowering Young Indonesia to Beat Hypertension, One Tap at a Time', tags: ['Figma', 'FigJam', 'Maze'], image: 'img/hyperaid.png', prototypeUrl: 'https://www.figma.com/proto/UlokKfUVshhxDtPrvxREd9/HYPERAID-NANDE?node-id=0-1&p=f&t=zWZ2pJteeQSGD4ZE-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=225%3A3120&show-proto-sidebar=1&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/229589313/HyperAId-Empowering-Young-to-Beat-Hypertension' },
+        { title: 'Web Maggoplast-Gel',               cat: 'web',    type: 'Web App',         desc: 'E-commerce, consultation, and product information website for Maggoplast.', tags: ['Laravel', 'Bootstrap'], image: 'img/mg.png', prototypeUrl: 'https://www.figma.com/proto/YbkqAhyom6XnaFQGX0mmh2/PusingDikit?node-id=409-352&t=QJlnCY3kjDE1DNux-1&scaling=scale-down-width&content-scaling=fixed&page-id=321%3A572', behanceUrl: 'https://www.behance.net/gallery/241776559/Maggoplast-Website-Smart-Business-Website' },
+        { title: 'Web Nyuci',       cat: 'web',    type: 'Web Platform',    desc: 'Laundry website for customers to order services, partners to manage orders, and admins to manage data.', tags: ['Figma', 'Laravel'], image: 'img/nyuci.png', prototypeUrl: 'https://www.figma.com/proto/utaujv9hC9jXyRoL4HuECR/Main-Room?node-id=0-1', behanceUrl: 'https://www.behance.net/gallery/229605349/Nyuci-Smart-Simple-Fast-Laundry-Service' },
+        { title: 'App Levish Glow',           cat: 'mobile', type: 'Mobile App',      desc: 'Mobile app designed to support facial skincare and care routines.', tags: ['Figma', 'FigJam', 'Maze'], image: 'img/lg.png', prototypeUrl: 'https://www.figma.com/proto/gdMxVwkx2ct55Z8L091FsG/Pheew-NIFC?node-id=1-2&p=f&t=7Z3dYLnsNBun4NS4-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=784%3A5102&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/205239135/LevishGlow-AI-powered-skin-health-and-beauty-App' },
+        { title: 'Web Angboo',             cat: 'web',    type: 'Web App',         desc: 'Company portal and e-commerce for information, services, and online purchases.', tags: ['Figma', 'Maze'], image: 'img/angboo.png', prototypeUrl: 'https://www.figma.com/proto/TtHw5KjUhn8hdgbo8uAJSa/Angboo?node-id=0-1&p=f&t=OqNOlUe9hDCyZxLu-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A66&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/254901333/Angboo-E-commerce-Company-Profile-Website' },
+        { title: 'App Foody',      cat: 'mobile', type: 'Mobile App',      desc: 'Empowering living with BMI tracking, logs, and AI-driven food recommendations', tags: ['Figma', 'Android Studio'], image: 'img/fdy.png', prototypeUrl: 'https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION-FOODY-Copy?node-id=237-887&p=f&t=pe4BU25DxmSYhiDf-0&scaling=contain&content-scaling=fixed&page-id=237%3A887&starting-point-node-id=375%3A11972&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/205265235/Foody' },
+        { title: 'App Pigging Monitoring',       cat: 'mobile', type: 'Mobile App',      desc: 'Pigging Monitoring is a mobile system for real-time pipeline pigging monitoring.', tags: ['Figma', 'FigJam'], image: 'img/pgg.png', prototypeUrl: 'https://www.figma.com/proto/RYv7pO4sykmhYpA6cyG8nR?node-id=0-1&fuid=1149611445040717485&prev-plan-id=1586215289788725096&prev-plan-type=team&prev-selected-view=recentsAndSharing&prev-tab=recently-viewed', behanceUrl: 'https://www.behance.net/gallery/241749825/IoT-Pigging-Monitoring-App-Mobile-UIUX-Design' },
+        { title: 'Web Tukuniku',            cat: 'web',    type: 'Web Platform',    desc: 'E-commerce and company profile website for Toko Tukuniku, a local small business.', tags: ['Figma', 'Laravel'], image: 'img/tukuniku.png', prototypeUrl: 'https://www.figma.com/proto/rInuVumr0tvcMtMWuJJW74/website-tukuniku?node-id=923-2821&t=x1rmIkOIGNnFEuhV-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=923%3A2821&show-proto-sidebar=1&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/254899923/Tukuniku-Website-E-Commerce' },
+        { title: 'App Tangkuban Perahu',    cat: 'mobile', type: 'Mobile App',      desc: 'Interactive 3D app bringing Indonesian legends to life through digital storytelling.', tags: ['Figma', 'Wireframing'], image: 'img/tp.png', prototypeUrl: 'https://www.figma.com/proto/ZLCCRxhuVEvnYCWqRnHQhV/Untitled?node-id=4001-10&t=fI23mjhRLJqz9H52-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A2', behanceUrl: 'https://www.behance.net/gallery/241705259/Tangkuban-Perahu-Apikasi-Cerita-Rakyat-Berbasis-AR' },
+        { title: 'Web Company Portal',       cat: 'web',    type: 'Web App',         desc: 'Company portal website designed to facilitate communication between employees.', tags: ['Figma','Vue.js'], image: 'img/cpr.png', prototypeUrl: 'https://www.figma.com/proto/VTNBLdYcxC5emCTCSp8asr/comporgas?node-id=3-177&t=6lvw4geLr2UVdgGb-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A177&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/254898385/Company-Portal-COMPORGAS' },
+        { title: 'App NoteWave',              cat: 'mobile', type: 'Mobile App',      desc: 'NoteWave is a free music app for discovering, streaming, and connecting with music communities online.', tags: ['Figma', 'Maze'], image: 'img/nv.png', prototypeUrl: 'https://www.figma.com/proto/vI3xJ5hAske5YvyBpt7Vcg/Projek-figma?node-id=31-2&p=f&t=EJM4ZTjnTdpv81EQ-0&scaling=scale-down&content-scaling=fixed&page-id=31%3A2&starting-point-node-id=376%3A59326&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/205246849/NoteWave-Music-Streaming-Application' },
+        { title: 'Web TRPL',             cat: 'web',    type: 'Web Platform',    desc: 'Website providing information about the Software Engineering program at IPB University.', tags: ['Figma', 'FigJam'], image: 'img/trpl.png', prototypeUrl: 'https://www.figma.com/proto/eRqqwz9UXLLZ3c0Kei2bmg/TPL-B1?node-id=413-62&t=uUeGEIjWBrndD0pq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1737%3A2299', behanceUrl: 'https://www.behance.net/gallery/158465787/Magazine-Terpal' },
+        { title: 'App ByBlossom',        cat: 'mobile', type: 'Mobile App',      desc: 'An app helping mothers monitor their childrens growth and development.', tags: ['Figma', 'Figjam', 'Maze'], image: 'img/bb.png', prototypeUrl: 'https://www.figma.com/proto/UOAb9L5lO0TAz1qQC5ZUZf/ByBlossom?node-id=0-1&p=f&t=ffLFFAdC8mdYvTcL-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=312%3A2461&show-proto-sidebar=1&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/254895407/ByBlossom' }
+    ];
+
+    const PAGE_SIZE = 6;
+    let currentFilter = 'all';
+    let currentPage = 1;
+
+    const grid = document.getElementById('projectGrid');
+    const paginationWrap = document.getElementById('pagination');
+    const emptyState = document.getElementById('emptyState');
+    const filterBar = document.getElementById('filterBar');
+
+    function cardHTML(p, num) {
+        const meta = categoryMeta[p.cat];
+        const tagsHTML = p.tags.map(t => `<span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">${t}</span>`).join('');
+        const imgSrc = p.image ? p.image : `https://picsum.photos/seed/${p.seed}/640/480`;
+
+        return `
+        <article class="project-card reveal is-visible bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col" data-category="${p.cat}">
+            <div class="img-reveal aspect-[4/3] overflow-hidden relative">
+                <img alt="${p.title} preview" class="w-full h-full object-cover" src="${imgSrc}" loading="lazy">
+                <span class="absolute top-3 left-3 font-display text-[13px] font-semibold px-2.5 py-1 rounded-full bg-cream/90 backdrop-blur text-ink-soft">${num}</span>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+                <span class="eyebrow ${meta.accentClass}">${meta.label} · ${p.type}</span>
+                <h3 class="font-display text-[20px] leading-[1.15] text-ink font-semibold mt-2">${p.title}</h3>
+                <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">${p.desc}</p>
+                <div class="flex flex-wrap gap-2 mt-4">${tagsHTML}</div>
+                <div class="flex flex-wrap gap-3 mt-5">
+                    <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" href="${p.prototypeUrl}" target="_blank" rel="noopener">
+                        Prototype
+                        <span class="material-symbols-outlined text-[16px]">north_east</span>
+                    </a>
+                    <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="${p.behanceUrl}" target="_blank" rel="noopener">
+                        Behance
+                    </a>
+                </div>
+            </div>
+        </article>`;
+    }
+
+    function getFilteredProjects() {
+        return currentFilter === 'all' ? projects : projects.filter(p => p.cat === currentFilter);
+    }
+
+    function renderPagination(totalPages) {
+        if (totalPages <= 1) { paginationWrap.innerHTML = ''; return; }
+
+        let html = `<button class="page-btn" data-page="prev" ${currentPage === 1 ? 'disabled' : ''}>
+                        <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                    </button>`;
+
+        for (let i = 1; i <= totalPages; i++) {
+            html += `<button class="page-btn ${i === currentPage ? 'is-active' : ''}" data-page="${i}">${i}</button>`;
+        }
+
+        html += `<button class="page-btn" data-page="next" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                 </button>`;
+
+        paginationWrap.innerHTML = html;
+    }
+
+    function render() {
+        const filtered = getFilteredProjects();
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = filtered.slice(start, start + PAGE_SIZE);
+
+        grid.innerHTML = pageItems.map((p, i) => cardHTML(p, String(start + i + 1).padStart(2, '0'))).join('');
+        emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
+
+        renderPagination(totalPages);
+    }
+
+    filterBar.addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+
+        filterBar.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        currentFilter = btn.dataset.filter;
+        currentPage = 1;
+        render();
+    });
+
+    paginationWrap.addEventListener('click', (e) => {
+        const btn = e.target.closest('.page-btn');
+        if (!btn || btn.disabled) return;
+
+        const filtered = getFilteredProjects();
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE) || 1;
+        let target = btn.dataset.page;
+
+        if (target === 'prev') target = currentPage - 1;
+        else if (target === 'next') target = currentPage + 1;
+        else target = parseInt(target, 10);
+
+        if (target < 1 || target > totalPages) return;
+
+        currentPage = target;
+        render();
+        document.getElementById('projectGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    render();
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>

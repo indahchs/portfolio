@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Digital Toolkit · Nur Indah</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4A6549",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#8BA888",
+                        "on-primary-container": "#243d24",
+                        "secondary": "#765846",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#FDD5BE",
+                        "on-secondary-container": "#795A49",
+                        "tertiary": "#735858",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#FDD5BE",
+                        "on-tertiary-container": "#493132",
+                        "background": "#ffffff",
+                        "on-background": "#1C1C17",
+                        "surface": "#FDF9F1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#F7F3EB",
+                        "surface-container": "#F1EDE6",
+                        "surface-container-high": "#ECE8E0",
+                        "surface-variant": "#E6E2DA",
+                        "on-surface": "#1C1C17",
+                        "on-surface-variant": "#434841",
+                        "outline": "#737970",
+                        "outline-variant": "#C3C8BF"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        xs: "4px",
+                        sm: "12px",
+                        base: "8px",
+                        md: "24px",
+                        lg: "48px",
+                        xl: "80px",
+                        gutter: "24px",
+                        "container-max": "1120px"
+                    },
+                    fontFamily: {
+                        "caption": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-xl": ["Quicksand"]
+                    },
+                    fontSize: {
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "headline-lg": ["clamp(28px, 5vw, 40px)", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "headline-xl": ["clamp(36px, 6vw, 56px)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1C1C17;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        h1, h2, h3, .font-display {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 8px 24px rgba(107, 78, 61, 0.08);
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .doodle {
+            position: absolute;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+        }
+
+        /* ---------- Animations added ---------- */
+
+        /* Hero: badge + heading + paragraph enter one after another */
+        .hero-item {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in-section.is-visible .hero-item {
+            opacity: 1;
+            transform: none;
+        }
+        .fade-in-section.is-visible .hero-item:nth-child(1) { transition-delay: 0.05s; }
+        .fade-in-section.is-visible .hero-item:nth-child(2) { transition-delay: 0.15s; }
+        .fade-in-section.is-visible .hero-item:nth-child(3) { transition-delay: 0.28s; }
+        .fade-in-section.is-visible .hero-item:nth-child(4) { transition-delay: 0.4s; }
+
+        /* Staggered reveal for the 3 skill cards */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(24px) scale(0.98);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .stagger-item.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Gentle float loop for decorative doodles */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(var(--doodle-rot, 0deg)); }
+            50% { transform: translateY(-8px) rotate(var(--doodle-rot, 0deg)); }
+        }
+        .doodle-float {
+            animation: float-slow 5s ease-in-out infinite;
+        }
+        .doodle-float.delay-1 { animation-delay: 0.8s; }
+
+        /* Skill card lift + icon spin-in on hover */
+        .skill-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(107, 78, 61, 0.14);
+        }
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(-6deg);
+        }
+        .skill-icon {
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Tag chips: subtle pop-in handled by parent stagger, plus hover bounce */
+        .skill-chip {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .skill-chip:hover {
+            transform: translateY(-2px) scale(1.04);
+            background-color: rgba(74, 101, 73, 0.18);
+        }
+
+        /* Underline grow-in for section-adjacent accents (kept subtle, no-op class placeholder) */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-in-section, .hero-item, .stagger-item, .doodle-float, .skill-card, .skill-icon, .skill-chip {
+                transition: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+
+    <!-- Navbar (sama persis dengan index.html) -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+        <div class="max-w-container-max mx-auto px-gutter h-[76px] flex items-center justify-between">
+            <a class="font-display text-xl sm:text-2xl font-bold text-primary tracking-tight flex items-center gap-2" href="index.html">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+                Portfolio
+            </a>
+
+            <!-- Desktop nav -->
+            <div class="hidden md:flex items-center gap-md">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="index.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="about.html">About</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="#">Skills</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="project.html">Project</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-2 py-1 rounded-full hover:bg-primary-container/10 transition-all duration-300" href="contact.html">Contact</a>
+            </div>
+
+            <a class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(74,101,73,0.2)] active:scale-95 transition-all duration-300" href="contact.html">
+                Say Hello
+            </a>
+
+            <!-- Mobile toggle -->
+            <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-primary p-2 rounded-full hover:bg-primary-container/10" id="menu-btn">
+                <span class="material-symbols-outlined" id="menu-icon">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile nav panel -->
+        <div class="md:hidden border-t border-outline-variant/30 bg-surface" id="mobile-menu">
+            <div class="flex flex-col px-gutter py-md gap-1">
+                <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="index.html">Home</a>
+                <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="about.html">About</a>
+                <a class="text-primary font-bold font-label-md text-label-md px-3 py-2.5 rounded-xl bg-primary-container/10" href="#">Skills</a>
+                <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="project.html">Project</a>
+                <a class="text-on-surface-variant font-label-md text-label-md px-3 py-2.5 rounded-xl hover:bg-primary-container/10" href="contact.html">Contact</a>
+                <a class="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md" href="contact.html">Say Hello</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-[76px] pb-xl">
+
+        <!-- HERO: Digital Toolkit -->
+        <section class="max-w-container-max mx-auto px-gutter min-h-[40vh] flex flex-col justify-center py-12 md:py-16 fade-in-section is-visible">
+            <div class="flex flex-col items-start gap-6 max-w-4xl relative">
+                <!-- Doodles (gentle continuous float) -->
+                <span class="material-symbols-outlined doodle doodle-float text-primary/20 text-[48px] -top-6 -left-6" style="--doodle-rot: -15deg;">psychiatry</span>
+                <span class="material-symbols-outlined doodle doodle-float delay-1 text-secondary/30 text-[36px] -top-2 right-4" style="font-variation-settings: 'FILL' 1; --doodle-rot: 12deg;">local_florist</span>
+
+                <!-- Badge -->
+                <div class="hero-item inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#CCEBC733] font-label-md text-label-md text-primary">
+                    <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+                    Digital Toolkit
+                </div>
+
+                <!-- Heading dengan warna thoughtful #4A6549 -->
+                <h1 class="hero-item font-display text-headline-lg text-on-background leading-tight">
+                    Crafting <span class="text-[#4A6549]">thoughtful</span> digital experiences.
+                </h1>
+
+                <!-- Deskripsi -->
+                <p class="hero-item font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    A collection of skills, tools, and technologies I use to turn ideas into intuitive designs and functional interfaces.
+                </p>
+            </div>
+        </section>
+
+        <!-- SKILLS GRID -->
+        <section class="max-w-container-max mx-auto px-gutter py-8 md:py-12 fade-in-section is-visible">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+                <!-- Languages -->
+                <div class="skill-card stagger-item bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center" style="transition-delay: 0ms">
+                    <div class="skill-icon w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
+                        <span class="material-symbols-outlined text-[32px]">code</span>
+                    </div>
+                    <h3 class="font-display text-headline-md text-on-surface mb-md">Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">JavaScript</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">TypeScript</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">HTML/CSS</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Python</span>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="skill-card stagger-item bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center relative md:-translate-y-4" style="transition-delay: 140ms">
+                    <span class="material-symbols-outlined doodle doodle-float text-secondary/30 text-[32px] -top-4 right-1" style="--doodle-rot: 12deg;">local_florist</span>
+                    <div class="skill-icon w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
+                        <span class="material-symbols-outlined text-[32px]">handyman</span>
+                    </div>
+                    <h3 class="font-display text-headline-md text-on-surface mb-md">Tools</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Github</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Figma</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Adobe XD</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Canva</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Maze</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">VS Code</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Jira</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Adobe Illustrator</span>
+                    </div>
+                </div>
+                <!-- Frameworks -->
+                <div class="skill-card stagger-item bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-container-low text-center flex flex-col items-center" style="transition-delay: 280ms">
+                    <div class="skill-icon w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-sm">
+                        <span class="material-symbols-outlined text-[32px]">widgets</span>
+                    </div>
+                    <h3 class="font-display text-headline-md text-on-surface mb-md">Frameworks</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Laravel</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Vue.js</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Next.js</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Vuetify</span>
+                        <span class="skill-chip px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (sama dengan index.html) -->
+    <footer class="w-full py-md bg-surface-container border-t border-surface-container-low mt-xl">
+        <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md text-center md:text-left">
+            <div class="font-display text-headline-md text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+                Portfolio
+            </div>
+            <div class="font-caption text-caption text-on-surface-variant text-center">
+                © 2026 Nur Indah Chasanah — Crafted with intention and green tea.
+            </div>
+            <div class="flex gap-4">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
+                    <span class="font-label-md text-label-md">GitHub</span>
+                </a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
+                    <span class="font-label-md text-label-md">LinkedIn</span>
+                </a>
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-200 hover:opacity-80" href="#">
+                    <span class="font-label-md text-label-md">Behance</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu toggle + Intersection Observer -->
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            menuIcon.textContent = isOpen ? 'close' : 'menu';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.textContent = 'menu';
+            });
+        });
+
+        // Fade-in on scroll (hero + section wrappers)
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Staggered reveal for the skill cards
+            const staggerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        staggerObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -40px 0px"
+            });
+
+            document.querySelectorAll('.stagger-item').forEach(item => {
+                staggerObserver.observe(item);
+            });
+        });
+    </script>
+
+</body>
+</html>
