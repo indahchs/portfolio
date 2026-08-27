@@ -46,13 +46,19 @@
 
 <style>
     * { -webkit-tap-highlight-color: transparent; }
-    html { scroll-padding-top: 110px; }
+    html {
+        scroll-padding-top: 110px;
+        overflow-x: hidden;
+        width: 100%;
+    }
 
     body {
         background-color: #FFFFFF;
         color: #1E2A1A;
         font-family: 'Plus Jakarta Sans', sans-serif;
         overflow-x: hidden;
+        width: 100%;
+        position: relative;
     }
 
     h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
@@ -140,6 +146,9 @@
         to { transform: translateX(-50%); }
     }
     .marquee-mask {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
         -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
         mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
     }
@@ -279,10 +288,8 @@
     <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
         <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
             <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="#home">Home</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#about">About</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#skills">Skills</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#work">Work</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="#journey">Journey</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="project.html">Project</a>
+            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="journey.html">Journey</a>
             <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="#contact">Say Hello</a>
         </div>
     </div>
@@ -346,18 +353,18 @@
                 </div>
             </div>
 
-            <div class="reveal reveal-delay-2 is-visible relative flex justify-center items-center">
+            <div class="reveal reveal-delay-2 is-visible relative flex justify-center items-center mt-4 lg:mt-0">
                 <div class="absolute w-[105%] h-[105%] bg-matcha-mist/40 blob-shape blur-3xl -z-10"></div>
-                <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[220px] h-[280px] sm:w-[280px] sm:h-[360px]">
+                <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[180px] h-[230px] xs:w-[220px] xs:h-[280px] sm:w-[280px] sm:h-[360px]">
                     <img alt="Illustration of Nur Indah at her desk" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
                 </div>
-                <div class="absolute -top-3 -right-1 sm:right-2 float-slow bg-cream px-4 py-2.5 rounded-full ambient-shadow-sm border border-line flex items-center gap-2">
-                    <span class="material-symbols-outlined text-latte text-[20px]" style="font-variation-settings:'FILL' 1;">local_cafe</span>
-                    <span class="eyebrow text-ink-soft">matcha &amp; code</span>
+                <div class="absolute -top-3 right-0 sm:right-2 float-slow bg-cream px-3 py-2 sm:px-4 sm:py-2.5 rounded-full ambient-shadow-sm border border-line flex items-center gap-1.5 sm:gap-2 max-w-[46%] sm:max-w-none">
+                    <span class="material-symbols-outlined text-latte text-[16px] sm:text-[20px] shrink-0" style="font-variation-settings:'FILL' 1;">local_cafe</span>
+                    <span class="eyebrow text-ink-soft text-[9px] sm:text-[11px] whitespace-nowrap">matcha &amp; code</span>
                 </div>
-                <div class="absolute -bottom-4 -left-3 sm:left-2 float-slow-rev bg-matcha-deep text-cream px-4 py-2.5 rounded-full ambient-shadow-sm flex items-center gap-2">
-                    <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">palette</span>
-                    <span class="eyebrow">Figma → code</span>
+                <div class="absolute -bottom-4 left-0 sm:left-2 float-slow-rev bg-matcha-deep text-cream px-3 py-2 sm:px-4 sm:py-2.5 rounded-full ambient-shadow-sm flex items-center gap-1.5 sm:gap-2 max-w-[46%] sm:max-w-none">
+                    <span class="material-symbols-outlined text-[14px] sm:text-[18px] shrink-0" style="font-variation-settings:'FILL' 1;">palette</span>
+                    <span class="eyebrow text-[9px] sm:text-[11px] whitespace-nowrap">Figma → code</span>
                 </div>
             </div>
         </div>
@@ -389,34 +396,34 @@
             </div>
 
             <div class="grid grid-cols-2 gap-4 sm:gap-5">
-                <div class="reveal reveal-delay-2 clay-radius-sm bg-matcha-deep text-cream p-6 flex flex-col justify-between min-h-[140px] ambient-shadow-sm">
-                    <span class="material-symbols-outlined text-[24px]">design_services</span>
+                <div class="reveal reveal-delay-2 clay-radius-sm bg-matcha-deep text-cream p-5 sm:p-6 flex flex-col justify-between min-h-[130px] sm:min-h-[140px] ambient-shadow-sm">
+                    <span class="material-symbols-outlined text-[22px] sm:text-[24px]">design_services</span>
                     <div>
-                        <p class="font-display text-[28px] leading-none font-semibold">01</p>
-                        <p class="font-body text-[12.5px] mt-1 opacity-90">UI/UX Design — research to prototype</p>
+                        <p class="font-display text-[24px] sm:text-[28px] leading-none font-semibold">01</p>
+                        <p class="font-body text-[11.5px] sm:text-[12.5px] mt-1 opacity-90">UI/UX Design — research to prototype</p>
                     </div>
                 </div>
-                <div class="reveal reveal-delay-3 clay-radius-sm bg-latte text-cream p-6 flex flex-col justify-between min-h-[140px] ambient-shadow-sm">
-                    <span class="material-symbols-outlined text-[24px]">code_blocks</span>
+                <div class="reveal reveal-delay-3 clay-radius-sm bg-latte text-cream p-5 sm:p-6 flex flex-col justify-between min-h-[130px] sm:min-h-[140px] ambient-shadow-sm">
+                    <span class="material-symbols-outlined text-[22px] sm:text-[24px]">code_blocks</span>
                     <div>
-                        <p class="font-display text-[28px] leading-none font-semibold">02</p>
-                        <p class="font-body text-[12.5px] mt-1 opacity-90">Front-End Dev — Vue, Laravel, Next.js</p>
+                        <p class="font-display text-[24px] sm:text-[28px] leading-none font-semibold">02</p>
+                        <p class="font-body text-[11.5px] sm:text-[12.5px] mt-1 opacity-90">Front-End Dev — Vue, Laravel, Next.js</p>
                     </div>
                 </div>
-                <div class="reveal reveal-delay-2 col-span-2 bg-paper border border-line rounded-[1.75rem] p-6 flex items-center justify-between gap-3">
-                    <div>
-                        <p class="font-display text-[24px] text-ink leading-none">10+</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">UI/UX projects designed</p>
+                <div class="reveal reveal-delay-2 col-span-2 bg-paper border border-line rounded-[1.75rem] p-5 sm:p-6 grid grid-cols-3 gap-2 sm:flex sm:items-center sm:justify-between sm:gap-3">
+                    <div class="text-center sm:text-left">
+                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">10+</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">UI/UX projects designed</p>
                     </div>
-                    <div class="w-px h-9 bg-line shrink-0"></div>
-                    <div>
-                        <p class="font-display text-[24px] text-ink leading-none">60+</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">web & mobile screens designed</p>
+                    <div class="hidden sm:block w-px h-9 bg-line shrink-0"></div>
+                    <div class="text-center sm:text-left border-x sm:border-x-0 border-line px-2 sm:px-0">
+                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">60+</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">web & mobile screens designed</p>
                     </div>
-                    <div class="w-px h-9 bg-line shrink-0"></div>
-                    <div>
-                        <p class="font-display text-[24px] text-ink leading-none">2</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[11px]">internship experiences.</p>
+                    <div class="hidden sm:block w-px h-9 bg-line shrink-0"></div>
+                    <div class="text-center sm:text-left">
+                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">2</p>
+                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">internship experiences</p>
                     </div>
                 </div>
             </div>
@@ -597,47 +604,47 @@
         <div class="flex flex-col gap-4 max-w-3xl mx-auto">
             <!-- Achievement 1 - 3rd Place Android -->
             <div class="reveal reveal-delay-1 group">
-                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-center gap-5">
-                        <!-- Peringkat & Icon -->
-                        <div class="flex items-center gap-4 shrink-0">
-                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-                            </div>
-                            <div class="text-center">
-                                <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
-                                <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
-                            </div>
+                <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
+                    <!-- Peringkat & Icon -->
+                    <div class="flex items-center gap-4 shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
                         </div>
-
-                        <!-- Divider -->
-                        <div class="w-px h-12 bg-line shrink-0"></div>
-
-                        <!-- Info Kompetisi -->
-                        <div class="flex-1 min-w-0">
-                            <h3 class="font-display text-base font-semibold text-ink">Android Programming Competition</h3>
-                            <p class="font-body text-sm text-ink-soft/70">at the I/O Festival 2025</p>
-                        </div>
-
-                        <!-- Tahun & Button -->
-                        <div class="flex items-center gap-3 shrink-0">
-                            <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2025</span>
-                            <a target="_blank" href="https://drive.google.com/file/d/1EoVYDTy3e4tXZgEj0LvKvxsWNGcpPS0u/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                <span class="material-symbols-outlined text-[16px]">verified</span>
-                                Certificate
-                            </a>
+                        <div class="text-center">
+                            <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
+                            <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
                         </div>
                     </div>
+
+                    <!-- Divider: cuma muncul di sm ke atas -->
+                    <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
+
+                    <!-- Info Kompetisi -->
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-display text-base font-semibold text-ink">Android Programming Competition</h3>
+                        <p class="font-body text-sm text-ink-soft/70">at the I/O Festival 2025</p>
+                    </div>
+
+                    <!-- Tahun & Button -->
+                    <div class="flex items-center flex-wrap gap-3 shrink-0">
+                        <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2025</span>
+                        <a target="_blank" href="https://drive.google.com/file/d/1EoVYDTy3e4tXZgEj0LvKvxsWNGcpPS0u/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </div>
+                </div>
                 </div>
             </div>
 
             <!-- Achievement 2 - 1st Place SWITCHFEST -->
             <div class="reveal reveal-delay-1 group">
-                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-center gap-5">
+                <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
                         <!-- Peringkat & Icon -->
                         <div class="flex items-center gap-4 shrink-0">
-                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
                             </div>
                             <div class="text-center">
@@ -647,7 +654,7 @@
                         </div>
 
                         <!-- Divider -->
-                        <div class="w-px h-12 bg-line shrink-0"></div>
+                        <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
 
                         <!-- Info Kompetisi -->
                         <div class="flex-1 min-w-0">
@@ -656,7 +663,7 @@
                         </div>
 
                         <!-- Tahun & Button -->
-                        <div class="flex items-center gap-3 shrink-0">
+                        <div class="flex items-center flex-wrap gap-3 shrink-0">
                             <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
                             <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
                                 <span class="material-symbols-outlined text-[16px]">verified</span>
@@ -669,11 +676,11 @@
 
             <!-- Achievement 3 - 3rd Place NIFC -->
             <div class="reveal reveal-delay-3 group">
-                <div class="relative bg-cream rounded-2xl p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                    <div class="flex items-center gap-5">
+                <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
                         <!-- Peringkat & Icon -->
                         <div class="flex items-center gap-4 shrink-0">
-                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
                                 <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
                             </div>
                             <div class="text-center">
@@ -683,7 +690,7 @@
                         </div>
 
                         <!-- Divider -->
-                        <div class="w-px h-12 bg-line shrink-0"></div>
+                        <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
 
                         <!-- Info Kompetisi -->
                         <div class="flex-1 min-w-0">
@@ -692,7 +699,7 @@
                         </div>
 
                         <!-- Tahun & Button -->
-                        <div class="flex items-center gap-3 shrink-0">
+                        <div class="flex items-center flex-wrap gap-3 shrink-0">
                             <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
                             <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
                                 <span class="material-symbols-outlined text-[16px]">verified</span>
@@ -762,7 +769,7 @@
 
 </main>
 
-<footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line">
+<footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line text-center sm:text-left">
     <p class="eyebrow text-ink-soft/60 normal-case font-semibold">© 2026 Nur Indah Chasanah</p>
     <p class="eyebrow text-ink-soft/60 normal-case font-semibold">Crafted with intention &amp; a bit of green tea</p>
 </footer>
