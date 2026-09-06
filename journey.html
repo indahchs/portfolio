@@ -133,6 +133,7 @@
     .cert-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease, background-color 0.3s ease; }
     .cert-chip:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -12px rgba(45, 74, 42, 0.28); background-color: #FAFFF5; }
 
+    /* Compass ring - hanya dekorasi, pakai gold */
     .compass-ring {
         position: absolute; border-radius: 50%; border: 2px dashed rgba(45,74,42,0.35);
         animation: spin 34s linear infinite;
@@ -188,12 +189,15 @@
         color: #FFFFFF; padding: 5px 12px; border-radius: 9999px;
     }
 
+    /* Semua accent menggunakan matcha-deep (#2D4A2A) untuk teks */
     .accent-work { color: #2D4A2A; }
-    .accent-edu { color: #B8862E; }
-    .accent-org { color: #D4A84A; }
+    .accent-edu { color: #2D4A2A; }
+    .accent-org { color: #2D4A2A; }
+    
+    /* Badge background tetap matcha-deep */
     .bg-accent-work { background: #2D4A2A; }
-    .bg-accent-edu { background: #B8862E; }
-    .bg-accent-org { background: #D4A84A; }
+    .bg-accent-edu { background: #2D4A2A; }
+    .bg-accent-org { background: #2D4A2A; }
 
     .navbar-army {
         background: #2D4A2A;
@@ -220,6 +224,7 @@
 
 <div class="grain"></div>
 
+<!-- Floating Navigation - Army Green -->
 <nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
     <div class="navbar-army flex items-center justify-between gap-4 sm:gap-8 rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
         <a class="flex items-center gap-2 shrink-0 pl-1" href="index.html">
@@ -276,12 +281,13 @@
             </div>
 
             <div class="reveal reveal-delay-1 is-visible relative hidden sm:flex justify-center items-center h-[240px]">
+                <!-- Compass ring - hanya dekorasi, tetap pakai gold tipis -->
                 <div class="compass-ring w-[220px] h-[220px]"></div>
                 <div class="compass-ring inner w-[160px] h-[160px]"></div>
                 <div class="relative w-20 h-20 rounded-full bg-matcha-deep flex items-center justify-center ambient-shadow-sm float-slow">
                     <span class="material-symbols-outlined text-cream text-[34px]">explore</span>
                 </div>
-                <span class="absolute top-2 right-6 eyebrow text-gold-deep bg-cream px-3 py-1 rounded-full border border-line rotate-3">est. 2022</span>
+                <span class="absolute top-2 right-6 eyebrow text-matcha-deep bg-cream px-3 py-1 rounded-full border border-line rotate-3">est. 2022</span>
                 <span class="absolute bottom-4 left-2 eyebrow text-matcha-deep bg-cream px-3 py-1 rounded-full border border-line -rotate-3">Jakarta, ID</span>
             </div>
         </div>
@@ -463,6 +469,7 @@
     <!-- ============ CONTACT CTA ============ -->
     <section class="container-wrap container-px pb-16 sm:pb-24">
         <div class="reveal relative bg-matcha-deep rounded-[2.25rem] sm:rounded-[3rem] px-6 sm:px-16 py-14 sm:py-20 overflow-hidden text-center">
+            <!-- Hanya background blur dekorasi, pakai gold tipis -->
             <span aria-hidden="true" class="absolute -top-10 -left-10 w-40 h-40 bg-gold/30 blob-shape blur-2xl"></span>
             <span aria-hidden="true" class="absolute -bottom-14 -right-14 w-56 h-56 bg-matcha-bright/25 blob-shape blur-2xl"></span>
 
