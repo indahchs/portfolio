@@ -8,11 +8,12 @@
 
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
-</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
     tailwind.config = {
         darkMode: "class",
@@ -20,24 +21,26 @@
             extend: {
                 colors: {
                     cream: "#FFFFFF",
-                    paper: "#F0F5EA",
+                    paper: "#FAFFF5",
                     "paper-deep": "#E2ECD4",
                     ink: "#1E2A1A",
                     "ink-soft": "#4A5A40",
-                    matcha: "#7FB069",
-                    "matcha-deep": "#4E7A3A",
-                    "matcha-bright": "#8FC97A",
-                    "matcha-mist": "#D4E8C0",
+                    matcha: "#3E8C46",
+                    "matcha-deep": "#2D4A2A",
+                    "matcha-bright": "#4A6B3A",
+                    "matcha-mist": "#D6EDD8",
                     latte: "#C28A5A",
                     "latte-deep": "#A06A3E",
                     "latte-bright": "#DBA87A",
                     gold: "#D4A84A",
                     "gold-bright": "#E8C86A",
-                    line: "#DDE6D0"
+                    line: "#DDE6D0",
+                    army: "#2D4A2A"
                 },
                 fontFamily: {
-                    display: ["Fredoka", "sans-serif"],
-                    body: ["Plus Jakarta Sans", "sans-serif"]
+                    display: ["Clash Display", "sans-serif"],
+                    body: ["Plus Jakarta Sans", "sans-serif"],
+                    mono: ["Roboto Mono", "monospace"]
                 }
             }
         }
@@ -46,51 +49,23 @@
 
 <style>
     * { -webkit-tap-highlight-color: transparent; }
-    html {
-        scroll-padding-top: 110px;
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    body {
-        background-color: #FFFFFF;
-        color: #1E2A1A;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-    }
-
-    h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
-
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
-    }
-
+    html { scroll-padding-top: 110px; overflow-x: hidden; width: 100%; }
+    body { background-color: #FFFFFF; color: #1E2A1A; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; width: 100%; position: relative; }
+    h1, h2, h3, .font-display { font-family: 'Clash Display', sans-serif; }
+    .font-mono { font-family: 'Roboto Mono', monospace; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24; }
     ::selection { background: #D4A84A; color: #FFFFFF; }
 
-    .container-px {
-        padding-left: clamp(20px, 6vw, 160px);
-        padding-right: clamp(20px, 6vw, 160px);
-    }
+    .container-px { padding-left: clamp(20px, 6vw, 160px); padding-right: clamp(20px, 6vw, 160px); }
     .container-wrap { max-width: 1680px; margin-left: auto; margin-right: auto; }
 
-    .eyebrow {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-weight: 700;
-        font-size: 11px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-    }
+    .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
 
     .clay-radius { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
     .clay-radius-alt { border-radius: 38% 62% 61% 39% / 55% 45% 55% 45%; }
     .clay-radius-sm { border-radius: 26px 54px 26px 54px; }
 
-    .blob-shape {
-        border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%;
-        animation: morph 12s ease-in-out infinite;
-    }
+    .blob-shape { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; animation: morph 12s ease-in-out infinite; }
     @keyframes morph {
         0%, 100% { border-radius: 58% 42% 39% 61% / 46% 36% 64% 54%; }
         50% { border-radius: 42% 58% 55% 45% / 55% 40% 60% 45%; }
@@ -99,19 +74,9 @@
     .ambient-shadow { box-shadow: 0 20px 50px -20px rgba(78, 122, 58, 0.20); }
     .ambient-shadow-sm { box-shadow: 0 10px 26px -14px rgba(78, 122, 58, 0.18); }
 
-    .cursor-glow {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: radial-gradient(500px circle at var(--cursor-x, 50%) var(--cursor-y, 30%), rgba(127, 176, 105, 0.15), transparent 60%);
-        transition: background 0.15s ease-out;
-    }
+    .cursor-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(500px circle at var(--cursor-x, 50%) var(--cursor-y, 30%), rgba(127, 176, 105, 0.15), transparent 60%); transition: background 0.15s ease-out; }
 
-    .reveal {
-        opacity: 0;
-        transform: translateY(26px);
-        transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
-    }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1); }
     .reveal.is-visible { opacity: 1; transform: none; }
     .reveal-delay-1.is-visible { transition-delay: .08s; }
     .reveal-delay-2.is-visible { transition-delay: .16s; }
@@ -122,54 +87,82 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .awards-slide { scroll-snap-align: start; }
     .awards-dot { width: 8px; height: 8px; border-radius: 9999px; background: #DDE6D0; transition: all 0.3s cubic-bezier(.16,1,.3,1); cursor: pointer; border: none; padding: 0; }
-    .awards-dot.is-active { width: 22px; background: #4E7A3A; }
+    .awards-dot.is-active { width: 22px; background: #2D4A2A; }
 
-    .word-reveal span {
+    .word-reveal > span {
         display: inline-block;
         opacity: 0;
         transform: translateY(0.4em) rotate(1.5deg);
+    }
+    .reveal.is-visible .word-reveal > span {
         animation: wordIn 0.85s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    .type-cycle-wrap {
+        display: inline-flex;
+        align-items: baseline;
+        margin: 0 2px;
+    }
+    .type-cycle {
+        color: #F0F5EA;
+        font-weight: 600;
     }
     @keyframes wordIn { to { opacity: 1; transform: translateY(0) rotate(0); } }
 
-    .underline-hover {
-        background-image: linear-gradient(currentColor, currentColor);
-        background-position: 0 100%;
-        background-repeat: no-repeat;
-        background-size: 0% 2px;
-        transition: background-size 0.35s cubic-bezier(.16,1,.3,1);
-    }
+    .underline-hover { background-image: linear-gradient(currentColor, currentColor); background-position: 0 100%; background-repeat: no-repeat; background-size: 0% 2px; transition: background-size 0.35s cubic-bezier(.16,1,.3,1); }
     .underline-hover:hover { background-size: 100% 2px; }
 
-    .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: marquee 32s linear infinite;
-    }
+    .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
     .marquee-track:hover { animation-play-state: paused; }
-    @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-    }
-    .marquee-mask {
-        overflow: hidden;
-        width: 100%;
-        max-width: 100%;
-        -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-        mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .ticker-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+    .ticker-track span.ticker-word { font-family: 'Clash Display', sans-serif; font-weight: 600; font-size: 20px; color: #F0F5EA; white-space: nowrap; }
+    .ticker-track span.ticker-sep { color: #8FC97A; font-size: 14px; }
+    @media (min-width: 640px) { .ticker-track span.ticker-word { font-size: 26px; } }
+    .marquee-mask { overflow: hidden; width: 100%; max-width: 100%; -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
 
     .img-reveal { clip-path: inset(0 0 0 0); }
     .img-reveal img { transition: transform 0.9s cubic-bezier(.16,1,.3,1); }
     .img-reveal:hover img { transform: scale(1.045); }
 
-    .timeline-line {
-        background: repeating-linear-gradient(to bottom, #C28A5A 0, #C28A5A 6px, transparent 6px, transparent 14px);
-        width: 2px;
+    .timeline-line { background: repeating-linear-gradient(to bottom, #C28A5A 0, #C28A5A 6px, transparent 6px, transparent 14px); width: 2px; }
+
+    .project-card-dark {
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+    }
+    .project-card-dark:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255,255,255,0.22);
+        background-color: rgba(255,255,255,0.06);
+        box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(74,107,58,0.15);
     }
 
+    .stack-slot {
+        position: relative;
+        display: inline-flex;
+        width: clamp(42px, 9vw, 130px);
+        height: clamp(20px, 4.2vw, 52px);
+        vertical-align: middle;
+        margin: 0 clamp(3px, 0.7vw, 10px) 2px;
+        top: -2px;
+    }
+
+    .stack-slot img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 3px solid #FFFFFF;
+        box-shadow: 0 10px 22px -8px rgba(45, 74, 42, 0.30);
+        transition: transform 1.1s cubic-bezier(.22,1,.36,1), opacity 1.1s cubic-bezier(.22,1,.36,1);
+        will-change: transform, opacity;
+    }
     .nav-link { position: relative; }
-    .nav-link.active { color: #4E7A3A; }
+    .nav-link { color: rgba(255, 255, 255, 0.7); transition: color 0.3s ease; }
+    .nav-link:hover { color: #FFFFFF; }
+    .nav-link.active { color: #FFFFFF; }
     .nav-link.active::after {
         content: "";
         position: absolute;
@@ -182,121 +175,559 @@
         transform: translateX(-50%);
     }
 
-    #mobile-menu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(.16,1,.3,1);
-    }
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(.16,1,.3,1); }
     #mobile-menu.open { max-height: 480px; }
 
     .btn-primary { transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, background-color 0.3s ease; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(78, 122, 58, 0.40); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(45, 74, 42, 0.40); }
     .btn-primary:active { transform: translateY(-1px) scale(0.98); }
 
     .btn-ghost { transition: transform 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease; }
     .btn-ghost:hover { transform: translateY(-3px); }
     .btn-ghost:active { transform: translateY(-1px) scale(0.98); }
 
-    .grain {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.025;
-        z-index: 1;
-        mix-blend-mode: multiply;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
+    .grain { position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 1; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
     .float-slow { animation: floaty 7s ease-in-out infinite; }
     .float-slow-rev { animation: floaty 8s ease-in-out infinite reverse; }
-    @keyframes floaty {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-12px) rotate(3deg); }
-    }
+    @keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(3deg); } }
+    .float-straight { animation: floatyStraight 6.5s ease-in-out infinite; }
+    @keyframes floatyStraight { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
     .skill-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease; }
-    .skill-chip:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 10px 22px -10px rgba(78, 122, 58, 0.25); }
+    .skill-chip:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 10px 22px -10px rgba(45, 74, 42, 0.25); }
 
     .cert-chip { transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease, background-color 0.3s ease; }
-    .cert-chip:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -12px rgba(78, 122, 58, 0.28); background-color: #F0F5EA; }
+    .cert-chip:hover { transform: translateY(-3px); box-shadow: 0 12px 24px -12px rgba(45, 74, 42, 0.28); background-color: #F0F5EA; }
 
-    .project-card {
-        transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    .project-card { transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease; }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px -16px rgba(45, 74, 42, 0.25); }
+
+    .tool-logo { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 6px; overflow: hidden; }
+    .tool-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .type-caret-name {
+        font-weight: 400;
+        opacity: 1;
     }
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 24px 48px -16px rgba(78, 122, 58, 0.25);
+    .type-caret-name.is-blinking {
+        animation: caretBlink 0.85s step-end infinite;
     }
 
-    .tool-logo {
-        width: 28px;
-        height: 28px;
+    .acc-item summary { cursor: pointer; list-style: none; }
+    .acc-item summary::-webkit-details-marker { display: none; }
+    .acc-item .acc-icon { transition: transform 0.35s cubic-bezier(.16,1,.3,1); }
+    .acc-item[open] .acc-icon { transform: rotate(45deg); }
+    .acc-item .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(.16,1,.3,1); }
+    .acc-item[open] .acc-body { grid-template-rows: 1fr; }
+    .acc-body > div { overflow: hidden; }
+    .faq-section {
+        position: relative;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at 12% 15%, rgba(127,176,105,0.22), transparent 45%),
+            radial-gradient(circle at 88% 20%, rgba(212,168,74,0.20), transparent 42%),
+            radial-gradient(circle at 50% 100%, rgba(45,74,42,0.14), transparent 55%),
+            #FAFFF5;
+    }
+
+    .faq-blob-1 {
+        position: absolute;
+        top: -12%; left: -10%;
+        width: 380px; height: 380px;
+        background: radial-gradient(circle, rgba(127,176,105,0.35), transparent 70%);
+        filter: blur(50px);
+        pointer-events: none;
+    }
+    .faq-blob-2 {
+        position: absolute;
+        bottom: -18%; right: -8%;
+        width: 420px; height: 420px;
+        background: radial-gradient(circle, rgba(74, 212, 76, 0.3), transparent 70%);
+        filter: blur(56px);
+        pointer-events: none;
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 1; }
+
+    .faq-item {
+        position: relative;
+        background: #FFFFFF;
+        border: 1px solid #DDE6D0;
+        border-radius: 8px 28px 28px 28px;
+        transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-radius 0.4s ease;
+    }
+    .faq-item:hover {
+        border-color: #B7D9AE;
+        box-shadow: 0 16px 32px -20px rgba(45,74,42,0.3);
+    }
+    .faq-item.is-open {
+        background: linear-gradient(155deg, #2D4A2A 0%, #1c2e1a 100%);
+        border-color: #2D4A2A;
+        border-radius: 28px 8px 28px 28px;
+        box-shadow: 0 22px 44px -18px rgba(45,74,42,0.4);
+    }
+
+    .faq-badge {
+        position: absolute;
+        top: -14px; left: 20px;
+        width: 44px; height: 44px;
+        border-radius: 9999px;
+        background: #D6EDD8;
+        color: #2D4A2A;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 8px 18px -8px rgba(45,74,42,0.35);
+        transform: rotate(-6deg);
+        transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), background-color 0.4s ease, color 0.4s ease;
+    }
+    .faq-item.is-open .faq-badge {
+        background: #1E2A1A;
+        color: #FFFFFF;
+        transform: rotate(0deg) scale(1.08);
+    }
+
+    .faq-summary {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 22px 20px 22px 76px;
+        font: inherit;
+    }
+
+    .faq-summary h3 { transition: color 0.4s ease; }
+    .faq-item.is-open .faq-summary h3 { color: #FFFFFF; }
+
+    .faq-chevron {
+        flex-shrink: 0;
+        width: 32px; height: 32px;
+        border-radius: 9999px;
+        background: #F0F5EA;
+        color: #2D4A2A;
+        display: flex; align-items: center; justify-content: center;
+        transition: transform 0.4s cubic-bezier(.16,1,.3,1), background-color 0.4s ease, color 0.4s ease;
+    }
+    .faq-item.is-open .faq-chevron {
+        transform: rotate(180deg);
+        background: rgba(255,255,255,0.12);
+        color: #FFFFFF;
+    }
+
+    .faq-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .faq-item.is-open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel > div { overflow: hidden; }
+
+    .faq-answer-box {
+        margin: 0 20px 20px 76px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+
+    .process-dot { width: 10px; height: 10px; border-radius: 9999px; background: #2D4A2A; }
+
+    .type-box { border: 2px dashed rgba(30,42,26,0.35); padding: 4px 18px 6px; margin: 0 3px; line-height: 1; opacity: 0; transform: scale(0.9); animation: typeBoxIn 0.5s cubic-bezier(.16,1,.3,1) 0.15s forwards; }
+    .type-box .corner { position: absolute; width: 7px; height: 7px; background: #1E2A1A; border-radius: 1px; opacity: 0; transform: scale(0); animation: cornerPop 0.35s cubic-bezier(.34,1.56,.64,1) forwards; }
+    .type-box .corner.tl { top: -4.5px; left: -4.5px; animation-delay: 0.55s; }
+    .type-box .corner.tr { top: -4.5px; right: -4.5px; animation-delay: 0.62s; }
+    .type-box .corner.bl { bottom: -4.5px; left: -4.5px; animation-delay: 0.69s; }
+    .type-box .corner.br { bottom: -4.5px; right: -4.5px; animation-delay: 0.76s; }
+    @keyframes typeBoxIn { to { opacity: 1; transform: scale(1); } }
+    @keyframes cornerPop { to { opacity: 1; transform: scale(1); } }
+    .type-caret {
+        font-weight: 400;
+        opacity: 1;
+    }
+    .type-caret.is-blinking {
+        animation: caretBlink 0.85s step-end infinite;
+    }
+    @keyframes caretBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .type-box .type-name {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+
+    .loc-tag {
+        position: absolute;
+        font-size: 0;
+        border: 1.5px dashed rgba(30, 42, 26, 0.35);
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        padding: 3px 9px 4px;
+        line-height: 1;
+        opacity: 0;
+        transform: scale(0.9);
+        animation: typeBoxIn 0.5s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
+    }
+
+    .loc-tag .corner {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: #1E2A1A;
+        border-radius: 1px;
+        opacity: 0;
+        transform: scale(0);
+        animation: cornerPop 0.35s cubic-bezier(.34, 1.56, .64, 1) forwards;
+    }
+
+    .loc-tag .corner.tl { top: -3.5px; left: -3.5px; animation-delay: 0.55s; }
+    .loc-tag .corner.tr { top: -3.5px; right: -3.5px; animation-delay: 0.62s; }
+    .loc-tag .corner.bl { bottom: -3.5px; left: -3.5px; animation-delay: 0.69s; }
+    .loc-tag .corner.br { bottom: -3.5px; right: -3.5px; animation-delay: 0.76s; }
+
+    .loc-tag .loc-text {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 10px;
+        font-weight: 600;
+        color: #1E2A1A;
+        letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 640px) {
+        .loc-tag .loc-text {
+            font-size: 11px;
+        }
+    }
+
+    .stabilo {
+        position: relative;
+        display: inline;
+        white-space: normal;
+        font-weight: 400;
+        color: inherit;
+        transition: font-weight 0.05s linear;
+    }
+    .stabilo::before {
+        content: "";
+        position: absolute;
+        left: -4px; right: -4px;
+        top: 0.03em; bottom: 0.03em;
+        background: #E8CE81;
+        border-radius: 4px;
+        transform: scaleX(0);
+        transform-origin: 0% center;
+        z-index: -1;
+        pointer-events: none;
+    }
+    .reveal.is-visible .stabilo::before {
+        animation: stabiloSweep 1.1s cubic-bezier(.65, 0, .35, 1) forwards;
+        animation-delay: 0.3s;
+    }
+    .reveal.is-visible .stabilo {
+        font-weight: 700;
+        transition-delay: 0.95s;
+    }
+    @keyframes stabiloSweep {
+        0%   { transform: scaleX(0); }
+        100% { transform: scaleX(1); }
+    }
+
+    .font-signature { font-family: 'Caveat', cursive; }
+
+    .about-tab-shape {
+        clip-path: polygon(0 0, 78% 0, 100% 22%, 100% 100%, 0 100%);
+        border-radius: 28px;
+    }
+
+    .stat-divider { align-items: center; gap: 4px; }
+    .stat-divider .dot { width: 9px; height: 9px; border-radius: 9999px; display: inline-block; }
+    .stat-divider .dot-ink { background: #1E2A1A; }
+    .stat-divider .dot-gold { background: #D4A84A; margin-left: -3px; }
+
+    .svc-wrap { position: relative; }
+    .svc-item {
+        position: relative;
+        background: #FFFFFF;
+        border: 1px solid #DDE6D0;
+        border-radius: 12px 40px 12px 40px;
+        transition: background-color 0.4s ease, border-color 0.4s ease, border-radius 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .svc-item.is-open {
+        background: #2D4A2A;
+        border-color: #2D4A2A;
+        border-radius: 12px 40px 12px 40px;
+    }
+
+    .svc-item.is-open .svc-title {
+        color: #FFFFFF;
+    }
+
+    .svc-num {
+        width: 44px;
+        height: 44px;
+        border: 0.5px solid rgba(30, 42, 26, 0.35);
+        border-radius: 9999px;
+        color: #D4A84A;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: transparent;
         flex-shrink: 0;
-        border-radius: 6px;
-        overflow: hidden;
-    }
-    .tool-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
+    .svc-item.is-open .svc-num {
+        border-color: rgba(255, 255, 255, 0.35);
+        color: #FFFFFF;
+    }
+
+    .svc-arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 9999px;
+        background: #2D4A2A;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(.16, 1, .3, 1);
+        flex-shrink: 0;
+    }
+    .svc-item.is-open .svc-arrow {
+        background: #FFFFFF;
+        color: #1E2A1A;
+        transform: rotate(90deg);
+    }
+
+    .svc-item.is-open .svc-arrow {
+        transform: rotate(90deg);
+    }
+
+    .svc-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.45s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .svc-item.is-open .svc-body {
+        grid-template-rows: 1fr;
+    }
+
+    .svc-body>div {
+        overflow: hidden;
+    }
+
+    .svc-tag {
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        background-color: rgba(255, 255, 255, 0.25);
+        color: #F0F5EA;
+        border-radius: 9999px;
+        padding: 6px 14px;
+        font-size: 10px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+    }
+
+    .svc-head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .about-chip {
+        position: absolute;
+        white-space: nowrap;
+        box-shadow: 0 10px 24px -10px rgba(45, 74, 42, 0.30);
+    }
+
+    .award-card {
+    position: relative;
+    border-radius: 28px;
+    padding: 22px;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(160deg, #2D4A2A 0%, #16221a 85%);
+    transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    }
+    .award-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 44px -18px rgba(0,0,0,0.5);
+    }
+
+    /* glow lembut, dikurung di dalam card (overflow:hidden di parent) */
+    .award-glow {
+        position: absolute;
+        top: -20%; left: 40%;
+        width: 70%; height: 70%;
+        background: radial-gradient(circle, rgba(127,176,105,0.18), transparent 70%);
+        filter: blur(24px);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .award-top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    /* logo kecil pojok kiri atas, bukan foto besar */
+    .award-logo {
+        width: 46px; height: 46px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
+        display: flex; align-items: center; justify-content: center;
+        padding: 8px;
+        flex-shrink: 0;
+    }
+    .award-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+    .award-year {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        color: #B7D9AE;
+        background: rgba(255,255,255,0.06);
+        padding: 4px 11px;
+        border-radius: 9999px;
+        border: 1px dashed rgba(183,217,174,0.35);
+        flex-shrink: 0;
+    }
+
+    .award-body { position: relative; z-index: 1; margin-top: 18px; }
+
+    /* tombol sertifikat: lingkaran nyantol di tepi kanan, separuh kepotong card */
+    .cert-btn {
+        position: absolute;
+        right: -24px;
+        top: 40%;
+        transform: translateY(-50%);
+        width: 52px; height: 52px;
+        border-radius: 9999px;
+        background: #F0F5EA;
+        color: #1E2A1A;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 10px 24px -6px rgba(0,0,0,0.4);
+        transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), background-color 0.3s ease;
+        z-index: 2;
+    }
+    .award-card:hover .cert-btn {
+        transform: translateY(-50%) scale(1.08);
+        background: #FFFFFF;
+    }
+
+    #awardsSlider { padding-top: 20px; padding-bottom: 20px; }
+
     @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-            animation-duration: 0.001ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.001ms !important;
-            scroll-behavior: auto !important;
-        }
+        *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
         .reveal { opacity: 1; transform: none; }
         .word-reveal span { opacity: 1; transform: none; }
+        .stabilo::before { transform: scaleX(1); }
+        .stabilo { font-weight: 700; }
     }
 
     :focus-visible { outline: 2px solid #C28A5A; outline-offset: 3px; border-radius: 6px; }
 
     .bg-warm-glow { background: radial-gradient(ellipse at 30% 40%, rgba(127,176,105,0.08), transparent 70%); }
     .bg-warm-glow-2 { background: radial-gradient(ellipse at 70% 60%, rgba(194,138,90,0.06), transparent 60%); }
+
+    .navbar-army {
+        background: #2D4A2A;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.45);
+    }
+
+    .workbench-card { transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease, border-color 0.28s ease; }
+    .workbench-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px -10px rgba(45,74,42,0.14), 0 4px 12px -2px rgba(0,0,0,0.04); }
+    .wb-pill { transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+    .wb-pill:hover { transform: translateY(-2px); }
+    :root { --slot-w: clamp(240px, 68vw, 380px); }
+
+    #projSliderTrack { scroll-padding-left: calc(50% - var(--slot-w)/2); scroll-padding-right: calc(50% - var(--slot-w)/2); }
+
+    .slide-card {
+        width: var(--slot-w);
+        scroll-snap-align: center;
+        transform: scale(0.82);
+        opacity: 0.4;
+        transition: transform 0.32s cubic-bezier(.22,1,.36,1), opacity 0.32s cubic-bezier(.22,1,.36,1), border-color 0.3s ease;
+        transform-origin: center;
+        will-change: transform, opacity;
+    }
+    .slide-card.is-center {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 10;
+    }
+    .no-snap-transition .slide-card {
+        transition: none !important;
+    }
+
+    .slide-nav-btn {
+        width: 44px; height: 44px;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 9999px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #F0F5EA;
+        transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+    .slide-nav-btn:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+
+    .slide-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(255,255,255,0.2); transition: all 0.25s cubic-bezier(.16,1,.3,1); cursor: pointer; border: none; padding: 0; }
+    .slide-dot.is-active { width: 22px; background: #E8C86A; }
 </style>
 </head>
 <body class="antialiased min-h-screen selection:bg-gold selection:text-cream">
 
 <div class="grain"></div>
 
-<!-- Floating Navigation -->
+<!-- Floating Navigation - Army Green -->
 <nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
-    <div class="flex items-center justify-between gap-4 sm:gap-8 bg-cream/88 backdrop-blur-xl border border-line shadow-[0_8px_30px_-12px_rgba(78,122,58,0.18)] rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
+    <div class="navbar-army flex items-center justify-between gap-4 sm:gap-8 rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
         <a class="flex items-center gap-2 shrink-0 pl-1" href="#home">
-            <span class="w-8 h-8 rounded-full bg-matcha-deep flex items-center justify-center" aria-hidden="true">
-                <span class="material-symbols-outlined text-cream text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
+            <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center" aria-hidden="true">
+                <span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
             </span>
-            <span class="font-display text-[17px] font-semibold text-matcha-deep tracking-tight">Indah</span>
+            <span class="font-display text-[17px] font-semibold text-white tracking-tight">Indah</span>
         </a>
 
-        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium text-ink-soft">
-            <a class="nav-link active hover:text-matcha-deep transition-colors" data-nav href="#home">Home</a>
-            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="project.html">Project</a>
-            <a class="nav-link hover:text-matcha-deep transition-colors" data-nav href="journey.html">Journey</a>
+        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium">
+            <a class="nav-link active" data-nav href="#home">Home</a>
+            <a class="nav-link" data-nav href="project.html">Project</a>
+            <a class="nav-link" data-nav href="journey.html">Journey</a>
         </div>
 
-        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold btn-primary" href="#contact">
+        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-army font-body text-[13px] font-semibold btn-primary" href="#contact">
             Say Hello
             <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
         </a>
 
-        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-matcha-deep p-2 rounded-full hover:bg-paper" id="menu-btn">
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-white p-2 rounded-full hover:bg-white/10" id="menu-btn">
             <span class="material-symbols-outlined" id="menu-icon">menu</span>
         </button>
     </div>
 
-    <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
+    <div class="md:hidden mt-2 bg-army/95 backdrop-blur-xl border border-white/10 shadow-lg rounded-3xl" id="mobile-menu">
         <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
-            <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="#home">Home</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="project.html">Project</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="journey.html">Journey</a>
-            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="#contact">Say Hello</a>
+            <a class="text-white font-semibold px-3 py-3 rounded-2xl bg-white/10" href="#home">Home</a>
+            <a class="text-white/70 px-3 py-3 rounded-2xl hover:bg-white/10" href="project.html">Project</a>
+            <a class="text-white/70 px-3 py-3 rounded-2xl hover:bg-white/10" href="journey.html">Journey</a>
+            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-army font-semibold" href="#contact">Say Hello</a>
         </div>
     </div>
 </nav>
@@ -304,302 +735,672 @@
 <main>
 
     <!-- ============ HERO ============ -->
-    <section class="relative container-wrap container-px pt-[148px] sm:pt-[166px] pb-16 sm:pb-24 overflow-hidden" id="home">
+    <section class="relative pt-[150px] sm:pt-[168px] overflow-hidden bg-paper" id="home">
         <div class="absolute inset-0 bg-warm-glow pointer-events-none"></div>
         <div class="absolute inset-0 bg-warm-glow-2 pointer-events-none"></div>
         <div class="cursor-glow hidden md:block" id="cursorGlow"></div>
 
-        <span aria-hidden="true" class="hidden lg:block absolute top-[170px] left-[2%] w-2.5 h-2.5 rounded-full bg-latte/50 float-slow"></span>
-        <span aria-hidden="true" class="hidden lg:block absolute top-[380px] left-[0%] w-1.5 h-1.5 rounded-full bg-matcha/50 float-slow-rev"></span>
-        <span aria-hidden="true" class="hidden lg:block absolute top-[110px] right-[4%] w-1.5 h-1.5 rounded-full bg-gold/60 float-slow"></span>
+        <div class="container-wrap container-px pb-16 sm:pb-20">
 
-        <div class="reveal is-visible flex flex-wrap items-center gap-3 mb-7">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-paper border border-line text-ink-soft eyebrow">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-matcha opacity-60"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-matcha"></span>
+            <div class="reveal is-visible flex justify-center mb-6">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream border border-line text-ink eyebrow shadow-sm">
+                    <span class="w-4 h-4 rounded-full bg-matcha-deep flex items-center justify-center">
+                        <span class="material-symbols-outlined text-cream text-[11px]" style="font-variation-settings:'FILL' 1;">waving_hand</span>
+                    </span>
+                    A LITTLE INTRODUCTION
                 </span>
-                Open to front-end &amp; UI/UX roles
-            </span>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-8 items-center relative">
-            <div class="relative z-10">
-                <h1 class="word-reveal font-display text-[42px] sm:text-[48px] md:text-[56px] leading-[1.05] tracking-[-0.01em] text-ink font-semibold">
-                    <span style="animation-delay:.05s">Interfaces</span> <span style="animation-delay:.15s">that</span><br>
-                    <span class="text-matcha-deep" style="animation-delay:.25s">feel</span> <span class="relative inline-block text-latte" style="animation-delay:.35s">warm<svg aria-hidden="true" class="absolute -bottom-1.5 left-0 w-full" height="8" viewBox="0 0 200 10" xmlns="http://www.w3.org/2000/svg"><path d="M2 7 Q 50 -2 100 6 T 198 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"/></svg></span><span style="animation-delay:.4s">,</span><br>
-                    <span style="animation-delay:.5s">built</span> <span style="animation-delay:.6s">with</span> <span style="animation-delay:.7s">care.</span>
-                </h1>
-
-                <p class="reveal reveal-delay-2 is-visible font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed max-w-md mt-6">
-                    I’m <span class="text-ink font-semibold"> Nur Indah Chasanah, </span> UI/UX designer and front-end developer who enjoys turning ideas into simple, functional, and thoughtful digital experiences.
-                </p>
-
-                <div class="reveal reveal-delay-3 is-visible flex flex-wrap items-center gap-4 mt-8">
-                    <a class="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="project.html">
-                        View my work
-                        <span class="material-symbols-outlined text-[18px]">north_east</span>
-                    </a>
-                    <a
-                    href="https://drive.google.com/file/d/1HLVqcK7W2mEVbncC1lnlcGnXAaMm3t3R/view?usp=sharing"
-                    target="_blank"
-                    class="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink/15 text-ink font-body text-[14px] font-semibold hover:bg-paper"
-                    >
-                        Download CV
-                        <span class="material-symbols-outlined text-[18px]">download</span>
-                    </a>
-                </div>
-
-                <div class="reveal reveal-delay-4 is-visible flex flex-wrap items-center gap-x-6 gap-y-2 mt-11 eyebrow text-ink-soft/75">
-                    <span>Creative</span>
-                    <span class="w-1 h-1 rounded-full bg-ink-soft/40"></span>
-                    <span>Curious</span>
-                    <span class="w-1 h-1 rounded-full bg-ink-soft/40"></span>
-                    <span>Responsible</span>
-                </div>
             </div>
 
-            <div class="reveal reveal-delay-2 is-visible relative flex justify-center items-center mt-4 lg:mt-0">
-                <div class="absolute w-[105%] h-[105%] bg-matcha-mist/40 blob-shape blur-3xl -z-10"></div>
-                <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[180px] h-[230px] xs:w-[220px] xs:h-[280px] sm:w-[280px] sm:h-[360px]">
-                    <img alt="Illustration of Nur Indah at her desk" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
+            <div class="reveal reveal-delay-1 is-visible relative flex items-center justify-center text-center">
+                <h1 class="font-display text-[38px] sm:text-[52px] md:text-[62px] leading-[1.05] tracking-[-0.01em] text-ink font-semibold">
+                    I'm <span class="type-box relative inline-flex items-center align-middle">
+                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                        <span class="type-name text-matcha-deep" id="typedName"></span><span class="type-caret text-matcha-deep">|</span>
+                    </span>
+                </h1>
+            </div>
+
+            <p class="reveal reveal-delay-1 is-visible text-center font-body text-[15px] sm:text-[16px] text-ink-soft mt-3">
+                I design with curiosity, build with intention, and care about the details in between.
+            </p>
+
+            <div class="reveal reveal-delay-2 is-visible relative grid grid-cols-1 lg:grid-cols-[0.85fr_1.3fr_0.85fr] gap-8 lg:gap-4 items-center mt-10">
+
+                <div class="flex flex-col items-center text-center lg:items-start lg:text-left gap-4 lg:pl-2 order-2 lg:order-1">
+                    <p class="eyebrow text-ink-soft">Follow Me On</p>
+                    <div class="flex items-center gap-2.5">
+                        <a href="https://www.linkedin.com/in/indahchs/" target="_blank" class="w-10 h-10 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-matcha-deep transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">work</span>
+                        </a>
+                        <a href="https://github.com/indahchs" target="_blank" class="w-10 h-10 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-matcha-deep transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">code</span>
+                        </a>
+                        <a href="https://www.behance.net/indahchs" target="_blank" class="w-10 h-10 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-matcha-deep transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">palette</span>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-3 mt-12">
+                        <div class="flex items-center -space-x-2">
+                            <span class="w-6 h-6 rounded-full bg-matcha-mist border-2 border-paper flex items-center justify-center"><span class="material-symbols-outlined text-matcha-deep text-[13px]">emoji_events</span></span>
+                            <span class="w-6 h-6 rounded-full bg-matcha-deep border-2 border-paper flex items-center justify-center"><span class="material-symbols-outlined text-white text-[13px]">emoji_events</span></span>
+                            <span class="w-6 h-6 rounded-full bg-matcha-mist border-2 border-paper flex items-center justify-center"><span class="material-symbols-outlined text-matcha-deep text-[13px]">emoji_events</span></span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-display text-[18px] text-matcha-deep font-semibold">3x Competition Winner</p>
+                        <p class="font-body text-[13px] text-ink-soft">1st &amp; 3rd place, national UI/UX contests</p>
+                    </div>
                 </div>
-                <div class="absolute -top-3 right-0 sm:right-2 float-slow bg-cream px-3 py-2 sm:px-4 sm:py-2.5 rounded-full ambient-shadow-sm border border-line flex items-center gap-1.5 sm:gap-2 max-w-[46%] sm:max-w-none">
-                    <span class="material-symbols-outlined text-latte text-[16px] sm:text-[20px] shrink-0" style="font-variation-settings:'FILL' 1;">local_cafe</span>
-                    <span class="eyebrow text-ink-soft text-[9px] sm:text-[11px] whitespace-nowrap">matcha &amp; code</span>
+
+                <div class="relative flex justify-center items-center order-1 lg:order-2">
+                    <div class="absolute w-[110%] h-[110%] bg-matcha-mist/50 blob-shape blur-3xl -z-10"></div>
+                    <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[220px] h-[280px] sm:w-[280px] sm:h-[360px] md:w-[320px] md:h-[400px]">
+                        <img alt="Illustration of Nur Indah" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
+                    </div>
+
+                    <span aria-hidden="true" class="absolute top-3 left-1 sm:-left-3 float-slow w-9 h-9 rounded-full bg-matcha-bright flex items-center justify-center ambient-shadow-sm">
+                        <span class="material-symbols-outlined text-cream text-[18px]" style="font-variation-settings:'FILL' 1;">spa</span>
+                    </span>
+                    <span aria-hidden="true" class="absolute bottom-6 -right-3 sm:-right-6 float-slow-rev w-3.5 h-3.5 rounded-full bg-gold"></span>
+                    <span aria-hidden="true" class="absolute top-1/3 -right-4 sm:-right-8 float-slow w-6 h-6 rounded-full border-2 border-gold/60"></span>
+                    <span aria-hidden="true" class="absolute bottom-10 left-0 sm:-left-6 float-slow-rev text-gold text-[22px] font-display">✦</span>
+                    <span aria-hidden="true" class="absolute top-6 right-2 sm:right-6 float-slow w-2 h-2 rounded-full bg-matcha-deep"></span>
                 </div>
-                <div class="absolute -bottom-4 left-0 sm:left-2 float-slow-rev bg-matcha-deep text-cream px-3 py-2 sm:px-4 sm:py-2.5 rounded-full ambient-shadow-sm flex items-center gap-1.5 sm:gap-2 max-w-[46%] sm:max-w-none">
-                    <span class="material-symbols-outlined text-[14px] sm:text-[18px] shrink-0" style="font-variation-settings:'FILL' 1;">palette</span>
-                    <span class="eyebrow text-[9px] sm:text-[11px] whitespace-nowrap">Figma → code</span>
+
+                <div class="flex flex-col items-center text-center lg:items-end lg:text-right gap-2 lg:pr-2 order-3">
+                    <p class="eyebrow text-ink-soft/60">Skilled in</p>
+                    <p class="font-display text-[24px] sm:text-[26px] leading-[1.3] font-semibold max-w-[220px] h-[34px] overflow-hidden relative">
+                        <span id="skillCycle" class="text-matcha-deep inline-block">UI/UX Design</span>
+                    </p>
+
+                    <div class="flex flex-col gap-2.5 items-end mt-20">
+                        <div class="flex items-center gap-2.5">
+                            <span class="bg-ink text-cream px-4 py-2 rounded-full eyebrow text-[11px] normal-case font-semibold whitespace-nowrap">Prototype</span>
+                            <span class="bg-matcha-deep text-cream px-4 py-2 rounded-full eyebrow text-[11px] normal-case font-semibold whitespace-nowrap">Dashboard</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <span class="bg-matcha-deep text-cream px-4 py-2 rounded-full eyebrow text-[11px] normal-case font-semibold whitespace-nowrap">Design System</span>
+                            <span class="bg-cream border border-line text-ink px-4 py-2 rounded-full eyebrow text-[11px] normal-case font-semibold whitespace-nowrap">Website</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-cream border border-line text-ink px-4 py-2 rounded-full eyebrow text-[11px] normal-case font-semibold whitespace-nowrap">Mobile App Design</span>
+                            <span class="w-7 h-7 rounded-full bg-ink text-paper flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-[14px] leading-none">add</span>
+                            </span>                        
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="reveal reveal-delay-3 flex justify-center mt-10">
+                <div class="inline-flex items-center gap-1 p-1.5 rounded-full border border-ink/15 bg-cream">
+                    <a class="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="#work">
+                        Portfolio
+                        <span class="w-6 h-6 rounded-full bg-cream/20 flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">arrow_forward</span></span>
+                    </a>
+                    <a href="#contact" class="btn-ghost inline-flex items-center px-6 py-3 rounded-full text-ink font-body text-[14px] font-semibold hover:bg-white">
+                        Hire Me
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative bg-ink py-4 sm:py-5 overflow-hidden mt-4">
+            <div class="marquee-mask">
+                <div class="ticker-track flex items-center" id="tickerTrack"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="py-14 sm:py-20 bg-paper/50 border-y border-line" id="services">
+        <div class="container-wrap container-px">
+            <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
+                <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold max-w-lg">
+                    How I bring <span class="text-matcha-deep">ideas to life</span>
+                </h2>
+            </div>
+
+            <div class="reveal reveal-delay-1 flex flex-col gap-3" id="svcList">
+
+                <div class="svc-item" data-svc="1">
+                    <div class="svc-head flex items-center gap-4 px-5 sm:px-6 py-4">
+                        <span class="svc-num font-mono text-[13px] font-semibold">01.</span>
+                        <h3 class="svc-title font-display text-[18px] sm:text-[20px] text-ink font-semibold flex-1 transition-colors duration-300">UI/UX Design</h3>
+                        <span class="svc-arrow"><span class="material-symbols-outlined text-[20px]">arrow_outward</span></span>
+                    </div>
+                    <div class="svc-body px-5 sm:px-6">
+                        <div>
+                            <div class="pt-1 pb-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="svc-tag">User Research</span>
+                                    <span class="svc-tag">Wireframing</span>
+                                    <span class="svc-tag">Interactive Prototypes</span>
+                                </div>
+                                <p class="font-body text-[13.5px] text-cream/80 leading-relaxed max-w-lg">Conducted user research, created wireframes and Figma prototypes, then refined the designs through usability testing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-item" data-svc="2">
+                    <div class="svc-head flex items-center gap-4 px-5 sm:px-6 py-4">
+                        <span class="svc-num font-mono text-[13px] font-semibold">02.</span>
+                        <h3 class="svc-title font-display text-[18px] sm:text-[20px] text-ink font-semibold flex-1 transition-colors duration-300">Front-End Development</h3>
+                        <span class="svc-arrow"><span class="material-symbols-outlined text-[20px]">arrow_outward</span></span>
+                    </div>
+                    <div class="svc-body px-5 sm:px-6">
+                        <div>
+                            <div class="pt-1 pb-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="svc-tag">Vue.js</span>
+                                    <span class="svc-tag">Laravel</span>
+                                    <span class="svc-tag">Tailwind CSS</span>
+                                </div>
+                                <p class="font-body text-[13.5px] text-cream/80 leading-relaxed max-w-lg">Turning designs into responsive, working interfaces with Vue.js, Laravel, and Tailwind CSS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-item" data-svc="3">
+                    <div class="svc-head flex items-center gap-4 px-5 sm:px-6 py-4">
+                        <span class="svc-num font-mono text-[13px] font-semibold">03.</span>
+                        <h3 class="svc-title font-display text-[18px] sm:text-[20px] text-ink font-semibold flex-1 transition-colors duration-300">Web &amp; Dashboard Design</h3>
+                        <span class="svc-arrow"><span class="material-symbols-outlined text-[20px]">arrow_outward</span></span>
+                    </div>
+                    <div class="svc-body px-5 sm:px-6">
+                        <div>
+                            <div class="pt-1 pb-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="svc-tag">Internal Tools</span>
+                                    <span class="svc-tag">Data Dashboards</span>
+                                </div>
+                                <p class="font-body text-[13.5px] text-cream/80 leading-relaxed max-w-lg">Designing internal tools and dashboards that keep workflows clear, organized, and easy to use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-item" data-svc="4">
+                    <div class="svc-head flex items-center gap-4 px-5 sm:px-6 py-4">
+                        <span class="svc-num font-mono text-[13px] font-semibold">04.</span>
+                        <h3 class="svc-title font-display text-[18px] sm:text-[20px] text-ink font-semibold flex-1 transition-colors duration-300">Mobile App Design</h3>
+                        <span class="svc-arrow"><span class="material-symbols-outlined text-[20px]">arrow_outward</span></span>
+                    </div>
+                    <div class="svc-body px-5 sm:px-6">
+                        <div>
+                            <div class="pt-1 pb-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="svc-tag">Onboarding Flows</span>
+                                    <span class="svc-tag">Screen Design</span>
+                                </div>
+                                <p class="font-body text-[13.5px] text-cream/80 leading-relaxed max-w-lg">Mobile-first flows and screens for app concepts, from onboarding through daily-use states.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="svc-item" data-svc="5">
+                    <div class="svc-head flex items-center gap-4 px-5 sm:px-6 py-4">
+                        <span class="svc-num font-mono text-[13px] font-semibold">05.</span>
+                        <h3 class="svc-title font-display text-[18px] sm:text-[20px] text-ink font-semibold flex-1 transition-colors duration-300">Wireframing &amp; Prototyping</h3>
+                        <span class="svc-arrow"><span class="material-symbols-outlined text-[20px]">arrow_outward</span></span>
+                    </div>
+                    <div class="svc-body px-5 sm:px-6">
+                        <div>
+                            <div class="pt-1 pb-5">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="svc-tag">Low-Fi Sketches</span>
+                                    <span class="svc-tag">Clickable Prototypes</span>
+                                </div>
+                                <p class="font-body text-[13.5px] text-cream/80 leading-relaxed max-w-lg">Low-fidelity sketches through to clickable hi-fi prototypes, so ideas can be tested before a line of code is written.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
     <section class="container-wrap container-px py-14 sm:py-20" id="about">
-        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
-            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
-                A bit <span class="text-matcha-deep">about</span> me
-            </h2>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-16 items-center">
 
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-6 lg:gap-8 items-start">
-            <div class="reveal reveal-delay-1 relative bg-paper rounded-[2.25rem] p-7 sm:p-9 border border-line">
-                <span aria-hidden="true" class="material-symbols-outlined absolute -top-5 -left-4 text-latte/30 text-[46px] rotate-[-12deg]" style="font-variation-settings:'FILL' 1;">format_quote</span>
-                <p class="font-display text-[20px] sm:text-[24px] leading-[1.4] text-ink font-medium">
-                    Good design is a lot like whisking the perfect bowl of matcha,
-                    <span class="text-matcha-deep"> it takes patience, attention, and a bit of care</span> to get that smooth, balanced result.
-                </p>
-                <p class="font-body text-[15px] text-ink-soft leading-relaxed mt-6">
-                    I'm a fresh graduate in Software Engineering who specializes in user-centered UI/UX design and front-end development, turning research and wireframes into interfaces that feel calm, clean, and easy to use.
-                </p>
-
-                <div class="flex flex-wrap gap-2 mt-7">
-                    <span class="px-3.5 py-1.5 rounded-full bg-cream border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🍵 certified matcha enthusiast</span>
-                    <span class="px-3.5 py-1.5 rounded-full bg-cream border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🎶 Powered by Music</span>
-                </div>
+            <div class="reveal reveal-delay-1 relative flex justify-center lg:justify-start">
+                <div class="absolute w-[88%] h-[92%] top-2 left-2 sm:left-6 bg-matcha-deep about-tab-shape -z-10 rounded-tl-[24px] rounded-tr-[300px] rounded-br-[24px] rounded-bl-[300px]"></div>
+                <span aria-hidden="true" class="absolute -top-3 -right-1 sm:right-6 float-slow text-gold text-[26px] font-display">✦</span>
+                <img alt="Nur Indah Chasanah, UI/UX designer and front-end developer" class="w-full max-w-[300px] sm:max-w-[360px] h-auto drop-shadow-[0_20px_45px_rgba(45,74,42,0.22)]" src="img/me.png">
             </div>
 
-            <div class="grid grid-cols-2 gap-4 sm:gap-5">
-                <div class="reveal reveal-delay-2 clay-radius-sm bg-matcha-deep text-cream p-5 sm:p-6 flex flex-col justify-between min-h-[130px] sm:min-h-[140px] ambient-shadow-sm">
-                    <span class="material-symbols-outlined text-[22px] sm:text-[24px]">design_services</span>
-                    <div>
-                        <p class="font-display text-[24px] sm:text-[28px] leading-none font-semibold">01</p>
-                        <p class="font-body text-[11.5px] sm:text-[12.5px] mt-1 opacity-90"><span class="font-semibold">UI/UX Design </span><br> Research to prototype</p>
-                    </div>
+            <div class="reveal reveal-delay-2 flex flex-col gap-6">
+                <p class="font-body text-[20px] sm:text-[24px] text-ink-soft/60 font-medium">Hello, I am</p>
+
+                <h2 class="relative inline-block w-fit mb-2 sm:mb-3 font-display text-[36px] sm:text-[48px] md:text-[54px] leading-[1.02] tracking-[-0.01em] text-ink font-bold">
+                    Nur Indah Chasanah
+                    <span class="loc-tag" style="bottom:-4px; right:0;">
+                        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                        <span class="font-mono text-[12px] sm:text-[13px] font-semibold text-ink">Jakarta</span>
+                    </span>
+                </h2>
+
+                <p class="font-body text-[15px] sm:text-[16px] text-ink-soft leading-relaxed max-w-md">
+                    I'm Nur Indah, a fresh graduate in Software Engineering who designs and builds calm, considered interfaces. I design the way you'd whisk the perfect bowl of matcha, it takes
+                    <span class="stabilo text-ink">patience, attention, and a bit of care</span>
+                    to get that smooth, balanced result.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3.5 py-1.5 rounded-full bg-paper border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🍵 certified matcha enthusiast</span>
+                    <span class="px-3.5 py-1.5 rounded-full bg-paper border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🐱 cat person</span>
+                    <span class="px-3.5 py-1.5 rounded-full bg-paper border border-line eyebrow text-ink-soft normal-case tracking-normal font-semibold">🎶 powered by music</span>
                 </div>
-                <div class="reveal reveal-delay-3 clay-radius-sm bg-latte text-cream p-5 sm:p-6 flex flex-col justify-between min-h-[130px] sm:min-h-[140px] ambient-shadow-sm">
-                    <span class="material-symbols-outlined text-[22px] sm:text-[24px]">code_blocks</span>
-                    <div>
-                        <p class="font-display text-[24px] sm:text-[28px] leading-none font-semibold">02</p>
-                        <p class="font-body text-[11.5px] sm:text-[12.5px] mt-1 opacity-90"><span class="font-semibold">Front-End Developer</span> <br> Vue.Js, Laravel</p>
-                    </div>
+
+                <div class="flex items-center gap-5 mt-2">
+                    <a class="btn-primary inline-flex items-center gap-2 pl-6 pr-2 py-2 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="https://drive.google.com/file/d/1HLVqcK7W2mEVbncC1lnlcGnXAaMm3t3R/view?usp=sharing" target="_blank" rel="noopener">
+                        Download CV
+                        <span class="w-9 h-9 rounded-full bg-cream text-matcha-deep flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">north_east</span></span>
+                    </a>
                 </div>
-                <div class="reveal reveal-delay-2 col-span-2 bg-paper border border-line rounded-[1.75rem] p-5 sm:p-6 grid grid-cols-3 gap-2 sm:flex sm:items-center sm:justify-between sm:gap-3">
-                    <div class="text-center sm:text-left">
-                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">15+</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">UI/UX projects designed</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-9 bg-line shrink-0"></div>
-                    <div class="text-center sm:text-left border-x sm:border-x-0 border-line px-2 sm:px-0">
-                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">80+</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">web & mobile screens designed</p>
-                    </div>
-                    <div class="hidden sm:block w-px h-9 bg-line shrink-0"></div>
-                    <div class="text-center sm:text-left">
-                        <p class="font-display text-[20px] sm:text-[24px] text-ink leading-none">2</p>
-                        <p class="eyebrow text-ink-soft/70 mt-1.5 normal-case font-semibold text-[10px] sm:text-[11px] leading-tight">internship experiences</p>
-                    </div>
+            </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-6 mt-14 sm:mt-16">
+            <div class="text-left">
+                <p class="font-display text-[30px] sm:text-[36px] text-ink leading-none">15+</p>
+                <p class="font-body text-[13px] text-ink-soft mt-1.5">UI/UX projects designed</p>
+            </div>
+            <span aria-hidden="true" class="stat-divider hidden sm:flex"><span class="dot dot-ink"></span><span class="dot dot-gold"></span></span>
+            <div class="text-left">
+                <p class="font-display text-[30px] sm:text-[36px] text-ink leading-none">80+</p>
+                <p class="font-body text-[13px] text-ink-soft mt-1.5">web &amp; mobile screens designed</p>
+            </div>
+            <span aria-hidden="true" class="stat-divider hidden sm:flex"><span class="dot dot-ink"></span><span class="dot dot-gold"></span></span>
+            <div class="text-left">
+                <p class="font-display text-[30px] sm:text-[36px] text-ink leading-none">2</p>
+                <p class="font-body text-[13px] text-ink-soft mt-1.5">internship experiences</p>
+            </div>
+            <span aria-hidden="true" class="stat-divider hidden sm:flex"><span class="dot dot-ink"></span><span class="dot dot-gold"></span></span>
+            <div class="text-left">
+                <p class="font-display text-[30px] sm:text-[36px] text-ink leading-none">4+</p>
+                <p class="font-body text-[13px] text-ink-soft mt-1.5">Design tools used</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TOOLKIT TICKER (SKILLS SOFTWARE) ============ -->
+    <section class="relative bg-ink overflow-hidden flex items-center" id="toolkit-ticker">
+        <div class="reveal container-wrap container-px w-full flex items-center justify-center gap-6 sm:gap-10 py-4 sm:py-5 min-h-[52px] sm:min-h-[64px]">
+            <!-- Teks: relative top-[-1px] sedikit menaikkan posisi agar pas center -->
+            <h2 class="relative top-[-10px] font-display text-[20px] sm:text-[20px] leading-[1] text-cream font-semibold shrink-0 whitespace-pre-line text-center sm:text-left">
+                Software <br>Skills
+            </h2>
+            
+            <div class="relative flex-1 min-w-0 h-full flex items-center">
+                <div class="marquee-mask w-full">
+                    <!-- Ukuran logo disamakan dengan tinggi padding di Hero -->
+                    <div class="marquee-track flex items-center gap-3 sm:gap-4" id="toolkitLogoTrack"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
-    <section class="py-14 sm:py-20 bg-paper/70 border-y border-line" id="skills">
+    <!-- ============ WORKBENCH SKILLS GRID ============ -->
+    <section class="py-14 sm:py-20 bg-white border-y border-line" id="skills">
         <div class="container-wrap container-px">
+
             <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
-                <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
-                    My <span class="text-matcha-deep">toolkit</span>
+                <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold max-w-lg">
+                    My <span class="text-matcha-deep">toolkit</span> &amp; stack
                 </h2>
             </div>
-        </div>
 
-        <div class="marquee-mask mb-10 sm:mb-14">
-            <div class="marquee-track" id="marqueeTrack"></div>
-        </div>
+            <div class="reveal reveal-delay-1 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-        <div class="container-wrap container-px grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div class="reveal reveal-delay-1 bg-cream rounded-[1.75rem] border border-line p-7 shadow-sm">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="w-11 h-11 rounded-full bg-matcha/15 text-matcha-deep flex items-center justify-center"><span class="material-symbols-outlined">terminal</span></span>
-                    <h3 class="font-display text-[18px] text-ink font-medium">Languages</h3>
+                <!-- Column 1: Design & Prototyping -->
+                <article class="lg:col-span-4 workbench-card bg-matcha-deep text-cream rounded-[1.75rem] p-7 sm:p-8 shadow-sm flex flex-col justify-between relative overflow-hidden min-h-[560px]">
+                    <div class="absolute -right-16 -bottom-16 w-56 h-56 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div>
+                        <div class="flex items-center gap-3 pb-6 border-b border-white/10">
+                            <div class="w-11 h-11 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10">
+                                <span class="material-symbols-outlined text-white text-[20px]">palette</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-[18px] font-semibold text-cream">Design &amp; Prototyping</h3>
+                            </div>
+                        </div>
+
+                        <p class="font-body text-[12.5px] text-cream/70 mt-4 leading-relaxed">From exploratory wireframes to high-fidelity design systems, and usability testing that closes the loop.</p>
+
+                        <div class="mt-6 p-4 rounded-2xl bg-white/[0.07] border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 38 57">
+                                        <path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"></path>
+                                        <path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"></path>
+                                        <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"></path>
+                                        <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"></path>
+                                        <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-body font-bold text-[13px] text-cream flex items-center gap-1.5">
+                                        Figma
+                                        <span class="font-mono text-[9px] bg-matcha-deep text-white font-bold px-1.5 py-0.5 rounded">Primary</span>
+                                    </h4>
+                                    <p class="font-body text-[11px] text-cream/70">Design systems &amp; prototyping</p>
+                                </div>
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap gap-1.5 font-mono text-[10px] text-white/90">
+                                <span class="bg-black/20 px-2 py-0.5 rounded-full">Auto-layout</span>
+                                <span class="bg-black/20 px-2 py-0.5 rounded-full">Design Tokens</span>
+                                <span class="bg-black/20 px-2 py-0.5 rounded-full">Components</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-2.5">
+                            <div class="wb-pill p-3 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.09]">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-original.svg" alt="Adobe XD" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[12px] font-semibold text-cream">Adobe XD</span>
+                                </div>
+                                <p class="font-body text-[10px] text-cream/60">Wireframing</p>
+                            </div>
+                            <div class="wb-pill p-3 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.09]">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <!-- Logo Illustrator dari Wikimedia (hitam oranye) -->
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Illustrator" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[12px] font-semibold text-cream">Illustrator</span>
+                                </div>
+                                <p class="font-body text-[10px] text-cream/60">Vector assets</p>
+                            </div>
+                            <div class="wb-pill p-3 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.09]">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="w-6 h-6 rounded bg-white flex items-center justify-center shrink-0">
+                                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/maze.svg" alt="Maze" class="w-4 h-4 object-contain" />
+                                    </span>
+                                    <span class="font-body text-[12px] font-semibold text-cream">Maze</span>
+                                </div>
+                                <p class="font-body text-[10px] text-cream/60">User testing</p>
+                            </div>
+                            <div class="wb-pill p-3 rounded-2xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.09]">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[12px] font-semibold text-cream">Canva</span>
+                                </div>
+                                <p class="font-body text-[10px] text-cream/60">Rapid pitching</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-white/10">
+                        <div class="font-Plus Jakarta Sans text-[10px] font-bold text-white/90 tracking-wide mb-2 uppercase">Workflow alignment</div>
+                        <div class="flex items-center justify-between font-body text-[11px] text-cream/80 bg-black/20 p-2.5 rounded-xl">
+                            <span class="inline-flex items-center gap-1.5">Design systems</span>
+                            <span class="text-cream/40">→</span>
+                            <span>Hand-off</span>
+                            <span class="text-cream/40">→</span>
+                            <span>Testing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Column 2: Languages + Build & Dev Tools -->
+                <div class="lg:col-span-4 flex flex-col gap-6">
+
+                    <article class="workbench-card bg-cream rounded-[1.75rem] border border-line p-6 sm:p-7 shadow-sm">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 rounded-2xl bg-matcha-mist text-matcha-deep flex items-center justify-center">
+                                <span class="material-symbols-outlined text-[20px]">terminal</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-[17px] text-ink font-semibold">Languages</h3>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="wb-pill flex items-center justify-between p-2.5 rounded-xl bg-matcha-mist/40 border border-line hover:bg-matcha-mist/70">
+                                <div class="flex items-center gap-2.5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[13px] font-semibold text-ink">TypeScript</span>
+                                </div>
+                                <span class="font-mono text-[10px] font-semibold text-matcha-deep bg-matcha-mist px-2 py-0.5 rounded">Daily</span>
+                            </div>
+                            <div class="wb-pill flex items-center justify-between p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/40">
+                                <div class="flex items-center gap-2.5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[13px] font-semibold text-ink">JavaScript</span>
+                                </div>
+                                <span class="font-mono text-[10px] font-medium text-ink-soft bg-paper-deep/60 px-2 py-0.5 rounded">Advanced</span>
+                            </div>
+                            <div class="wb-pill flex items-center justify-between p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/40">
+                                <div class="flex items-center gap-2.5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[13px] font-semibold text-ink">PHP</span>
+                                </div>
+                                <span class="font-mono text-[10px] font-medium text-ink-soft bg-paper-deep/60 px-2 py-0.5 rounded">Solid</span>
+                            </div>
+                            <div class="wb-pill flex items-center justify-between p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/40">
+                                <div class="flex items-center gap-2.5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[13px] font-semibold text-ink">HTML / CSS</span>
+                                </div>
+                                <span class="font-mono text-[10px] font-medium text-ink-soft bg-paper-deep/60 px-2 py-0.5 rounded">Mastery</span>
+                            </div>
+                            <div class="wb-pill flex items-center justify-between p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/40">
+                                <div class="flex items-center gap-2.5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-6 h-6 shrink-0 object-contain" />
+                                    <span class="font-body text-[13px] font-semibold text-ink">Python</span>
+                                </div>
+                                <span class="font-mono text-[10px] font-medium text-ink-soft bg-paper-deep/60 px-2 py-0.5 rounded">Proficient</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="workbench-card bg-cream rounded-[1.75rem] border border-line p-6 sm:p-7 shadow-sm">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="w-10 h-10 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
+                                <span class="material-symbols-outlined text-[20px]">handyman</span>
+                            </div>
+                            <div>
+                                <h3 class="font-display text-[17px] text-ink font-semibold">Build &amp; Dev Tools</h3>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div class="wb-pill flex items-center gap-2.5 p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-5 h-5 shrink-0 object-contain" />
+                                <span class="font-body text-[12px] font-semibold text-ink">VS Code</span>
+                            </div>
+                            <div class="wb-pill flex items-center gap-2.5 p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-5 h-5 shrink-0 object-contain" />
+                                <span class="font-body text-[12px] font-semibold text-ink">GitHub</span>
+                            </div>
+                            <div class="wb-pill flex items-center gap-2.5 p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite" class="w-5 h-5 shrink-0 object-contain" />
+                                <span class="font-body text-[12px] font-semibold text-ink">Vite</span>
+                            </div>
+                            <div class="wb-pill flex items-center gap-2.5 p-2.5 rounded-xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" class="w-5 h-5 shrink-0 object-contain" />
+                                <span class="font-body text-[12px] font-semibold text-ink">Jira</span>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">JavaScript</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">TypeScript</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">PHP</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">HTML / CSS</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-matcha/10 text-matcha-deep font-body text-[13px] font-medium cursor-default">Python</span>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-2 bg-cream rounded-[1.75rem] border border-line p-7 md:-translate-y-4 shadow-sm">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center"><span class="material-symbols-outlined">handyman</span></span>
-                    <h3 class="font-display text-[18px] text-ink font-medium">Tools</h3>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Figma</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Adobe XD</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Illustrator</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Canva</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Maze</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">GitHub</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Jira</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Vite</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">VS Code</span>
-                </div>
-            </div>
-            <div class="reveal reveal-delay-3 bg-cream rounded-[1.75rem] border border-line p-7 shadow-sm">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="w-11 h-11 rounded-full bg-gold/20 text-latte-deep flex items-center justify-center"><span class="material-symbols-outlined">widgets</span></span>
-                    <h3 class="font-display text-[18px] text-ink font-medium">Frameworks</h3>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Laravel</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Vue.js</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Next.js</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Vuetify</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Tailwind CSS</span>
-                    <span class="skill-chip px-4 py-2 rounded-full bg-gold/10 text-latte-deep font-body text-[13px] font-medium cursor-default">Bootstrap</span>
+
+                <div class="lg:col-span-4 flex flex-col gap-6">
+                    
+                    <!-- Card Framework (tinggi disesuaikan agar tidak terlalu panjang) -->
+                    <article class="workbench-card bg-cream rounded-[1.75rem] border border-line p-7 sm:p-8 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[490px]">
+                        <div class="absolute -top-16 -right-16 w-44 h-44 bg-matcha-mist/60 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div>
+                            <div class="flex items-center gap-3 pb-6 border-b border-line">
+                                <div class="w-11 h-11 rounded-2xl bg-matcha-mist text-matcha-deep flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px]">widgets</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-display text-[18px] text-ink font-semibold">Frameworks</h3>
+                                </div>
+                            </div>
+
+                            <p class="font-body text-[12.5px] text-ink-soft mt-4 leading-relaxed">Building responsive front-ends, MVC-based backends, and clean interfaces with utility-first styling.</p>
+
+                            <div class="mt-6 p-4 rounded-2xl bg-matcha-mist/50 border border-line">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-cream flex items-center justify-center border border-line shrink-0">
+                                            <svg class="w-6 h-6 text-[#42B883]" fill="currentColor" viewBox="0 0 24 24"><path d="M2 3h3.5L12 14.2 18.5 3H22L12 21 2 3zm4.5 0h3L12 7.7 14.5 3h3L12 12.5 6.5 3z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-body font-bold text-[13px] text-ink flex items-center gap-2">
+                                                Vue.js
+                                                <span class="font-mono text-[9px] font-bold text-matcha-deep bg-matcha-mist px-1.5 py-0.5 rounded">Core Engine</span>
+                                            </h4>
+                                            <p class="font-body text-[11px] text-ink-soft">Composition API, Pinia, Vue Router</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3.5 grid grid-cols-2 gap-2.5">
+                                <div class="wb-pill p-3 rounded-2xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-5 h-5 shrink-0 object-contain" />
+                                        <span class="font-body text-[12px] font-semibold text-ink">Tailwind CSS</span>
+                                    </div>
+                                </div>
+                                <div class="wb-pill p-3 rounded-2xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="w-5 h-5 shrink-0 object-contain" />
+                                        <span class="font-body text-[12px] font-semibold text-ink">Laravel</span>
+                                    </div>
+                                </div>
+                                <div class="wb-pill p-3 rounded-2xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="w-5 h-5 shrink-0 object-contain" />
+                                        <span class="font-body text-[12px] font-semibold text-ink">Next.js</span>
+                                    </div>
+                                </div>
+                                <div class="wb-pill p-3 rounded-2xl bg-paper border border-line hover:bg-matcha-mist/30">
+                                    <div class="flex items-center gap-2">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuetify/vuetify-original.svg" alt="Vuetify" class="w-5 h-5 shrink-0 object-contain" />
+                                        <span class="font-body text-[12px] font-semibold text-ink">Vuetify</span>
+                                    </div>
+                                </div>
+                                <div class="wb-pill p-3 rounded-2xl bg-paper border border-line hover:bg-matcha-mist/30 col-span-2">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="w-5 h-5 shrink-0 object-contain" />
+                                            <span class="font-body text-[12px] font-semibold text-ink">Bootstrap 5</span>
+                                        </div>
+                                        <span class="font-mono text-[10px] text-ink-soft/60">Legacy stacks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card Status Bar (Baru) -->
+                    <article class="workbench-card bg-cream rounded-[1.75rem] border border-line p-5 sm:p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-2.5 w-2.5 relative shrink-0 self-center">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-matcha opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-matcha-deep"></span>
+                                </span>
+                                <span class="font-body font-medium text-[12px] text-ink">
+                                    Ready for collaborative <span class="text-matcha-deep font-semibold">UI/UX &amp; Frontend Engineering</span> roles
+                                </span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ PROJECTS - 3 in a row ============ -->
-    <section class="container-wrap container-px py-16 sm:py-24" id="work">
-        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-14 sm:mb-15">
-            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
-                Project <span class="text-matcha-deep">design</span>
-            </h2>
-        </div>
+    <!-- ============ PROJECTS ============ -->
+    <section class="relative bg-ink py-16 sm:py-24 overflow-hidden" id="work">
+        <!-- Ambient glows -->
+        <div class="absolute -top-24 -left-24 w-72 h-72 sm:w-96 sm:h-96 bg-matcha-bright/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-32 w-80 h-80 sm:w-[28rem] sm:h-[28rem] bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/3 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Subtle dot-grid texture -->
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none" style="background-image: radial-gradient(circle, #FFFFFF 1px, transparent 1px); background-size: 26px 26px;"></div>
 
-            <!-- Project 1 -->
-            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
-                <div class="img-reveal aspect-[4/3] overflow-hidden">
-                    <img alt="Web IoT Pig Tracking dashboard" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b">
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <span class="eyebrow text-latte-deep">Product Design · Web Platform</span>
-                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">Web IoT Pig Tracking</h3>
-                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
-                        Real-time operational dashboard that tracks livestock data through IoT sensors.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Vue.js</span>
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Vuetify</span>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-5">
-                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70">
-                            Prototype
-                            <span class="material-symbols-outlined text-[16px]">north_east</span>
-                        </a>
-                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="https://www.behance.net/gallery/241725399/IoT-Pigging-Monitoring">
-                            Behance
-                        </a>
-                    </div>
-                </div>
-            </article>
+        <div class="container-wrap container-px relative">
 
-            <!-- Project 2 -->
-            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
-                <div class="img-reveal aspect-[4/3] overflow-hidden">
-                    <img alt="App Seraya interface" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53">
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <span class="eyebrow text-matcha-deep">UI/UX Design · Mobile App</span>
-                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">App Seraya</h3>
-                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
-                        AI-powered companion for emotional self-care and daily mindfulness.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Figma</span>
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Spring Boot</span>
-                    </div>
-                    <div class="flex flex-wrap gap-3 mt-5">
-                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485">
-                            Prototype
-                            <span class="material-symbols-outlined text-[16px]">north_east</span>
-                        </a>
-                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="https://www.behance.net/gallery/229427779/AI-Powered-App-for-Emotional-Self-Care-and-Reflection">
-                            Behance
-                        </a>
-                    </div>
-                </div>
-            </article>
+            <div class="reveal mb-14 sm:mb-16 w-full overflow-x-hidden mt-6" id="quoteBlock">
+                <div class="flex justify-center px-6 sm:px-4">
+                    <div class="flex flex-col items-center gap-1.5 sm:gap-2.5 text-center font-display text-cream font-medium leading-snug"
+                        style="font-size: clamp(14px, 3.6vw, 36px);">
 
-            <!-- Project 3 -->
-            <article class="reveal project-card bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col">
-                <div class="img-reveal aspect-[4/3] overflow-hidden">
-                    <img alt="Web Foody interface" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a">
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <span class="eyebrow text-latte-deep">Product Design · Web App</span>
-                    <h3 class="font-display text-[22px] leading-[1.15] text-ink font-semibold mt-2">Web Foody</h3>
-                    <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">
-                        BMI tracking, food logs, and AI-driven health recommendations.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Figma</span>
-                        <span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">Laravel</span>
+                        <p class="whitespace-nowrap word-reveal">
+                            <span style="animation-delay:0.05s">I</span>
+                            <span style="animation-delay:0.10s">like</span>
+                            <span style="animation-delay:0.15s">turning</span>
+                            <span style="animation-delay:0.20s">messy</span>
+                            <span style="animation-delay:0.25s">ideas</span>
+                            <span style="animation-delay:0.30s">into</span>
+                            <span class="type-cycle-wrap" style="animation-delay:0.35s"><span class="type-cycle" id="cycleWord">clean</span><span class="type-caret text-cream/80" id="cycleCaret">|</span></span>
+                            <span class="stack-slot" id="stackSlot1" aria-hidden="true" style="animation-delay:0.40s"></span>
+                            <span style="animation-delay:0.45s">interfaces,</span>
+                        </p>
+
+                        <p class="whitespace-nowrap word-reveal">
+                            <span style="animation-delay:0.50s">then</span>
+                            <span style="animation-delay:0.55s">carefully</span>
+                            <span class="stack-slot" id="stackSlot2" aria-hidden="true" style="animation-delay:0.60s"></span>
+                            <span style="animation-delay:0.65s">shaping</span>
+                            <span style="animation-delay:0.70s">them</span>
+                            <span style="animation-delay:0.75s">into</span>
+                            <span style="animation-delay:0.80s">products</span>
+                        </p>
+
+                        <p class="whitespace-nowrap text-cream/60 word-reveal">
+                            <span style="animation-delay:0.85s">that</span>
+                            <span style="animation-delay:0.90s">people</span>
+                            <span style="animation-delay:0.95s">actually</span>
+                            <span style="animation-delay:1.00s">use.</span>
+                        </p>
+
                     </div>
-                    <div class="flex flex-wrap gap-3 mt-5">
-                        <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold" target="_blank" href="https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION---FOODY--Copy-?node-id=0-1&p=f&t=LenPCVfLsvRdwmjz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1098%3A9296&show-proto-sidebar=1">
-                            Prototype
-                            <span class="material-symbols-outlined text-[16px]">north_east</span>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div id="projSliderTrack" class="flex gap-5 sm:gap-7 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth py-4"></div>
+
+                <button id="projPrev" class="slide-nav-btn absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 hidden sm:flex" aria-label="Previous project">
+                    <span class="material-symbols-outlined text-[22px]">chevron_left</span>
+                </button>
+                <button id="projNext" class="slide-nav-btn absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 hidden sm:flex" aria-label="Next project">
+                    <span class="material-symbols-outlined text-[22px]">chevron_right</span>
+                </button>
+            </div>
+
+            <div id="projDots" class="flex items-center justify-center gap-2 mt-8"></div>
+           <div class="reveal flex justify-center mt-16 sm:mt-20">
+                <div class="rounded-full p-1" style="background: linear-gradient(135deg, #344436, #2D4A2A 60%, #1E2A1A);">
+                    <div class="flex items-center gap-2">
+                        <a href="project.html"
+                        class="flex items-center bg-ink/[0.64] backdrop-blur-sm border border-white/10 text-cream rounded-full pl-8 pr-8 py-3.5 font-body text-[14px] font-semibold whitespace-nowrap hover:bg-white/[0.08] transition-colors">
+                            View All Projects
                         </a>
-                        <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-ink/15 text-ink font-body text-[13px] font-semibold hover:bg-paper" href="https://www.behance.net/gallery/205265235/Foody">
-                            Behance
+                        <a href="project.html"
+                        class="w-12 h-12 rounded-full bg-cream text-ink flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
                         </a>
                     </div>
                 </div>
-            </article>
-
-        </div>
-
-        <div class="reveal text-center mt-16 sm:mt-20">
-            <a class="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink/15 text-ink font-body text-[14px] font-semibold hover:bg-paper" href="project.html">
-                View all projects
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
+            </div>
         </div>
     </section>
 
-  <!-- ============ RECOGNITION / ACHIEVEMENTS ============ -->
+    <!-- ============ RECOGNITION / ACHIEVEMENTS ============ -->
     <section class="container-wrap container-px py-14 sm:py-20 bg-paper/40" id="achievements">
         <div class="reveal">
             <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold mb-3">
@@ -607,189 +1408,192 @@
             </h2>
         </div>
 
-        <div class="reveal reveal-delay-1 max-w-3xl mx-auto mt-10">
-            <!-- Slider viewport -->
+        <div class="reveal reveal-delay-2 mt-10">
             <div id="awardsSlider" class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth -mx-1">
 
-                <!-- Slide 1: Achievement 1, 2 & 3 -->
-                <div class="awards-slide shrink-0 w-full flex flex-col gap-4 px-1">
-                    <!-- Achievement 1 - 3rd Place Android -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
-                                        <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">Android Programming Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at the I/O Festival 2025</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2025</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1EoVYDTy3e4tXZgEj0LvKvxsWNGcpPS0u/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="awards-slide shrink-0 w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 px-1">
 
-                    <!-- Achievement 2 - 1st Place SWITCHFEST -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="font-display text-xl font-semibold text-matcha-deep">1st</span>
-                                        <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">UI/UX Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at SWITCHFEST</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="Android Programming award" class="w-full h-full object-cover" src="award/ap.png">
                             </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2025</span>
                         </div>
-                    </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">3rd Place</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">Android Programming Competition at the I/O Festival 2025</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/1EoVYDTy3e4tXZgEj0LvKvxsWNGcpPS0u/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
 
-                    <!-- Achievement 3 - 3rd Place NIFC -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-matcha-deep/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-matcha-deep text-[28px]" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="font-display text-xl font-semibold text-matcha-deep">3rd</span>
-                                        <span class="block font-body text-[10px] text-ink-soft/60 uppercase tracking-wider">Place</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">UI/UX Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at the NATIONAL INFORMATIC FUN COMPETITION 3.0</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-matcha-deep/10 text-matcha-deep hover:bg-matcha-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="UI/UX Competition award" class="w-full h-full object-cover" src="award/ui.png">
                             </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2024</span>
                         </div>
-                    </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">1st Place</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">UI/UX Competition at SWITCHFEST</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
+
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="UI/UX Competition award" class="w-full h-full object-cover" src="award/ui.png">
+                            </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2024</span>
+                        </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">3rd Place</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">UI/UX Competition at the NATIONAL INFORMATIC FUN COMPETITION 3.0</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/1kNDwMZ10cfiCbpqRIdOUs-ND2J5Abv3y/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
+
                 </div>
 
-                <!-- Slide 2: Achievement 4 & 5 -->
-                <div class="awards-slide shrink-0 w-full flex flex-col gap-4 px-1">
-                    <!-- Achievement 4 - Participant INFEST -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-latte/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-latte-deep text-[26px]">workspace_premium</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block font-body text-[11px] font-semibold text-latte-deep uppercase tracking-wider max-w-[56px]">Participant</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">UI/UX Design Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at INFEST Competition 2024</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1P3CfC7pTKRsCaWcSThIAMxrhrm_xE0Bg/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-latte/10 text-latte-deep hover:bg-latte-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="awards-slide shrink-0 w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 px-1">
 
-                    <!-- Achievement 5 - Participant HMSI -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-latte/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-latte-deep text-[26px]">workspace_premium</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block font-body text-[11px] font-semibold text-latte-deep uppercase tracking-wider max-w-[56px]">Participant</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">UI/UX Design Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at HMSI Competition 2024</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2024</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/12BA1UKzgNWxjBEevrdpNCiXo-xNPtJD8/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-latte/10 text-latte-deep hover:bg-latte-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="UI/UX Design Competition award" class="w-full h-full object-cover" src="award/ui.png">
                             </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2024</span>
                         </div>
-                    </div>
-                    <!-- Achievement 6 - Participant MP -->
-                    <div class="group">
-                        <div class="relative bg-cream rounded-2xl p-5 sm:p-6 border border-line shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                            <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5">
-                                <div class="flex items-center gap-4 shrink-0">
-                                    <div class="w-12 h-12 rounded-xl bg-latte/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-latte-deep text-[26px]">workspace_premium</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <span class="block font-body text-[11px] font-semibold text-latte-deep uppercase tracking-wider max-w-[56px]">Participant</span>
-                                    </div>
-                                </div>
-                                <div class="hidden sm:block w-px h-12 bg-line shrink-0"></div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-display text-base font-semibold text-ink">Business Plan Competition</h3>
-                                    <p class="font-body text-sm text-ink-soft/70">at MP Expo 2023</p>
-                                </div>
-                                <div class="flex items-center flex-wrap gap-3 shrink-0">
-                                    <span class="px-3 py-1 rounded-full bg-ink/5 text-[11px] font-semibold text-ink-soft border border-line">2023</span>
-                                    <a target="_blank" href="https://drive.google.com/file/d/1Qt9X6SPaykHFCTN8nHnMYL03UJHoH6r9/view?usp=sharing" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-latte/10 text-latte-deep hover:bg-latte-deep hover:text-cream transition-all duration-300 text-[12px] font-semibold group">
-                                        <span class="material-symbols-outlined text-[16px]">verified</span>
-                                        Certificate
-                                    </a>
-                                </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">Participant</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">UI/UX Design Competition at INFEST Competition 2024</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/1P3CfC7pTKRsCaWcSThIAMxrhrm_xE0Bg/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
+
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="UI/UX Design Competition award" class="w-full h-full object-cover" src="award/ui.png">
                             </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2024</span>
                         </div>
-                    </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">Participant</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">UI/UX Design Competition at HMSI Competition 2024</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/12BA1UKzgNWxjBEevrdpNCiXo-xNPtJD8/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
+
+                    <article class="award-card bg-ink text-cream p-6 sm:p-7 flex flex-col">
+                        <div class="flex items-start justify-between mb-6">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden bg-white/5 border border-white/10 shrink-0">
+                                <img alt="Business Plan Competition award" class="w-full h-full object-cover" src="award/bsp.png">
+                            </div>
+                            <span class="px-3 py-1 rounded-full border border-dashed border-gold/50 text-gold-bright font-mono text-[12px] font-semibold shrink-0">2023</span>
+                        </div>
+                        <h3 class="font-display text-[19px] sm:text-[20px] text-cream font-semibold">Participant</h3>
+                        <p class="font-body text-[13.5px] text-cream/60 leading-relaxed mt-2 flex-1">Business Plan Competition at MP Expo 2023</p>
+                        <a target="_blank" href="https://drive.google.com/file/d/1Qt9X6SPaykHFCTN8nHnMYL03UJHoH6r9/view?usp=sharing" class="mt-6 inline-flex items-center gap-1.5 w-fit px-4 py-2 rounded-full bg-white/10 text-cream hover:bg-gold-bright hover:text-ink transition-all duration-300 text-[12px] font-semibold">
+                            <span class="material-symbols-outlined text-[16px]">verified</span>
+                            Certificate
+                        </a>
+                    </article>
+
                 </div>
+
             </div>
 
-            <!-- Dot indicators -->
-            <div id="awardsDots" class="flex items-center justify-center gap-2 mt-6"></div>
+            <div id="awardsDots" class="flex items-center justify-center gap-2 mt-8"></div>
+        </div>
+    </section>
+    
+    <!-- ============ FAQ ============ -->
+    <section class="faq-section container-wrap container-px py-14 sm:py-20" id="faq">
+        <div class="faq-dot-grid"></div>
+        <div class="faq-blob-1"></div>
+        <div class="faq-blob-2"></div>
+
+        <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10 relative z-[1]">
+            <h2 class="font-display text-[32px] sm:text-[38px] leading-none text-ink font-semibold">
+                Question? <span class="text-matcha-deep">Look here</span>
+            </h2>
+        </div>
+
+        <div class="reveal reveal-delay-1 max-w-2xl faq-list" id="faqList">
+
+            <div class="faq-item is-open">
+                <button type="button" class="faq-summary">
+                    <span class="faq-badge"><span class="material-symbols-outlined text-[20px]">person</span></span>
+                    <h3 class="font-body text-[15px] sm:text-[16px] text-ink font-semibold flex-1">Who am I?</h3>
+                    <span class="faq-chevron"><span class="material-symbols-outlined text-[18px]">expand_more</span></span>
+                </button>
+                <div class="faq-panel"><div>
+                    <div class="faq-answer-box">
+                        <p class="font-body text-[14px] leading-relaxed text-cream/80">I'm a fresh graduate in Software Engineering Technology from IPB University with an interest in UI/UX and frontend development. I enjoy turning ideas and user needs into simple, practical, and thoughtful digital experiences.</p>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-summary">
+                    <span class="faq-badge"><span class="material-symbols-outlined text-[20px]">work_history</span></span>
+                    <h3 class="font-body text-[15px] sm:text-[16px] text-ink font-semibold flex-1">What have I worked on?</h3>
+                    <span class="faq-chevron"><span class="material-symbols-outlined text-[18px]">expand_more</span></span>
+                </button>
+                <div class="faq-panel"><div>
+                    <div class="faq-answer-box">
+                        <p class="font-body text-[14px] leading-relaxed text-cream/80">I've worked on various web and mobile projects, from UI/UX design and prototyping to frontend development and testing. Most of my projects started from understanding the problem and ended with a working solution.</p>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-summary">
+                    <span class="faq-badge"><span class="material-symbols-outlined text-[20px]">explore</span></span>
+                    <h3 class="font-body text-[15px] sm:text-[16px] text-ink font-semibold flex-1">Where have I gained experience?</h3>
+                    <span class="faq-chevron"><span class="material-symbols-outlined text-[18px]">expand_more</span></span>
+                </button>
+                <div class="faq-panel"><div>
+                    <div class="faq-answer-box">
+                        <p class="font-body text-[14px] leading-relaxed text-cream/80">My experience comes from internships, academic projects, competitions, and personal projects. These experiences have taught me how to work with different people, handle feedback, and adapt to real project requirements.</p>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-summary">
+                    <span class="faq-badge"><span class="material-symbols-outlined text-[20px]">bolt</span></span>
+                    <h3 class="font-body text-[15px] sm:text-[16px] text-ink font-semibold flex-1">What can I do?</h3>
+                    <span class="faq-chevron"><span class="material-symbols-outlined text-[18px]">expand_more</span></span>
+                </button>
+                <div class="faq-panel"><div>
+                    <div class="faq-answer-box">
+                        <p class="font-body text-[14px] leading-relaxed text-cream/80">My main skills are UI/UX design and frontend development. I work with tools like Figma and technologies such as HTML, CSS, JavaScript, Vue.js, and Laravel.</p>
+                    </div>
+                </div></div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-summary">
+                    <span class="faq-badge"><span class="material-symbols-outlined text-[20px]">handshake</span></span>
+                    <h3 class="font-body text-[15px] sm:text-[16px] text-ink font-semibold flex-1">Are you available for full-time or remote work?</h3>
+                    <span class="faq-chevron"><span class="material-symbols-outlined text-[18px]">expand_more</span></span>
+                </button>
+                <div class="faq-panel"><div>
+                    <div class="faq-answer-box">
+                        <p class="font-body text-[14px] leading-relaxed text-cream/80">Yes, I'm currently open to full-time opportunities, including remote and hybrid roles. I'm especially interested in UI/UX, Product Design, and frontend-related positions.</p>
+                    </div>
+                </div></div>
+            </div>
+
         </div>
     </section>
 
@@ -803,12 +1607,11 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8 items-stretch">
 
-            <!-- left: message -->
             <div class="reveal reveal-delay-1 relative bg-paper rounded-[2.25rem] p-7 sm:p-9 border border-line flex flex-col justify-between">
                 <div>
-                    <span aria-hidden="true" class="material-symbols-outlined text-latte/30 text-[48px] rotate-[-5deg] block mb-4" style="font-variation-settings:'FILL' 1;">mail</span>
+                    <span aria-hidden="true" class="material-symbols-outlined text-gold/30 text-[48px] rotate-[-5deg] block mb-4" style="font-variation-settings:'FILL' 1;">mail</span>
                     <p class="font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed max-w-md">
-                        I’m always open to new opportunities and projects. If you have something in mind, feel free to reach out.
+                        I'm always open to new opportunities and projects. If you have something in mind, feel free to reach out.
                     </p>
                 </div>
                 <a class="btn-primary inline-flex items-center gap-2 w-fit mt-8 px-7 py-3.5 rounded-full bg-matcha-deep text-cream font-body text-[14px] font-semibold" href="mailto:hello@nurindah.dev">
@@ -817,7 +1620,6 @@
                 </a>
             </div>
 
-            <!-- right: channels -->
             <div class="grid grid-cols-2 gap-4 sm:gap-5">
                 <a class="skill-chip reveal reveal-delay-1 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="mailto:hello@nurindah.dev">
                     <span class="w-11 h-11 rounded-full bg-matcha/15 text-matcha-deep flex items-center justify-center">
@@ -826,13 +1628,13 @@
                     <span class="font-body text-[13px] font-medium text-ink">Email</span>
                 </a>
                 <a class="skill-chip reveal reveal-delay-2 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="https://www.linkedin.com/in/indahchs/" target="_blank">
-                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center">
+                    <span class="w-11 h-11 rounded-full bg-gold/10 text-gold flex items-center justify-center">
                         <span class="material-symbols-outlined text-[20px]">work</span>
                     </span>
                     <span class="font-body text-[13px] font-medium text-ink">LinkedIn</span>
                 </a>
                 <a class="skill-chip reveal reveal-delay-2 flex flex-col items-center justify-center gap-2.5 px-4 py-7 rounded-[1.75rem] bg-cream border border-line" href="https://github.com/indahchs" target="_blank">
-                    <span class="w-11 h-11 rounded-full bg-gold/10 text-latte-deep flex items-center justify-center">
+                    <span class="w-11 h-11 rounded-full bg-gold/10 text-gold flex items-center justify-center">
                         <span class="material-symbols-outlined text-[20px]">code</span>
                     </span>
                     <span class="font-body text-[13px] font-medium text-ink">GitHub</span>
@@ -847,7 +1649,6 @@
 
         </div>
     </section>
-
 </main>
 
 <footer class="container-wrap container-px py-8 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-line text-center sm:text-left">
@@ -856,7 +1657,53 @@
 </footer>
 
 <script>
-    // Mobile menu
+    const typedNameEl = document.getElementById('typedName');
+    const typeBoxEl = document.querySelector('.type-box');
+    const nameCaret = document.querySelector('.type-caret');
+    if (typedNameEl && nameCaret) {
+        const fullName = 'Nur Indah Chasanah';
+        let charIndex = 0;
+        let isTypingComplete = false;
+        
+        nameCaret.classList.add('is-blinking');
+        
+        setTimeout(function typeChar() {
+            typedNameEl.textContent = fullName.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex < fullName.length) {
+                setTimeout(typeChar, 62);
+            } else {
+                isTypingComplete = true;
+                nameCaret.classList.add('is-blinking');
+                if (typeBoxEl) {
+                    typeBoxEl.style.transition = 'border-color 0.3s ease';
+                    typeBoxEl.style.borderColor = '#2D4A2A';
+                    setTimeout(() => { typeBoxEl.style.borderColor = ''; }, 350);
+                }
+            }
+        }, 950);
+    }
+
+    const skillCycleEl = document.getElementById('skillCycle');
+    if (skillCycleEl) {
+        const skills = ['UI/UX Design', 'Front-End Dev', 'Graphic Design'];
+        let skillIndex = 0;
+        skillCycleEl.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        setInterval(() => {
+            skillCycleEl.style.opacity = '0';
+            skillCycleEl.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+                skillIndex = (skillIndex + 1) % skills.length;
+                skillCycleEl.textContent = skills[skillIndex];
+                skillCycleEl.style.transform = 'translateY(-8px)';
+                requestAnimationFrame(() => {
+                    skillCycleEl.style.opacity = '1';
+                    skillCycleEl.style.transform = 'translateY(0)';
+                });
+            }, 400);
+        }, 2200);
+    }
+
     const menuBtn = document.getElementById('menu-btn');
     const menuIcon = document.getElementById('menu-icon');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -875,7 +1722,6 @@
         });
     });
 
-    // Scroll reveal
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -887,9 +1733,8 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Active nav link on scroll
     const navLinks = document.querySelectorAll('[data-nav]');
-    const sections = ['home', 'about', 'skills', 'work', 'journey'].map(id => document.getElementById(id)).filter(Boolean);
+    const sections = ['home', 'about', 'skills', 'work', 'journey', 'achievements', 'process', 'contact', 'faq'].map(id => document.getElementById(id)).filter(Boolean);
 
     const navObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -903,8 +1748,40 @@
     }, { rootMargin: "-40% 0px -50% 0px", threshold: 0 });
 
     sections.forEach(sec => navObserver.observe(sec));
+    (function () {
+        const projectImages = [
+            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b", // Pig Tracking
+            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53", // Seraya
+            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a"  // Foody
+        ];
 
-    // Cursor glow (desktop only, respects reduced motion)
+        function initStack(slotEl, images, startOffset, intervalMs) {
+            if (!slotEl) return;
+            slotEl.innerHTML = images.map((src) => `<img src="${src}" alt="" />`).join('');
+            const imgs = Array.from(slotEl.children);
+            let order = images.map((_, i) => (i + startOffset) % images.length);
+
+            function render() {
+                order.forEach((imgIndex, pos) => {
+                    const el = imgs[imgIndex];
+                    el.style.zIndex = images.length - pos;
+                    el.style.opacity = pos === 0 ? '1' : pos === 1 ? '0.55' : '0.28';
+                    el.style.transform = pos === 0
+                        ? 'translate(0, 0) scale(1)'
+                        : `translate(${pos * 5}px, ${pos * 4}px) scale(${1 - pos * 0.06})`;
+                });
+            }
+            render();
+            setInterval(() => {
+                order.push(order.shift());
+                render();
+            }, intervalMs);
+        }
+
+        initStack(document.getElementById('stackSlot1'), projectImages, 0, 2600);
+        initStack(document.getElementById('stackSlot2'), projectImages, 1, 2600);
+    })();
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const glow = document.getElementById('cursorGlow');
     if (glow && !prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
@@ -918,7 +1795,6 @@
         });
     }
 
-    // Awards & Recognition slider with dot indicators
     const awardsSlider = document.getElementById('awardsSlider');
     const awardsDotsWrap = document.getElementById('awardsDots');
     if (awardsSlider && awardsDotsWrap) {
@@ -952,7 +1828,6 @@
         }, { passive: true });
     }
 
-    // Skills marquee with real tool logos from CDN/online sources
     const marqueeItems = [
         { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
         { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
@@ -968,18 +1843,308 @@
         { name: 'Jira', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg' }
     ];
 
-    const track = document.getElementById('marqueeTrack');
-    if (track) {
-        const buildSet = () => marqueeItems.map(item => `
-            <span class="flex items-center gap-3 shrink-0 px-7">
-                <span class="w-9 h-9 rounded-full bg-paper border border-line flex items-center justify-center overflow-hidden flex-shrink-0 p-1.5">
-                    <img src="${item.logo}" alt="${item.name}" class="w-full h-full object-contain" loading="lazy" />
-                </span>
-                <span class="font-display text-[20px] sm:text-[24px] text-ink/70 font-medium">${item.name}</span>
+    const tickerWords = ['UI/UX Design', 'Dashboard', 'Website Design', 'Wireframe & Prototyping', 'Front-End Development', 'Mobile App Design'];
+    const tickerTrack = document.getElementById('tickerTrack');
+    if (tickerTrack) {
+        const buildTicker = () => tickerWords.map(w => `
+            <span class="ticker-word px-4">${w}</span>
+            <span class="ticker-sep px-1" aria-hidden="true">+</span>
+        `).join('');
+        tickerTrack.innerHTML = buildTicker() + buildTicker();
+    }
+
+    const toolkitLogoTrack = document.getElementById('toolkitLogoTrack');
+    if (toolkitLogoTrack) {
+        const buildLogos = () => marqueeItems.map(item => `
+            <span class="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white flex items-center justify-center overflow-hidden flex-shrink-0 p-1 shadow-sm" title="${item.name}">
+                <img src="${item.logo}" alt="${item.name}" class="w-full h-full object-contain" loading="lazy" />
             </span>
         `).join('');
-        track.innerHTML = buildSet() + buildSet();
+         toolkitLogoTrack.innerHTML = buildLogos() + buildLogos() + buildLogos() + buildLogos();
     }
+    (function () {
+        const items = Array.from(document.querySelectorAll('#svcList .svc-item'));
+        function openItem(target) {
+            items.forEach(item => item.classList.toggle('is-open', item === target));
+        }
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('is-open')) return;
+                openItem(item);
+            });
+        });
+        const defaultOpen = document.querySelector('#svcList .svc-item[data-svc="2"]');
+        if (defaultOpen) openItem(defaultOpen);
+    })();
+    (function () {
+    const projects = [
+        {
+            title: 'Web IoT Pig Tracking',
+            catLabel: 'Product Design · Web Platform',
+            desc: 'Real-time operational dashboard that tracks livestock data through IoT sensors.',
+            tags: ['Vue.js', 'Vuetify'],
+            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b',
+            prototypeUrl: 'https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70',
+            behanceUrl: 'https://www.behance.net/gallery/241725399/IoT-Pigging-Monitoring'
+        },
+        {
+            title: 'App Seraya',
+            catLabel: 'UI/UX Design · Mobile App',
+            desc: 'AI-powered companion for emotional self-care and daily mindfulness.',
+            tags: ['Figma', 'Spring Boot'],
+            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53',
+            prototypeUrl: 'https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485',
+            behanceUrl: 'https://www.behance.net/gallery/229427779/AI-Powered-App-for-Emotional-Self-Care-and-Reflection'
+        },
+        {
+            title: 'Web Foody',
+            catLabel: 'Product Design · Web App',
+            desc: 'BMI tracking, food logs, and AI-driven health recommendations.',
+            tags: ['Figma', 'Laravel'],
+            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a',
+            prototypeUrl: 'https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION---FOODY--Copy-?node-id=0-1&p=f&t=LenPCVfLsvRdwmjz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1098%3A9296&show-proto-sidebar=1',
+            behanceUrl: 'https://www.behance.net/gallery/205265235/Foody'
+        },
+        {
+            title: 'Web Serasana',
+            catLabel: 'Web App · Company Portal',
+            desc: 'Serasana is a company portal for exploring company information and booking rooms.',
+            tags: ['Figma', 'FigJam'],
+            image: 'img/serasana web.png',
+            prototypeUrl: 'https://www.figma.com/proto/NDBxMwohXrffl1uZnO3j4H/serasana?node-id=1-128&p=f&t=5J5Mv8byl8MWrDwF-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1',
+            behanceUrl: 'https://www.behance.net/gallery/245051355/Landing-Page-Website-Serasana'
+        },
+        {
+            title: 'App Hyperaid',
+            catLabel: 'Mobile App · Health Tech',
+            desc: 'Empowering young Indonesians to beat hypertension, one tap at a time.',
+            tags: ['Figma', 'FigJam', 'Maze'],
+            image: 'img/hyperaid.png',
+            prototypeUrl: 'https://www.figma.com/proto/UlokKfUVshhxDtPrvxREd9/HYPERAID-NANDE?node-id=0-1&p=f&t=zWZ2pJteeQSGD4ZE-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=225%3A3120&show-proto-sidebar=1&fuid=1149611445040717485',
+            behanceUrl: 'https://www.behance.net/gallery/229589313/HyperAId-Empowering-Young-to-Beat-Hypertension'
+        }
+    ];
+
+    const track = document.getElementById('projSliderTrack');
+    const dotsWrap = document.getElementById('projDots');
+    const prevBtn = document.getElementById('projPrev');
+    const nextBtn = document.getElementById('projNext');
+    if (!track) return;
+
+    const N = projects.length;
+    const REPEATS = 5; 
+    const cardHTML = (p, i) => `
+        <article class="slide-card shrink-0 bg-white/[0.04] backdrop-blur-sm rounded-[2rem] border border-white/10 overflow-hidden flex flex-col" data-real-index="${i}">
+            <div class="aspect-[4/3] overflow-hidden relative">
+                <img alt="${p.title}" class="w-full h-full object-cover" src="${p.image}" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"></div>
+                <span class="absolute top-3 right-4 font-mono text-[11px] text-cream/70">0${i + 1} / 0${N}</span>
+            </div>
+            <div class="p-6 sm:p-7 flex flex-col flex-1">
+                <span class="eyebrow text-white/[0.64]">${p.catLabel}</span>
+                <h3 class="font-display text-[20px] sm:text-[24px] leading-[1.15] text-cream font-semibold mt-2">${p.title}</h3>
+                <p class="font-body text-[13.5px] sm:text-[14px] text-cream/60 leading-relaxed mt-2 flex-1">${p.desc}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    ${p.tags.map(t => `<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cream/70 eyebrow normal-case font-semibold">${t}</span>`).join('')}
+                </div>
+                <div class="flex flex-wrap gap-3 mt-5">
+                    <a class="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white text-ink font-body text-[13px] font-semibold" target="_blank" rel="noopener" href="${p.prototypeUrl}">
+                        Prototype
+                        <span class="material-symbols-outlined text-[16px]">north_east</span>
+                    </a>
+                    <a class="btn-ghost inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/15 text-cream font-body text-[13px] font-semibold hover:bg-white/5" target="_blank" rel="noopener" href="${p.behanceUrl}">
+                        Behance
+                    </a>
+                </div>
+            </div>
+        </article>
+    `;
+
+    let fullHTML = '';
+    for (let r = 0; r < REPEATS; r++) {
+        fullHTML += projects.map(cardHTML).join('');
+    }
+    const spacerHTML = `<div class="shrink-0" style="width: calc(50% - var(--slot-w)/2);"></div>`;
+    track.innerHTML = spacerHTML + fullHTML + spacerHTML;
+
+    const cards = Array.from(track.querySelectorAll('.slide-card'));
+    const middleSetStart = N * 2;
+
+        projects.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'slide-dot';
+            dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+            dot.addEventListener('click', () => scrollToCardIndexWithGuard(middleSetStart + i));
+            dotsWrap.appendChild(dot);
+        });
+    const dots = Array.from(dotsWrap.querySelectorAll('.slide-dot'));
+
+    function cardCenterX(card) {
+        return card.offsetLeft + card.clientWidth / 2;
+    }
+
+    function scrollToCardIndex(idx, smooth = true) {
+        const card = cards[idx];
+        if (!card) return;
+        const target = cardCenterX(card) - track.clientWidth / 2;
+        track.scrollTo({ left: target, behavior: smooth ? 'smooth' : 'auto' });
+    }
+
+    function getClosestCardIndex() {
+        const trackCenter = track.scrollLeft + track.clientWidth / 2;
+        let closestIndex = 0;
+        let closestDist = Infinity;
+        cards.forEach((card, i) => {
+            const dist = Math.abs(trackCenter - cardCenterX(card));
+            if (dist < closestDist) { closestDist = dist; closestIndex = i; }
+        });
+        return closestIndex;
+    }
+
+        let ticking = false;
+    let isJumping = false;
+    let isProgrammaticScroll = false;
+    let programmaticTimer;
+
+    function updateVisuals() {
+        const closest = getClosestCardIndex();
+        cards.forEach((card, i) => card.classList.toggle('is-center', i === closest));
+        const realIdx = ((closest % N) + N) % N;
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === realIdx));
+        return closest;
+    }
+
+    function silentJump(equivalent) {
+        isJumping = true;
+        track.classList.add('no-snap-transition');
+        scrollToCardIndex(equivalent, false);
+        updateVisuals();
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                track.classList.remove('no-snap-transition');
+                isJumping = false;
+            });
+        });
+    }
+
+    function handleLoopReset() {
+        if (isJumping || isProgrammaticScroll) return;
+        const closest = getClosestCardIndex();
+        if (closest < N) {
+            silentJump(closest + N * 2);
+        } else if (closest >= N * 4) {
+            silentJump(closest - N * 2);
+        }
+    }
+
+    track.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateVisuals();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    let scrollEndTimer;
+    track.addEventListener('scroll', () => {
+        clearTimeout(scrollEndTimer);
+        scrollEndTimer = setTimeout(handleLoopReset, 180);
+    }, { passive: true });
+
+    function scrollToCardIndexWithGuard(idx) {
+        isProgrammaticScroll = true;
+        clearTimeout(programmaticTimer);
+        scrollToCardIndex(idx, true);
+        programmaticTimer = setTimeout(() => { isProgrammaticScroll = false; }, 500);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        const current = getClosestCardIndex();
+        scrollToCardIndexWithGuard(current - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+        const current = getClosestCardIndex();
+        scrollToCardIndexWithGuard(current + 1);
+    });
+
+    requestAnimationFrame(() => {
+        track.classList.add('no-snap-transition');
+        scrollToCardIndex(middleSetStart, false);
+        updateVisuals();
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => track.classList.remove('no-snap-transition'));
+        });
+    });
+})();
+(function () {
+    const el = document.getElementById('cycleWord');
+    const quoteBlock = document.getElementById('quoteBlock');
+    const caretEl = document.getElementById('cycleCaret');
+    if (!el || !quoteBlock || !caretEl) return;
+
+    const words = ['clean', 'simple', 'usable', 'intuitive'];
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = false;
+    let started = false;
+
+    function step() {
+        caretEl.classList.remove('is-blinking');
+
+        if (deleting) {
+            charIndex--;
+            el.textContent = words[wordIndex].slice(0, charIndex);
+            if (charIndex === 0) {
+                deleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                caretEl.classList.add('is-blinking');
+                setTimeout(step, 220);
+                return;
+            }
+            setTimeout(step, 45);
+        } else {
+            const word = words[wordIndex];
+            charIndex++;
+            el.textContent = word.slice(0, charIndex);
+            if (charIndex === word.length) {
+                caretEl.classList.add('is-blinking');
+                setTimeout(() => { deleting = true; step(); }, 1500);
+                return;
+            }
+            setTimeout(step, 75);
+        }
+    }
+
+    const cycleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                caretEl.classList.add('is-blinking');
+                setTimeout(() => { deleting = true; step(); }, 1800);
+                cycleObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.4 });
+
+    cycleObserver.observe(quoteBlock);
+})();
+(function () {
+    const list = document.getElementById('faqList');
+    if (!list) return;
+    const items = Array.from(list.querySelectorAll('.faq-item'));
+
+    items.forEach(item => {
+        const btn = item.querySelector('.faq-summary');
+        btn.addEventListener('click', () => {
+            const willOpen = !item.classList.contains('is-open');
+            items.forEach(i => i.classList.remove('is-open'));
+            if (willOpen) item.classList.add('is-open');
+        });
+    });
+})();
 </script>
 
 </body>

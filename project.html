@@ -8,7 +8,9 @@
 
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -19,25 +21,24 @@
             extend: {
                 colors: {
                     cream: "#FFFFFF",
-                    paper: "#F0F5EA",
+                    paper: "#FAFFF5",
                     "paper-deep": "#E2ECD4",
                     ink: "#1E2A1A",
                     "ink-soft": "#4A5A40",
-                    matcha: "#7FB069",
-                    "matcha-deep": "#4E7A3A",
-                    "matcha-bright": "#8FC97A",
-                    "matcha-mist": "#D4E8C0",
-                    latte: "#C28A5A",
-                    "latte-deep": "#A06A3E",
-                    "latte-bright": "#DBA87A",
+                    matcha: "#3E8C46",
+                    "matcha-deep": "#2D4A2A",
+                    "matcha-bright": "#4A6B3A",
+                    "matcha-mist": "#D6EDD8",
                     gold: "#D4A84A",
-                    "gold-deep": "#B8862E",
                     "gold-bright": "#E8C86A",
-                    line: "#DDE6D0"
+                    "gold-deep": "#B8862E",
+                    line: "#DDE6D0",
+                    army: "#2D4A2A"
                 },
                 fontFamily: {
-                    display: ["Fredoka", "sans-serif"],
-                    body: ["Plus Jakarta Sans", "sans-serif"]
+                    display: ["Clash Display", "sans-serif"],
+                    body: ["Plus Jakarta Sans", "sans-serif"],
+                    mono: ["Roboto Mono", "monospace"]
                 }
             }
         }
@@ -55,7 +56,8 @@
         overflow-x: hidden;
     }
 
-    h1, h2, h3, .font-display { font-family: 'Fredoka', sans-serif; }
+    h1, h2, h3, .font-display { font-family: 'Clash Display', sans-serif; }
+    .font-mono { font-family: 'Roboto Mono', monospace; }
 
     .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
@@ -95,23 +97,30 @@
     .reveal-delay-2.is-visible { transition-delay: .12s; }
     .reveal-delay-3.is-visible { transition-delay: .18s; }
 
-    .nav-link { position: relative; }
-    .nav-link.active { color: #4E7A3A; }
+    .nav-link { position: relative; color: rgba(255,255,255,0.7); transition: color 0.3s ease; }
+    .nav-link:hover { color: #FFFFFF; }
+    .nav-link.active { color: #FFFFFF; }
     .nav-link.active::after {
-        content: ""; position: absolute; left: 50%; bottom: -6px;
-        width: 4px; height: 4px; border-radius: 50%; background: #C28A5A; transform: translateX(-50%);
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -6px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #D4A84A;
+        transform: translateX(-50%);
     }
 
     #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(.16,1,.3,1); }
     #mobile-menu.open { max-height: 480px; }
 
     .btn-primary { transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s ease, background-color 0.3s ease; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(78, 122, 58, 0.40); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgba(45, 74, 42, 0.40); }
     .btn-primary:active { transform: translateY(-1px) scale(0.98); }
 
     .btn-ghost { transition: transform 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease; }
     .btn-ghost:hover { transform: translateY(-3px); }
-    .btn-ghost:active { transform: translateY(-1px) scale(0.98); }
 
     .grain {
         position: fixed; inset: 0; pointer-events: none; opacity: 0.025; z-index: 1; mix-blend-mode: multiply;
@@ -130,29 +139,24 @@
     }
     .project-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 24px 48px -16px rgba(78, 122, 58, 0.25);
+        box-shadow: 0 24px 48px -16px rgba(45, 74, 42, 0.25);
     }
 
-    .accent-web { color: #4E7A3A; }
-    .accent-mobile { color: #A06A3E; }
-
-    /* ===== Filter pills ===== */
     .filter-pill {
         transition: all 0.3s cubic-bezier(.16,1,.3,1);
         cursor: pointer;
     }
     .filter-pill.active {
-        background-color: #4E7A3A;
+        background-color: #2D4A2A;
         color: #FFFFFF;
-        border-color: #4E7A3A;
-        box-shadow: 0 10px 22px -10px rgba(78, 122, 58, 0.45);
+        border-color: #2D4A2A;
+        box-shadow: 0 10px 22px -10px rgba(45, 74, 42, 0.45);
     }
     .filter-pill:not(.active):hover {
         transform: translateY(-2px);
-        background-color: #F0F5EA;
+        background-color: #FAFFF5;
     }
 
-    /* ===== Pagination ===== */
     .page-btn {
         display: inline-flex; align-items: center; justify-content: center;
         min-width: 40px; height: 40px; padding: 0 6px;
@@ -160,9 +164,17 @@
         font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px; color: #4A5A40;
         transition: all 0.25s cubic-bezier(.16,1,.3,1);
     }
-    .page-btn:hover:not(:disabled) { background: #F0F5EA; transform: translateY(-2px); }
+    .page-btn:hover:not(:disabled) { background: #FAFFF5; transform: translateY(-2px); }
     .page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-    .page-btn.is-active { color: #FFFFFF; border-color: transparent; background-color: #4E7A3A; }
+    .page-btn.is-active { color: #FFFFFF; border-color: transparent; background-color: #2D4A2A; }
+
+    .navbar-army {
+        background: #2D4A2A;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 34px -14px rgba(0, 0, 0, 0.45);
+    }
 
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
@@ -172,7 +184,7 @@
         .reveal { opacity: 1; transform: none; }
     }
 
-    :focus-visible { outline: 2px solid #C28A5A; outline-offset: 3px; border-radius: 6px; }
+    :focus-visible { outline: 2px solid #D4A84A; outline-offset: 3px; border-radius: 6px; }
 
     .bg-warm-glow { background: radial-gradient(ellipse at 30% 40%, rgba(127,176,105,0.08), transparent 70%); }
 </style>
@@ -181,38 +193,38 @@
 
 <div class="grain"></div>
 
-<!-- Floating Navigation -->
+<!-- Floating Navigation - Army Green (sama dengan index.html) -->
 <nav class="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-auto">
-    <div class="flex items-center justify-between gap-4 sm:gap-8 bg-cream/88 backdrop-blur-xl border border-line shadow-[0_8px_30px_-12px_rgba(78,122,58,0.18)] rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
+    <div class="navbar-army flex items-center justify-between gap-4 sm:gap-8 rounded-full pl-3 pr-2 py-2 sm:pl-3 sm:pr-3">
         <a class="flex items-center gap-2 shrink-0 pl-1" href="index.html">
-            <span class="w-8 h-8 rounded-full bg-matcha-deep flex items-center justify-center" aria-hidden="true">
-                <span class="material-symbols-outlined text-cream text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
+            <span class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center" aria-hidden="true">
+                <span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings:'FILL' 1;">spa</span>
             </span>
-            <span class="font-display text-[17px] font-semibold text-matcha-deep tracking-tight">Indah</span>
+            <span class="font-display text-[17px] font-semibold text-white tracking-tight">Indah</span>
         </a>
 
-        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium text-ink-soft">
-            <a class="nav-link hover:text-matcha-deep transition-colors" href="index.html#home">Home</a>
-            <a class="nav-link active hover:text-matcha-deep transition-colors" href="project.html">Project</a>
-            <a class="nav-link hover:text-matcha-deep transition-colors" href="journey.html">Journey</a>
+        <div class="hidden md:flex items-center gap-7 font-body text-[14px] font-medium">
+            <a class="nav-link" data-nav href="index.html#home">Home</a>
+            <a class="nav-link active" data-nav href="project.html">Project</a>
+            <a class="nav-link" data-nav href="journey.html">Journey</a>
         </div>
 
-        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-matcha-deep text-cream font-body text-[13px] font-semibold btn-primary" href="index.html#contact">
+        <a class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-army font-body text-[13px] font-semibold btn-primary" href="index.html#contact">
             Say Hello
             <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
         </a>
 
-        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-matcha-deep p-2 rounded-full hover:bg-paper" id="menu-btn">
+        <button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden text-white p-2 rounded-full hover:bg-white/10" id="menu-btn">
             <span class="material-symbols-outlined" id="menu-icon">menu</span>
         </button>
     </div>
 
-    <div class="md:hidden mt-2 bg-cream/95 backdrop-blur-xl border border-line shadow-lg rounded-3xl" id="mobile-menu">
+    <div class="md:hidden mt-2 bg-army/95 backdrop-blur-xl border border-white/10 shadow-lg rounded-3xl" id="mobile-menu">
         <div class="flex flex-col px-4 py-3 gap-1 font-body text-[15px] font-medium">
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="index.html">Home</a>
-            <a class="text-matcha-deep font-semibold px-3 py-3 rounded-2xl bg-paper" href="project.html">Project</a>
-            <a class="text-ink-soft px-3 py-3 rounded-2xl hover:bg-paper" href="journey.html">Journey</a>
-            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-matcha-deep text-cream font-semibold" href="index.html#contact">Say Hello</a>
+            <a class="text-white/70 px-3 py-3 rounded-2xl hover:bg-white/10" href="index.html">Home</a>
+            <a class="text-white font-semibold px-3 py-3 rounded-2xl bg-white/10" href="project.html">Project</a>
+            <a class="text-white/70 px-3 py-3 rounded-2xl hover:bg-white/10" href="journey.html">Journey</a>
+            <a class="mt-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-army font-semibold" href="index.html#contact">Say Hello</a>
         </div>
     </div>
 </nav>
@@ -233,7 +245,7 @@
                     My <span class="text-matcha-deep">Projects</span>
                 </h1>
                 <p class="font-body text-[16px] sm:text-[17px] text-ink-soft leading-relaxed mt-5 max-w-lg">
-                    A collection of 17 web and mobile projects I’ve worked on, from the first idea to the final result.
+                    A collection of 17 web and mobile projects I've worked on, from the first idea to the final result.
                 </p>
             </div>
 
@@ -277,7 +289,7 @@
     <!-- ============ CONTACT CTA ============ -->
     <section class="container-wrap container-px pb-16 sm:pb-24">
         <div class="reveal relative bg-matcha-deep rounded-[2.25rem] sm:rounded-[3rem] px-6 sm:px-16 py-14 sm:py-20 overflow-hidden text-center">
-            <span aria-hidden="true" class="absolute -top-10 -left-10 w-40 h-40 bg-latte/30 blob-shape blur-2xl"></span>
+            <span aria-hidden="true" class="absolute -top-10 -left-10 w-40 h-40 bg-gold/30 blob-shape blur-2xl"></span>
             <span aria-hidden="true" class="absolute -bottom-14 -right-14 w-56 h-56 bg-matcha-bright/25 blob-shape blur-2xl"></span>
 
             <h2 class="font-display text-[28px] sm:text-[38px] leading-[1.15] text-cream font-semibold max-w-2xl mx-auto">
@@ -326,15 +338,7 @@
         });
     });
 
-    // ---- Dummy project data (17 items) — replace with real project info ----
-    const categoryMeta = {
-        web:    { label: 'Web Development', accentClass: 'accent-web' },
-        mobile: { label: 'Mobile App',       accentClass: 'accent-mobile' }
-    };
-
-    // prototypeUrl / behanceUrl are per-project — replace each "#" with the real link.
-    // Use `image` for a direct image URL (e.g. your own uploaded image / Figma export).
-    // If `image` is left out, the card falls back to a placeholder built from `seed`.
+    // ---- Dummy project data (17 items) ---- 
     const projects = [
         { title: 'Web IoT Pig Tracking',     cat: 'web',    type: 'Web Platform',    desc: 'Real-time operational dashboard that tracks livestock data through IoT sensors.', tags: ['Vue.js', 'Vuetify'], image:'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b', prototypeUrl: 'https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70', behanceUrl: 'https://www.behance.net/gallery/241725399/IoT-Pigging-Monitoring' },
         { title: 'App Seraya',              cat: 'mobile', type: 'Mobile App',      desc: 'AI-powered companion for emotional self-care and daily mindfulness.', tags: ['Figma', 'Spring Boot'], image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53', prototypeUrl: 'https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485', behanceUrl: 'https://www.behance.net/gallery/229427779/AI-Powered-App-for-Emotional-Self-Care-and-Reflection' },
@@ -365,18 +369,16 @@
     const filterBar = document.getElementById('filterBar');
 
     function cardHTML(p, num) {
-        const meta = categoryMeta[p.cat];
         const tagsHTML = p.tags.map(t => `<span class="px-3 py-1 rounded-full bg-paper text-ink-soft eyebrow normal-case font-semibold">${t}</span>`).join('');
-        const imgSrc = p.image ? p.image : `https://picsum.photos/seed/${p.seed}/640/480`;
 
         return `
         <article class="project-card reveal is-visible bg-cream rounded-[2rem] border border-line overflow-hidden shadow-sm flex flex-col" data-category="${p.cat}">
             <div class="img-reveal aspect-[4/3] overflow-hidden relative">
-                <img alt="${p.title} preview" class="w-full h-full object-cover" src="${imgSrc}" loading="lazy">
+                <img alt="${p.title} preview" class="w-full h-full object-cover" src="${p.image}" loading="lazy">
                 <span class="absolute top-3 left-3 font-display text-[13px] font-semibold px-2.5 py-1 rounded-full bg-cream/90 backdrop-blur text-ink-soft">${num}</span>
             </div>
             <div class="p-6 flex flex-col flex-1">
-                <span class="eyebrow ${meta.accentClass}">${meta.label} · ${p.type}</span>
+                <span class="eyebrow text-matcha-deep">${p.cat === 'web' ? 'Web Development' : 'Mobile App'} · ${p.type}</span>
                 <h3 class="font-display text-[20px] leading-[1.15] text-ink font-semibold mt-2">${p.title}</h3>
                 <p class="font-body text-[14px] text-ink-soft leading-relaxed mt-2 flex-1">${p.desc}</p>
                 <div class="flex flex-wrap gap-2 mt-4">${tagsHTML}</div>
