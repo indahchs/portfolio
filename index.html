@@ -379,9 +379,6 @@
         letter-spacing: -0.02em;
     }
 
-    /* loc-tag: positioning stays static, the "pop-in" animation only plays
-       once JS adds .show-tag (so it can be timed to appear right after the
-       "Nur Indah Chasanah" word-reveal finishes) */
     .loc-tag {
         position: absolute;
         font-size: 0;
@@ -829,7 +826,7 @@
                 <div class="relative flex justify-center items-center order-1 lg:order-2">
                     <div class="absolute w-[110%] h-[110%] bg-matcha-mist/50 blob-shape blur-3xl -z-10"></div>
                     <div class="relative clay-radius overflow-hidden ambient-shadow border-4 border-cream w-[220px] h-[280px] sm:w-[280px] sm:h-[360px] md:w-[320px] md:h-[400px]">
-                        <img alt="Illustration of Nur Indah" class="w-full h-full object-cover" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/deb45dd0-5c7e-477e-ae03-78e1459ad8ff">
+                        <img alt="Illustration of Nur Indah" class="w-full h-full object-cover" src="img/me1.png">
                     </div>
 
                     <span aria-hidden="true" class="absolute top-3 left-1 sm:-left-3 float-slow w-9 h-9 rounded-full bg-matcha-bright flex items-center justify-center ambient-shadow-sm">
@@ -1902,9 +1899,9 @@
 
     (function () {
         const projectImages = [
-            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b", // Pig Tracking
-            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53", // Seraya
-            "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a"  // Foody
+            "img/pgg.png", // Pig Tracking
+            "img/sry.png", // Seraya
+            "img/fdy.png"  // Foody
         ];
 
         function initStack(slotEl, images, startOffset, intervalMs) {
@@ -2035,7 +2032,7 @@
             catLabel: 'Product Design · Web Platform',
             desc: 'Real-time operational dashboard that tracks livestock data through IoT sensors.',
             tags: ['Vue.js', 'Vuetify'],
-            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aef8b9ac-25d5-429c-9e1b-fe3c7f3b687b',
+            image: 'img/pgg.png',
             prototypeUrl: 'https://www.figma.com/proto/Uv6g0uKeCct5DI4fhp4Bk7/Dashboard-Pigging-Monitoring?node-id=2-70&t=GUra5A9OwBGesICV-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A70',
             behanceUrl: 'https://www.behance.net/gallery/241725399/IoT-Pigging-Monitoring'
         },
@@ -2044,7 +2041,7 @@
             catLabel: 'UI/UX Design · Mobile App',
             desc: 'AI-powered companion for emotional self-care and daily mindfulness.',
             tags: ['Figma', 'Spring Boot'],
-            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b8719349-0a17-4bed-b2b6-c2edf929ea53',
+            image: 'img/sry.png',
             prototypeUrl: 'https://www.figma.com/proto/dgZnPk0SUzwWnuPRnve6n3/seraya?node-id=0-1&p=f&t=BTOEFFwkX8Eg7Qhj-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=114%3A2232&fuid=1149611445040717485',
             behanceUrl: 'https://www.behance.net/gallery/229427779/AI-Powered-App-for-Emotional-Self-Care-and-Reflection'
         },
@@ -2053,7 +2050,7 @@
             catLabel: 'Product Design · Web App',
             desc: 'BMI tracking, food logs, and AI-driven health recommendations.',
             tags: ['Figma', 'Laravel'],
-            image: 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0d213b77-f5d8-4597-9472-5a080dc6d88a',
+            image: 'img/fdy.png',
             prototypeUrl: 'https://www.figma.com/proto/NRzlCg0376PNzaiG7Cy2jC/ORION---FOODY--Copy-?node-id=0-1&p=f&t=LenPCVfLsvRdwmjz-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1098%3A9296&show-proto-sidebar=1',
             behanceUrl: 'https://www.behance.net/gallery/205265235/Foody'
         },
